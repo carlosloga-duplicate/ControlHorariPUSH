@@ -37,15 +37,12 @@ var app = {
         console.log('calling setup push');
         app.setupPush();
 
-/*         $("#radioENTRADA").click(function(){
-            alert("Altre ENTRADA");
-            if ($('input[name=radioENTRADA]:checked').val() == 'EHO')
-            {
-                $("#selectHoraENTRADA").focus();
-                $("#selectHoraENTRADA").selectmenu("open");
-            }
-          });
- */
+        /* Informar data actual */
+        var today = new Date();   
+        var dd = today.getDate();
+        var mm = today.getMonth()+1; //January is 0!
+        var yyyy = today.getFullYear();    
+        $('#DIA').val(dd + '/' + mm + '/' + yyyy);  
 
         /* acceder al combo que hay dentro del radioButton */
         $(document).on('change', '[name="radioENTRADA"]', function(){ 
