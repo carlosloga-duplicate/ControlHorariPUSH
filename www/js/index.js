@@ -50,6 +50,8 @@ var app = {
           $(document).on('change', '[name="radioENTRADA"]', function(){ 
             if ($('input[name=radioENTRADA]:checked').val() == 'EHO')
             {
+                $("input[name='radioENTRADA']:last").attr("checked", "checked");
+                $("input[name='radioENTRADA']").checkboxradio("refresh");
                 $("#selectHoraENTRADA").focus();
                 $("#selectHoraENTRADA").selectmenu("open");
             }
