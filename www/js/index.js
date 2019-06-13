@@ -44,7 +44,7 @@ var app = {
         var dd = today.getDate().toString();
         var mm = (today.getMonth()+1).toString(); //January is 0!
         var yyyy = today.getFullYear().toString();    
-        $('#DIA').val(dd + '/' + mm + '/' + yyyy);  
+        $('#DIA').val(yyyy + "-" + mm + "-" + dd);  /* yyyy-MM-dd  */
 
         /* acceder al combo que hay dentro del radioButton */
         $(document).on('change', '[name="radioENTRADA"]', function(){ 
