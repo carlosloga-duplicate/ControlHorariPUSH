@@ -37,6 +37,8 @@ var app = {
         console.log('calling setup push');
         app.setupPush();
 
+        $.mobile.changePage( "../index.html", { transition: "slideup", changeHash: false });
+
         /* Informar data actual */
         var today = new Date();   
         var dd = today.getDate();
