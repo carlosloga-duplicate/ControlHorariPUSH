@@ -47,7 +47,8 @@ var app = {
           });
  */
 
-          $(document).on('change', '[name="radioENTRADA"]', function(){ 
+        /* acceder al combo que hay dentro del radioButton */
+        $(document).on('change', '[name="radioENTRADA"]', function(){ 
             if ($('input[name=radioENTRADA]:checked').val() == 'EHO')
             {
                 $("input[name='radioENTRADA']:last").attr("checked", "checked");
@@ -57,6 +58,27 @@ var app = {
             }
         });   
 
+        /* acceder al combo que hay dentro del radioButton */
+        $(document).on('change', '[name="radioDESCANS"]', function(){ 
+            if ($('input[name=radioDESCANS]:checked').val() == 'DTO')
+            {
+                $("input[name='radioDESCANS']:last").attr("checked", "checked");
+                $("input[name='radioDESCANS']").checkboxradio("refresh");
+                $("#selectTempsDESCANS").focus();
+                $("#selectTempsDESCANS").selectmenu("open");
+            }
+        }); 
+
+        /* acceder al combo que hay dentro del radioButton */
+        $(document).on('change', '[name="radioSORTIDA"]', function(){ 
+            if ($('input[name=radioSORTIDA]:checked').val() == 'SHO')
+            {
+                $("input[name='radioSORTIDA']:last").attr("checked", "checked");
+                $("input[name='radioSORTIDA']").checkboxradio("refresh");
+                $("#selectHoraSORTIDA").focus();
+                $("#selectHoraSORTIDA").selectmenu("open");
+            }
+        }); 
 
     },
     setupPush: function() {
