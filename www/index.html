@@ -60,7 +60,7 @@
 
     <body style="margin:auto; width: 100%;">
 
-<!--         <div class="app">
+        <div class="app">
             <div id="deviceready" class="blink">
                 <p class="event listening">Connecting to Device</p>
                 <p class="event received">Device is Ready</p>
@@ -78,7 +78,7 @@
                     <p class="event received">Carregant l'aplicació</p> 
                 </div>
             </div>
-        </div> -->
+        </div>
 
         <div data-role="page" id="pageSETHORA" data-theme="a" >
             <!-- LINEA DE CABECERA -->
@@ -99,7 +99,7 @@
                     <td><input type="date" name="DIA" id="DIA" value="" /></td>
                 </tr></table>
 
-                <div data-role="collapsible-set" data-theme="c" data-content-theme="d">
+                <div data-role="collapsible-set" data-theme="c" data-content-theme="d" data-mini="true" style="width: 100%;">
                     <div data-role="collapsible">
                         <h1>ENTRADA</h1>
                         <!-- PANEL D'ENTRADA -->
@@ -152,7 +152,7 @@
                                                             <label for="radioDESCANS_TEMPS_DEFECTE" style="height: 55px; vertical-align: middle;">Defecte<br/>00:45</label>
                                                             <input type="radio" name="radioDESCANS" id="radioDESCANS_TEMPS_ALTRE" value="DTO"> 
                                                             <label for="radioDESCANS_TEMPS_ALTRE">Altre<br/> 
-                                                                <select name="selectTempsDESCANS" id="selecTempsDESCANS" data-mini="true" style="z-index: 500;">
+                                                                <select name="selecTempsDESCANS" id="selecTempsDESCANS" data-mini="true" style="z-index: 500;">
                                                                     <option value="1">00:05</option>
                                                                     <option value="2">00:10</option>
                                                                     <option value="3">00:15</option>
