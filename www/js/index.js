@@ -36,7 +36,7 @@ var app = {
         console.log('Received Device Ready Event');
         console.log('calling setup push');
         app.setupPush();
-        alert('ready!');
+
 /*         $("#radioENTRADA").click(function(){
             alert("Altre ENTRADA");
             if ($('input[name=radioENTRADA]:checked').val() == 'EHO')
@@ -48,7 +48,6 @@ var app = {
  */
 
           $(document).on('change', '[name="radioENTRADA"]', function(){ 
-            alert("una ENTRADA");
             if ($('input[name=radioENTRADA]:checked').val() == 'EHO')
             {
                 $("#selectHoraENTRADA").focus();
