@@ -41,10 +41,11 @@ var app = {
         
         /* Informar data actual */
         var today = new Date();   
-        var dd = today.getDate().toString();
+ /*        var dd = today.getDate().toString();
         var mm = (today.getMonth()+1).toString(); //January is 0!
-        var yyyy = today.getFullYear().toString();    
-        $('#DIA').val(yyyy + "-" + mm + "-" + dd);  /* yyyy-MM-dd  */
+        var yyyy = today.getFullYear().toString();  
+        var queryDate = new Date(2009,11,01); */  
+        $('#DIA').val(today);  /* yyyy-MM-dd  */
 
         /* acceder al combo que hay dentro del radioButton */
         $(document).on('change', '[name="radioENTRADA"]', function(){ 
