@@ -40,12 +40,12 @@ var app = {
         setTimeout("$.mobile.changePage('#pageSETHORA', { transition: 'slideup', changeHash: false });", 2000);
         
         /* Informar data actual */
-        var today = new Date();   
+        var today = new Date().toString();   
  /*        var dd = today.getDate().toString();
         var mm = (today.getMonth()+1).toString(); //January is 0!
-        var yyyy = today.getFullYear().toString(); */  
-        var queryDate = new Date(today.getFullYear(),today.getMonth(),today.getDate());  
-        $('#DIA').val(queryDate);  /* yyyy-MM-dd  */
+        var yyyy = today.getFullYear().toString(); 
+        var queryDate = new Date(today.getFullYear(),today.getMonth(),today.getDate());  */  
+        $('#inputDIA').val(today);              /* yyyy-MM-dd  */
 
         /* acceder al combo que hay dentro del radioButton */
         $(document).on('change', '[name="radioENTRADA"]', function(){ 
