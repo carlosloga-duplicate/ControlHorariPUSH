@@ -33,17 +33,17 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-        console.log('Received Device Ready Event');
-        console.log('calling setup push');
+/*         console.log('Received Device Ready Event');
+        console.log('calling setup push'); */
         app.setupPush();
 
-        $.mobile.changePage("#pageSETHORA", { transition: "slideup", changeHash: false });
-
+        setTimeout("$.mobile.changePage('#pageSETHORA', { transition: 'slideup', changeHash: false });", 2000);
+        
         /* Informar data actual */
         var today = new Date();   
-        var dd = today.getDate();
-        var mm = today.getMonth()+1; //January is 0!
-        var yyyy = today.getFullYear();    
+        var dd = today.getDate().toString();
+        var mm = (today.getMonth()+1).toString(); //January is 0!
+        var yyyy = today.getFullYear().toString();    
         $('#DIA').val(dd + '/' + mm + '/' + yyyy);  
 
         /* acceder al combo que hay dentro del radioButton */
