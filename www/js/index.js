@@ -37,8 +37,8 @@ var app = {
         console.log('calling setup push');
         app.setupPush();
 
-        $.mobile.changePage( "pageSETHORA", { transition: "slideup", changeHash: false });
-
+        /* $.mobile.changePage( "pageSETHORA", { transition: "slideup", changeHash: false });
+ */
         /* Informar data actual */
         var today = new Date();   
         var dd = today.getDate();
@@ -63,8 +63,8 @@ var app = {
             {
                 $("input[name='radioDESCANS']:last").attr("checked", "checked");
                 $("input[name='radioDESCANS']").checkboxradio("refresh");
-                $("#selectTempsDESCANS").focus();
-                $("#selectTempsDESCANS").selectmenu("open");
+                $("#selecTempsDESCANS").focus();
+                $("#selecTempsDESCANS").selectmenu("open");
             }
         }); 
 
