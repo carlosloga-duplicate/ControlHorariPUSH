@@ -60,7 +60,7 @@
 
     <body style="margin:auto; width: 100%;">
 
-        <div class="app">
+<!--         <div class="app">
             <div id="deviceready" class="blink">
                 <p class="event listening">Connecting to Device</p>
                 <p class="event received">Device is Ready</p>
@@ -78,7 +78,7 @@
                     <p class="event received">Carregant l'aplicació</p> 
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <div data-role="page" id="pageSETHORA" data-theme="a" >
             <!-- LINEA DE CABECERA -->
@@ -96,10 +96,12 @@
                 <!-- SELECCIÓ DEL DIA-->
                 <table style="width: 100%;"><tr>
                     <td><label style="font-size: large; font-weight:bold;" for="DIA">Jornada dia</label></td>
-                    <td><input type="date" name="DIA" id="DIA" required="required" /></td>
+                    <td><input type="date" name="inputDIA" id="inputDIA" required="required" /></td>
                 </tr></table>
-
+                
+                <!-- ACORDEON -->
                 <div data-role="collapsible-set" data-theme="c" data-content-theme="d" data-mini="true" style="width: 100%;">
+                    <!-- ACORDEON ENTRADA -->
                     <div data-role="collapsible">
                         <h1>ENTRADA</h1>
                         <!-- PANEL D'ENTRADA -->
@@ -121,6 +123,19 @@
                                                 <option value="2">07:05</option>
                                                 <option value="3">07:10</option>
                                                 <option value="4">07:15</option>
+                                                <option value="5">07:15</option>
+                                                <option value="6">07:15</option>
+                                                <option value="7">07:15</option>
+                                                <option value="8">07:15</option>
+                                                <option value="9">07:15</option>
+                                                <option value="10">07:15</option>
+                                                <option value="11">07:15</option>
+                                                <option value="12">07:15</option>
+                                                <option value="13">07:15</option>
+                                                <option value="14">07:15</option>
+                                                <option value="15">07:15</option>
+                                                <option value="16">07:15</option>
+                                                <option value="17">07:15</option>
                                             </select> 
                                         </label>                                 
                                     </fieldset>
@@ -135,6 +150,7 @@
                             <tr><td>&nbsp;</td></tr>
                         </table>
                     </div>
+                    <!-- ACORDEON SORTIDA -->
                     <div data-role="collapsible">
                         <h1>SORTIDA</h1>
                         <!-- PANEL DE SORTIDA -->
@@ -215,10 +231,10 @@
                     <tr><td style="background-color: darkgray;"><h1 style="color: white;">OPCIONS</h1></td></tr>
                     <tr><td>&nbsp;</td></tr>
                     <tr><td>
-                        <a href="#" class="ui-btn ui-btn-ui-mini ui-btn-icon-left ui-icon-gear">Configuració</a>
+                        <a href="#pageCONFIGURACIO" class="ui-btn ui-btn-ui-mini ui-btn-icon-left ui-icon-gear">Configuració</a>
                     </td></tr>
                     <tr><td>
-                        <a href="#" class="ui-btn ui-btn-ui-mini ui-btn-icon-left ui-icon-bullets">Històric</a>
+                        <a href="#pageHISTORIC" class="ui-btn ui-btn-ui-mini ui-btn-icon-left ui-icon-bullets">Històric</a>
                     </td></tr>
                 </table>
             </div>
@@ -226,15 +242,143 @@
         </div>
 
         <div data-role="page" id="pageCONFIRMACIO" data-theme="a" >
-
+            <!-- LINEA DE CABECERA -->
+            <div data-role="header" data-theme="a" style="margin-bottom: 0px; margin-top: 0px;">  
+                    <table width="100%" cellpadding="0" cellspacing="0"><tr>
+                        <td style="padding: 0px; vertical-align: middle;"><img src="img/logo.png" /></td>
+                        <td style="padding: 0px; text-align: center; width: 100%;"><h3>Control Horari</h3></td>                    
+                    </tr></table>                
+                </div>
+    
+                <!-- CONTENIDO -->
+                <div data-role="content" data-theme="a">
+                
+                </div>
+    
+                <!-- LINEA DE PIE DE PÁGINA -->
+                <div data-role="footer" id="divPie" name="divPie" data-theme="a" style="border: 0px; font-size: xx-small; text-align: right; width: 100%; position: fixed; bottom: 1px;">
+                    <table style="width: 100%;">
+                        <tr>
+                            <td id="tdPie" name="tdPie" style="text-align:left;"></td>
+                            <td style="text-align: right;">&copy;&nbsp;2019 Setting&nbsp;&nbsp;</td>
+                        </tr>
+                    </table>             
+                </div>
         </div>
 
         <div data-role="page" id="pageCONFIGURACIO" data-theme="a" >
+            <!-- LINEA DE CABECERA -->
+            <div data-role="header" data-theme="a" style="margin-bottom: 0px; margin-top: 0px;">  
+                <table width="100%" cellpadding="0" cellspacing="0"><tr>
+                    <td style="padding: 0px; vertical-align: middle;"><img src="img/logo.png" /></td>
+                    <td style="padding: 0px; text-align: center; width: 100%;"><h3>Control Horari</h3></td>                    
+                </tr></table>                
+            </div>
 
+            <!-- CONTENIDO -->
+            <div data-role="content" data-theme="a" style="text-align: center;">
+                <h1>CONFIGURACIÓ</h1><br/>
+                <table style="width: 100%;">
+                    <tr><td><h3>Usuari</h3></td><td colspan="2"><input type="text" name="inputUSUARI" id="inputUSUARI" required="required" /></td></tr>
+                    <tr><td><h3>Password</h3></td><td colspan="2"><input type="text" name="inputPASSW" id="inputPASSW" required="required" /></td></tr>
+                    <tr><td><h3>Hora entrada</h3></td>
+                    <td>   
+                        <select name="selectE_H_Defecte" id="selectE_H_Defecte" data-mini="true" style="z-index: 500; width: 100px;">
+                            <option value="1">07:00</option>
+                            <option value="2">07:05</option>
+                            <option value="3">07:10</option>
+                            <option value="4">07:15</option>
+                            <option value="5">07:15</option>
+                            <option value="6">07:15</option>
+                            <option value="7">07:15</option>
+                            <option value="8">07:15</option>
+                            <option value="9">07:15</option>
+                            <option value="10">07:15</option>
+                            <option value="11">07:15</option>
+                            <option value="12">07:15</option>
+                            <option value="13">07:15</option>
+                            <option value="14">07:15</option>
+                            <option value="15">07:15</option>
+                            <option value="16">07:15</option>
+                            <option value="17">07:15</option>
+                        </select> 
+                    </td>
+                    <td><label><input type="checkbox" name="cbE_H_Defecte">avisa'm</label></td>
+                </tr>
+
+                <tr><td><h3>Hora sortida</h3></td>
+                    <td>
+                    <select name="selectS_H_Defecte" id="selectS_H_Defecte" data-mini="true" style="z-index: 500; width: 100px;">
+                        <option value="1">17:00</option>
+                        <option value="2">17:05</option>
+                        <option value="3">17:10</option>
+                        <option value="4">17:15</option>
+                        <option value="5">17:20</option>
+                        <option value="6">17:25</option>
+                        <option value="7">17:30</option>
+                        <option value="8">17:35</option>
+                    </select>
+                </td>
+                <td><label><input type="checkbox" name="cbS_H_Defecte">avisa'm</label> </td>
+                </tr>
+                <tr>
+                <td><h3>Temps descans</h3></td>
+                <td colspan="2"><select name="selecT_Defecte" id="selecT_Defecte" data-mini="true">
+                        <option value="1">00:05</option>
+                        <option value="2">00:10</option>
+                        <option value="3">00:15</option>
+                        <option value="4">00:30</option>
+                        <option value="4">00:35</option>
+                    </select>  
+                    </td>
+                </tr>
+                <tr><td colspan="3">&nbsp;</td></tr>
+                <tr><td colspan="3">&nbsp;</td></tr>
+                <tr><td colspan="3">&nbsp;</td></tr>
+                <tr><td colspan="3">&nbsp;</td></tr>
+                <tr><td colspan="3">&nbsp;</td></tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td><a class="ui-btn ui-btn-b ui-btn ui-icon-delete ui-btn-icon-left" href="#pageSETHORA">CANCELAR</a></td>
+                    <td><a class="ui-btn ui-btn-a ui-btn ui-icon-check ui-btn-icon-left" href="#pageSETHORA">GUARDAR</a></td>
+                </tr>
+            </table>  
+            </div>
+
+            <!-- LINEA DE PIE DE PÁGINA -->
+            <div data-role="footer" id="divPie" name="divPie" data-theme="a" style="border: 0px; font-size: xx-small; text-align: right; width: 100%; position: fixed; bottom: 1px;">
+                <table style="width: 100%;">
+                    <tr>
+                        <td id="tdPie" name="tdPie" style="text-align:left;"></td>
+                        <td style="text-align: right;">&copy;&nbsp;2019 Setting&nbsp;&nbsp;</td>
+                    </tr>
+                </table>             
+            </div>
         </div>
 
         <div data-role="page" id="pageHISTORIC" data-theme="a" >
-
+            <!-- LINEA DE CABECERA -->
+            <div data-role="header" data-theme="a" style="margin-bottom: 0px; margin-top: 0px;">  
+                    <table width="100%" cellpadding="0" cellspacing="0"><tr>
+                        <td style="padding: 0px; vertical-align: middle;"><img src="img/logo.png" /></td>
+                        <td style="padding: 0px; text-align: center; width: 100%;"><h3>Control Horari</h3></td>                    
+                    </tr></table>                
+                </div>
+    
+                <!-- CONTENIDO -->
+                <div data-role="content" data-theme="a">
+                
+                </div>
+    
+                <!-- LINEA DE PIE DE PÁGINA -->
+                <div data-role="footer" id="divPie" name="divPie" data-theme="a" style="border: 0px; font-size: xx-small; text-align: right; width: 100%; position: fixed; bottom: 1px;">
+                    <table style="width: 100%;">
+                        <tr>
+                            <td id="tdPie" name="tdPie" style="text-align:left;"></td>
+                            <td style="text-align: right;">&copy;&nbsp;2019 Setting&nbsp;&nbsp;</td>
+                        </tr>
+                    </table>             
+                </div>
         </div>
 
         <script type="text/javascript" src="cordova.js"></script>
