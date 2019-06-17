@@ -29,56 +29,80 @@ var app = {
         document.addEventListener('deviceready', this.onDeviceReady, false);
     },
     onDeviceReady: function() {
+        app.receivedEvent('deviceready');
 
-        setTimeout("$.mobile.changePage('#pageSETHORA', { transition: 'slideup', changeHash: false });", 2000);
+        $.doTimeout(2000, function(){ 
+            cordova.getAppVersion.getVersionNumber(function (version) {  //coge la v. del tag version del config.xml
+                $("#tdPie").html("v." + version); 
 
-        $('body').on('click','imgENTRADA',function(){Confirmar('ENTRADA');})
-        $('body').on('click','imgSORTIDA',function(){Confirmar('SORTIDA');})
+                $.mobile.changePage('#pageSETHORA', { transition: 'slideup', changeHash: false });
 
-        /* Informar data actual */
-        var today = new Date().toString();    
-        $("input[type=date]").val(today);              /* yyyy-MM-dd  */
+                $('body').on('click','imgENTRADA',function(){Confirmar('ENTRADA');})
+                $('body').on('click','imgSORTIDA',function(){Confirmar('SORTIDA');})
 
-        /* acceder al combo que hay dentro del radioButton */
-        $(document).on('change', '[name="radioENTRADA"]', function(){ 
-            if ($('input[name=radioENTRADA]:checked').val() == 'EHO')
-            {
-                $("input[name='radioENTRADA']:last").attr("checked", "checked");
-                $("input[name='radioENTRADA']").checkboxradio("refresh");
-                $("#selectHoraENTRADA").focus();
-                $("#selectHoraENTRADA").selectmenu("open");
+                /* Informar data actual */
+                var today = new Date().toString();    
+                $("input[type=date]").val(today);              /* yyyy-MM-dd  */
+
+                /* acceder al combo que hay dentro del radioButton */
+                $(document).on('change', '[name="radioENTRADA"]', function(){ 
+                    if ($('input[name=radioENTRADA]:checked').val() == 'EHO')
+                    {
+                        $("input[name='radioENTRADA']:last").attr("checked", "checked");
+                        $("input[name='radioENTRADA']").checkboxradio("refresh");
+                        $("#selectHoraENTRADA").focus();
+                        $("#selectHoraENTRADA").selectmenu("open");
+                    }
+                });   
+
+                /* acceder al combo que hay dentro del radioButton */
+                $(document).on('change', '[name="radioDESCANS"]', function(){ 
+                    if ($('input[name=radioDESCANS]:checked').val() == 'DTO')
+                    {
+                        $("input[name='radioDESCANS']:last").attr("checked", "checked");
+                        $("input[name='radioDESCANS']").checkboxradio("refresh");
+                        $("#selecTempsDESCANS").focus();
+                        $("#selecTempsDESCANS").selectmenu("open");
+                    }
+                }); 
+
+                /* acceder al combo que hay dentro del radioButton */
+                $(document).on('change', '[name="radioSORTIDA"]', function(){ 
+                    if ($('input[name=radioSORTIDA]:checked').val() == 'SHO')
+                    {
+                        $("input[name='radioSORTIDA']:last").attr("checked", "checked");
+                        $("input[name='radioSORTIDA']").checkboxradio("refresh");
+                        $("#selectHoraSORTIDA").focus();
+                        $("#selectHoraSORTIDA").selectmenu("open");
+                    }
+                }); 
+            });
+        });
+
+        /* SALIR DE LA APP CUANDO SE PULSE LA TECLA BACK */
+        $(window).on("navigate", function (event, data) {
+            var direction = data.state.direction;
+            if (direction == 'back') {
+                setTimeout(function(){ navigator.app.exitApp(); }, 1500);                
             }
-        });   
+        });
 
-        /* acceder al combo que hay dentro del radioButton */
-        $(document).on('change', '[name="radioDESCANS"]', function(){ 
-            if ($('input[name=radioDESCANS]:checked').val() == 'DTO')
-            {
-                $("input[name='radioDESCANS']:last").attr("checked", "checked");
-                $("input[name='radioDESCANS']").checkboxradio("refresh");
-                $("#selecTempsDESCANS").focus();
-                $("#selecTempsDESCANS").selectmenu("open");
-            }
-        }); 
+    },
+    // Update DOM on a Received Event
+    receivedEvent: function(id) {
+        var parentElement = document.getElementById(id);
+        var listeningElement = parentElement.querySelector('.listening');
+        var receivedElement = parentElement.querySelector('.received');
 
-        /* acceder al combo que hay dentro del radioButton */
-        $(document).on('change', '[name="radioSORTIDA"]', function(){ 
-            if ($('input[name=radioSORTIDA]:checked').val() == 'SHO')
-            {
-                $("input[name='radioSORTIDA']:last").attr("checked", "checked");
-                $("input[name='radioSORTIDA']").checkboxradio("refresh");
-                $("#selectHoraSORTIDA").focus();
-                $("#selectHoraSORTIDA").selectmenu("open");
-            }
-        }); 
-
+        listeningElement.setAttribute('style', 'display:none;');
+        receivedElement.setAttribute('style', 'display:block;');        
     }   
 };
 
 function Confirmar(sQue)
 {
     alert(sQue);
-    
+
     if(sQue == "ENTRADA")
     {   
         $.mobile.changePage('#pageCONFIRMACIO', { transition: 'slideup', changeHash: false });
