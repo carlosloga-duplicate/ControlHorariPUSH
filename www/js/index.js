@@ -45,6 +45,7 @@ var app = {
                 /* var today = new Date().toString();     */
                 /* $("input[type=date]").val(today);      yyyy-MM-dd  */  
                 var hoy = GetFormattedDate();
+                alert(hoy);
                 $("#inputDIA").val(hoy);
 
                 /* acceder al combo que hay dentro del radioButton */

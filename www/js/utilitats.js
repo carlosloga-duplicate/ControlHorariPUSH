@@ -23,7 +23,7 @@ function GetFormattedDate() {
     var month = format(todayTime . getMonth() + 1);
     var day = format(todayTime . getDate());
     var year = format(todayTime . getFullYear());
-    return month + "/" + day + "/" + year;
+    return year + "-" + month + "-" + day;
 }
 
 
