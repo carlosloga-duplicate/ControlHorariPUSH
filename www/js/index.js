@@ -78,11 +78,14 @@ var app = {
 
         $('#botonENTRADA').click(function() {
             /* $.mobile.changePage('#pageCONFIRMACIO', { dataUrl : "pageCONFIRMACIO?color=D2F1CE", data : { 'color' : 'D2F1CE' }, reloadPage : true, changeHash : true }); */
+            storeObject.colorFondoConfirmacio = 'D2F1CE';
             $.mobile.changePage('#pageCONFIRMACIO', { transition: 'slideup', changeHash: false });
         });
 
         $('#botonSORTIDA').click(function() {
-            $.mobile.changePage('#pageCONFIRMACIO', { dataUrl : "pageCONFIRMACIO?color=FCC6B6", data : { 'color' : 'FCC6B6' }, changeHash : false, transition: 'slideup' });
+            /* $.mobile.changePage('#pageCONFIRMACIO', { dataUrl : "pageCONFIRMACIO?color=FCC6B6", data : { 'color' : 'FCC6B6' }, changeHash : false, transition: 'slideup' }); */
+            storeObject.colorFondoConfirmacio = 'FCC6B6';
+            $.mobile.changePage('#pageCONFIRMACIO', { transition: 'slideup', changeHash: false });
         });
 
         $(document).on('pagebeforeshow', "#pageCONFIRMACIO", function (event, data) {
@@ -90,10 +93,10 @@ var app = {
 
             try
             {
-            var parameters = $(this).data("url").split("?")[1];;
-            parameter = parameters.replace("color=","");  
-            alert(parameter);            
-            $("#divConfirmar").css( "background-color", parameter);
+/*                 var parameters = $(this).data("url").split("?")[1];;
+                parameter = parameters.replace("color=","");  */ 
+                alert(storeObject.colorFondoConfirmacio);            
+                $("#divConfirmar").css( "background-color", storeObject.colorFondoConfirmacio);
             }
             catch(err)
             {                
