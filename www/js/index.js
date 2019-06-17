@@ -86,13 +86,13 @@ var app = {
             $.mobile.changePage('#pageCONFIRMACIO', { dataUrl : "pageCONFIRMACIO?color=FCC6B6", data : { 'color' : 'FCC6B6' }, reloadPage : true, changeHash : true });
         });
 
-        $(document).on('pagebeforeshow', "#pageCONFIRMACIO", function (event, data) {
+/*         $(document).on('pagebeforeshow', "#pageCONFIRMACIO", function (event, data) {
             alert('en pagebeforeshow de pageCONFIRMACIO');
             var parameters = $(this).data("url").split("?")[1];;
             parameter = parameters.replace("color=","");  
             alert(parameter);
             $("#divConfirmar").css( "background-color", parameter);
-        });
+        }); */
 
         /* SALIR DE LA APP CUANDO SE PULSE LA TECLA BACK */
         $(window).on("navigate", function (event, data) {            
