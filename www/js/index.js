@@ -101,7 +101,7 @@ var app = {
 
   
                 $(document).delegate(".ui-page", "pagebeforeshow", function () {
-                    $(this).css('background', storeObject.colorFondoConfirmacio.toString );
+                    $(this).css('background-color', storeObject.colorFondoConfirmacio.toString );
                 });
 
             }
