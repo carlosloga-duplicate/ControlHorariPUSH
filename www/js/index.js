@@ -82,7 +82,7 @@ var app = {
         });
 
         $('#botonSORTIDA').click(function() {
-            $.mobile.changePage('#pageCONFIRMACIO', { dataUrl : "#pageCONFIRMACIO?color=FCC6B6", data : { 'color' : 'FCC6B6' }, changeHash : false, transition: 'slideup' });
+            $.mobile.changePage('#pageCONFIRMACIO', { dataUrl : "pageCONFIRMACIO?color=FCC6B6", data : { 'color' : 'FCC6B6' }, changeHash : false, transition: 'slideup' });
         });
 
         $(document).on('pagebeforeshow', "#pageCONFIRMACIO", function (event, data) {
