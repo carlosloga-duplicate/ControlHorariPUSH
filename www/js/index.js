@@ -37,19 +37,6 @@ var app = {
 
                 $.mobile.changePage('#pageSETHORA', { transition: 'slideup', changeHash: false });
 
-/*                 $('body').on('click','imgENTRADA',function(){Confirmar('ENTRADA');})
-                $('body').on('click','imgSORTIDA',function(){Confirmar('SORTIDA');}) */
-
-                $('#botonENTRADA').click(function() {
-                    alert('Button ENTRADA has been clicked');
-                    $.mobile.changePage('#pageCONFIRMACIO', { dataUrl : "pageCONFIRMACIO?color=D2F1CE", data : { 'color' : 'D2F1CE' }, reloadPage : true, changeHash : true });
-                });
-
-                $('#botonSORTIDA').click(function() {
-                    alert('Button SORTIDA has been clicked');
-                    $.mobile.changePage('#pageCONFIRMACIO', { dataUrl : "pageCONFIRMACIO?color=FCC6B6", data : { 'color' : 'FCC6B6' }, reloadPage : true, changeHash : true });
-                });
-
                 /* Informar data actual */
                 var today = new Date().toString();    
                 $("input[type=date]").val(today);              /* yyyy-MM-dd  */
@@ -89,7 +76,18 @@ var app = {
             });
         });
 
+        $('#botonENTRADA').click(function() {
+            alert('Button ENTRADA has been clicked');
+            $.mobile.changePage('#pageCONFIRMACIO', { dataUrl : "pageCONFIRMACIO?color=D2F1CE", data : { 'color' : 'D2F1CE' }, reloadPage : true, changeHash : true });
+        });
+
+        $('#botonSORTIDA').click(function() {
+            alert('Button SORTIDA has been clicked');
+            $.mobile.changePage('#pageCONFIRMACIO', { dataUrl : "pageCONFIRMACIO?color=FCC6B6", data : { 'color' : 'FCC6B6' }, reloadPage : true, changeHash : true });
+        });
+
         $(document).on('pagebeforeshow', "#pageCONFIRMACIO", function (event, data) {
+            alert('en pagebeforeshow de pageCONFIRMACIO');
             var parameters = $(this).data("url").split("?")[1];;
             parameter = parameters.replace("color=","");  
             alert(parameter);
@@ -97,7 +95,7 @@ var app = {
         });
 
         /* SALIR DE LA APP CUANDO SE PULSE LA TECLA BACK */
-        $(window).on("navigate", function (event, data) {
+        $(window).on("navigate", function (event, data) {            
             var direction = data.state.direction;
             if (direction == 'back') {
                 setTimeout(function(){ navigator.app.exitApp(); }, 1500);                
