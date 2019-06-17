@@ -42,9 +42,10 @@ var app = {
                 $.mobile.changePage('#pageSETHORA', { transition: 'slideup', changeHash: false });
 
                 /* Informar data actual */
-                var today = new Date().toString();    
-                /* $("input[type=date]").val(today);               yyyy-MM-dd  */
-                $("#inputDIA").val(today)
+                /* var today = new Date().toString();     */
+                /* $("input[type=date]").val(today);      yyyy-MM-dd  */  
+                var hoy = GetFormattedDate();
+                $("#inputDIA").val(hoy);
 
                 /* acceder al combo que hay dentro del radioButton */
                 $(document).on('change', '[name="radioENTRADA"]', function(){ 
@@ -129,21 +130,6 @@ var app = {
     }   
 };
 
-function Confirmar(sQue)
-{
-    alert(sQue);
-
-    if(sQue == "ENTRADA")
-    {   
-        $.mobile.changePage('#pageCONFIRMACIO', { transition: 'slideup', changeHash: false });
-        $("#divConfirmar").css( "background-color", "#D2F1CE");
-    }
-    else
-    {
-        $.mobile.changePage('#pageCONFIRMACIO', { transition: 'slideup', changeHash: false });
-        $("#divConfirmar").css( "background-color", "#FCC6B6");
-    }
-}
 
 
 
