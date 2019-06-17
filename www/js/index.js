@@ -82,13 +82,13 @@ var app = {
 
         $('#botonENTRADA').click(function() {
             /* $.mobile.changePage('#pageCONFIRMACIO', { dataUrl : "pageCONFIRMACIO?color=D2F1CE", data : { 'color' : 'D2F1CE' }, reloadPage : true, changeHash : true }); */
-            storeObject.colorFondoConfirmacio = 'D2F1CE';
+            storeObject.colorFondoConfirmacio = '#D2F1CE';
             $.mobile.changePage('#pageCONFIRMACIO', { transition: 'slideup', changeHash: false });
         });
 
         $('#botonSORTIDA').click(function() {
             /* $.mobile.changePage('#pageCONFIRMACIO', { dataUrl : "pageCONFIRMACIO?color=FCC6B6", data : { 'color' : 'FCC6B6' }, changeHash : false, transition: 'slideup' }); */
-            storeObject.colorFondoConfirmacio = 'FCC6B6';
+            storeObject.colorFondoConfirmacio = '#FCC6B6';
             $.mobile.changePage('#pageCONFIRMACIO', { transition: 'slideup', changeHash: false });
         });
 
@@ -98,7 +98,12 @@ var app = {
 /*              var parameters = $(this).data("url").split("?")[1];;
                 parameter = parameters.replace("color=","");  */           
                /*  $("#divConfirmar").css("background-color", storeObject.colorFondoConfirmacio.toString);  */
-                $("#pageCONFIRMACIO").style(".ui-page" , "{ background: gray;}");
+
+  
+                $(document).delegate(".ui-page", "pagebeforeshow", function () {
+                    $(this).css('background', storeObject.colorFondoConfirmacio.toString );
+                });
+
             }
             catch(err)
             {                
