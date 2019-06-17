@@ -98,7 +98,7 @@ var app = {
 /*              var parameters = $(this).data("url").split("?")[1];;
                 parameter = parameters.replace("color=","");  */           
                /*  $("#divConfirmar").css("background-color", storeObject.colorFondoConfirmacio.toString);  */
-                var color = storeObject.colorFondoConfirmacio.toString;
+                var color = storeObject.colorFondoConfirmacio;
                 alert(color);
                 $(this).css('background-color', color );
             }
