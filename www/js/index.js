@@ -77,8 +77,10 @@ var app = {
 
 function Confirmar(sQue)
 {
+    alert(sQue);
+    
     if(sQue == "ENTRADA")
-    {
+    {   
         $.mobile.changePage('#pageCONFIRMACIO', { transition: 'slideup', changeHash: false });
         $("#divConfirmar").css( "background-color", "#D2F1CE");
     }
