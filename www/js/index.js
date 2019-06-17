@@ -41,8 +41,13 @@ var app = {
                 $('body').on('click','imgSORTIDA',function(){Confirmar('SORTIDA');}) */
 
                 $('#botonENTRADA').click(function() {
-                    alert('Button has been clicked');
-                    $.mobile.changePage('#pageCONFIRMACIO', { dataUrl : "pageCONFIRMACIO?color=D2F1CE", data : { 'pcolor' : 'D2F1CE' }, reloadPage : true, changeHash : true });
+                    alert('Button ENTRADA has been clicked');
+                    $.mobile.changePage('#pageCONFIRMACIO', { dataUrl : "pageCONFIRMACIO?color=D2F1CE", data : { 'color' : 'D2F1CE' }, reloadPage : true, changeHash : true });
+                });
+
+                $('#botonSORTIDA').click(function() {
+                    alert('Button SORTIDA has been clicked');
+                    $.mobile.changePage('#pageCONFIRMACIO', { dataUrl : "pageCONFIRMACIO?color=FCC6B6", data : { 'color' : 'FCC6B6' }, reloadPage : true, changeHash : true });
                 });
 
                 /* Informar data actual */
