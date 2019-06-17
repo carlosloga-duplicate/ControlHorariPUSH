@@ -77,12 +77,11 @@ var app = {
         });
 
         $('#botonENTRADA').click(function() {
-            alert('Button ENTRADA has been clicked');
-            $.mobile.changePage('#pageCONFIRMACIO', { dataUrl : "pageCONFIRMACIO?color=D2F1CE", data : { 'color' : 'D2F1CE' }, reloadPage : true, changeHash : true });
+            /* $.mobile.changePage('#pageCONFIRMACIO', { dataUrl : "pageCONFIRMACIO?color=D2F1CE", data : { 'color' : 'D2F1CE' }, reloadPage : true, changeHash : true }); */
+            $.mobile.changePage('#pageCONFIRMACIO', { transition: 'slideup', changeHash: false });
         });
 
         $('#botonSORTIDA').click(function() {
-            alert('Button SORTIDA has been clicked');
             $.mobile.changePage('#pageCONFIRMACIO', { dataUrl : "pageCONFIRMACIO?color=FCC6B6", data : { 'color' : 'FCC6B6' }, reloadPage : true, changeHash : true });
         });
 
