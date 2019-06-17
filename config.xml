@@ -20,6 +20,20 @@
     <plugin name="cordova-plugin-console" source="npm" spec="~1.0.3" />
     <plugin name="cordova-plugin-dialogs" source="npm" spec="~1.2.1" />
     <plugin name="cordova-plugin-whitelist" source="npm" spec="~1.2.1" />
+    <plugin name="cordova-plugin-app-version" source="npm" spec="~0.1.9"/>    
+    <plugin name="cordova-plugin-fullscreen" source="npm" version="~1.1.0" />
+    <!-- ocultar statusbar en ios -->
+    <plugin name="cordova-plugin-statusbar-hide-on-startup" source="npm"/>
+    <plugin name="cordova-plugin-whitelist" spec="1" />
+    <feature name="File">
+        <param name="android-package" value="org.apache.cordova.file.FileUtils" />
+        <param name="ios-package" value="CDVFile" />
+    </feature>
+    <!--inicializaciones para detectar si hay conexión -->
+    <feature name="NetworkStatus">
+        <param name="android-package" value="org.apache.cordova.networkinformation.NetworkManager" />
+        <param name="ios-package" value="CDVConnection" />
+    </feature>    
     <icon src="icon.png" />
     <platform name="android">
         <icon density="ldpi" src="www/res/icon/android/drawable-ldpi-icon.png" />
