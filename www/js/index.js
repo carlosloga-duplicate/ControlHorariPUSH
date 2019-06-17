@@ -44,7 +44,7 @@ var app = {
                 /* $("input[type=date]").val(today);      yyyy-MM-dd  */  
                 var hoy = GetFormattedDate();
                 alert(hoy);
-                $("#inputDIA").val(hoy);
+               /*  $("#inputDIA").val(hoy); */
 
                 $.mobile.changePage('#pageSETHORA', { transition: 'slideup', changeHash: false });
 
