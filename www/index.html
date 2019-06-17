@@ -61,7 +61,7 @@
 
     <body style="margin:auto; width: 99%;">
 
-        <div data-role="page" id="pageINICI">
+<!--         <div data-role="page" id="pageINICI">
             <div id="divINICI" class="app">
                 <h1>Control Horari</h1>
                 <h4>Setting Consultoria en T.I.</h4>
@@ -72,7 +72,7 @@
                     <p class="event received">Carregant l'aplicació</p> 
                 </div>
             </div>
-        </div> 
+        </div>  -->
 
         <div data-role="page" id="pageSETHORA" data-theme="a" >
             <!-- LINEA DE CABECERA -->
@@ -136,8 +136,10 @@
                                 </td>
                                 </tr>
                                 <tr>                            
-                                    <td style="text-align: center; width: 100%;">
-                                        <img style="width: 282px;" id="imgENTRADA" name="imgENTRADA" data-role="button" src="img/ENTRADA.png" data-iconpos="notext" data-theme="a" /> 
+                                    <td style="text-align: center; width: 100%;">                                                                                
+                                        <input type="button" data-theme="" id="botonENTRADA" name="botonENTRADA">
+                                            <img src="img/ENTRADA.png" width="282px">
+                                        </input> 
                                     </td>   
                                 </tr></table>
                             </div></td></tr>
@@ -197,8 +199,8 @@
                                         </td>
                                     </tr>
                                     <tr>                            
-                                        <td style="text-align: center; width: 100%;">
-                                            <img style="width: 282px;" id="imgSORTIDA" name="imgSORTIDA" data-role="button" src="img/SORTIDA.png" data-iconpos="notext" data-theme="a" /> 
+                                        <td style="text-align: center; width: 100%;">                                            
+                                            <a href="#pageCONFIRMACIO" data-theme="" id="botonSORTIDA"><img src="img/SORTIDA.png" width="282px"></a>
                                         </td>   
                                     </tr>
                                 </table>
@@ -284,9 +286,9 @@
             <div data-role="content" data-theme="a">
                 <center><h3>CONFIGURACIÓ</h3></center> 
                 <table style="padding: 0; border-spacing: none;" cellspacing="0" cellpadding="0">
-                    <tr><td><h4>Usuari</h4></td><td colspan="2"><input type="text" name="inputUSUARI" id="inputUSUARI" required="required" data-mini="true" /></td></tr>
-                    <tr><td><h4>Password</h4></td><td colspan="2"><input type="text" name="inputPASSW" id="inputPASSW" required="required" data-mini="true" /></td></tr>
-                    <tr><td><h4>Hora entrada</h4></td>
+                    <tr><td><label for="inputUSUARI">Usuari</label></td><td colspan="2"><input type="text" name="inputUSUARI" id="inputUSUARI" required="required" data-mini="true" /></td></tr>
+                    <tr><td><label for="inputPASSW">Password</label></td><td colspan="2"><input type="text" name="inputPASSW" id="inputPASSW" required="required" data-mini="true" /></td></tr>
+                    <tr><td><label for="selectE_H_Defecte">Hora entrada</label></td>
                         <td>   
                             <select name="selectE_H_Defecte" id="selectE_H_Defecte" data-mini="true">
                                 <option value="1">07:00</option>
@@ -310,7 +312,7 @@
                         </td>
                         <td><label><input type="checkbox" name="cbE_H_Defecte" data-mini="true">avisa'm</label></td>
                     </tr>
-                    <tr><td><h4>Hora sortida</h4></td>
+                    <tr><td><label for="selectS_H_Defecte">Hora sortida</label></td>
                         <td>
                             <select name="selectS_H_Defecte" id="selectS_H_Defecte" data-mini="true" >
                                 <option value="1">17:00</option>
@@ -326,7 +328,7 @@
                         <td><label><input type="checkbox" name="cbS_H_Defecte" data-mini="true">avisa'm</label></td>
                     </tr>
                     <tr>
-                        <td><h4>Temps descans</h4></td>
+                        <td><label for="selecT_Defecte">Temps descans</label></td>
                         <td colspan="2">
                             <select name="selecT_Defecte" id="selecT_Defecte" data-mini="true">
                                 <option value="1">00:05</option>

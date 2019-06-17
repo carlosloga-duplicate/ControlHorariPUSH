@@ -37,8 +37,13 @@ var app = {
 
                 $.mobile.changePage('#pageSETHORA', { transition: 'slideup', changeHash: false });
 
-                $('body').on('click','imgENTRADA',function(){Confirmar('ENTRADA');})
-                $('body').on('click','imgSORTIDA',function(){Confirmar('SORTIDA');})
+/*                 $('body').on('click','imgENTRADA',function(){Confirmar('ENTRADA');})
+                $('body').on('click','imgSORTIDA',function(){Confirmar('SORTIDA');}) */
+
+                $('#botonENTRADA').click(function() {
+                    alert('Button has been clicked');
+                    $.mobile.changePage('#pageCONFIRMACIO', { dataUrl : "pageCONFIRMACIO?color=D2F1CE", data : { 'pcolor' : 'D2F1CE' }, reloadPage : true, changeHash : true });
+                });
 
                 /* Informar data actual */
                 var today = new Date().toString();    
@@ -77,6 +82,13 @@ var app = {
                     }
                 }); 
             });
+        });
+
+        $(document).on('pagebeforeshow', "#pageCONFIRMACIO", function (event, data) {
+            var parameters = $(this).data("url").split("?")[1];;
+            parameter = parameters.replace("color=","");  
+            alert(parameter);
+            $("#divConfirmar").css( "background-color", parameter);
         });
 
         /* SALIR DE LA APP CUANDO SE PULSE LA TECLA BACK */
