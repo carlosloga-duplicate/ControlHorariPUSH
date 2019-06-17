@@ -20,9 +20,9 @@ function Ahora()
 
 function GetFormattedDate() {
     var todayTime = new Date();
-    var month = format(todayTime . getMonth() + 1);
-    var day = format(todayTime . getDate());
-    var year = format(todayTime . getFullYear());
+    var month = format(todayTime.getMonth() + 1);
+    var day = format(todayTime.getDate());
+    var year = format(todayTime.getFullYear());
     return year + "-" + month + "-" + day;
 }
 
