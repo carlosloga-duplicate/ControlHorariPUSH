@@ -31,6 +31,10 @@ var app = {
     onDeviceReady: function() {
         app.receivedEvent('deviceready'); 
 
+        var storeObject = {
+            colorFondoConfirmacio: null
+        }
+
         $.doTimeout(2000, function(){ 
             cordova.getAppVersion.getVersionNumber(function (version) {  //coge la v. del tag version del config.xml
                 $("#tdPie").html("v." + version); 
