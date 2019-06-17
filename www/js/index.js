@@ -99,8 +99,8 @@ var app = {
                 parameter = parameters.replace("color=","");  */           
                /*  $("#divConfirmar").css("background-color", storeObject.colorFondoConfirmacio.toString);  */
                 var color = storeObject.colorFondoConfirmacio;
-                alert(color);
                 $(this).css('background-color', color );
+                $("#divConfirmar").css('background-color', color );
             }
             catch(err)
             {         
