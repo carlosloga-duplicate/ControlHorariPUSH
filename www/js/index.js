@@ -94,19 +94,17 @@ var app = {
 
         $(document).on('pagebeforeshow', "#pageCONFIRMACIO", function (event, data) {
             try
-            {
+            {                
 /*              var parameters = $(this).data("url").split("?")[1];;
                 parameter = parameters.replace("color=","");  */           
                /*  $("#divConfirmar").css("background-color", storeObject.colorFondoConfirmacio.toString);  */
-
-  
-                $(document).delegate(".ui-page", "pagebeforeshow", function () {
-                    $(this).css('background-color', storeObject.colorFondoConfirmacio.toString );
-                });
-
+                var color = storeObject.colorFondoConfirmacio.toString;
+                alert(color);
+                $(this).css('background-color', color );
             }
             catch(err)
-            {                
+            {         
+                alert(err.toString);       
             }
         });
 
