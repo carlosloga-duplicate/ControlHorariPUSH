@@ -93,14 +93,12 @@ var app = {
         });
 
         $(document).on('pagebeforeshow', "#pageCONFIRMACIO", function (event, data) {
-            alert('en pagebeforeshow de pageCONFIRMACIO');
-
             try
             {
-/*                 var parameters = $(this).data("url").split("?")[1];;
-                parameter = parameters.replace("color=","");  */ 
-                alert(storeObject.colorFondoConfirmacio);            
-                $("#divConfirmar").css( "background-color", storeObject.colorFondoConfirmacio);
+/*              var parameters = $(this).data("url").split("?")[1];;
+                parameter = parameters.replace("color=","");  */           
+               /*  $("#divConfirmar").css("background-color", storeObject.colorFondoConfirmacio.toString);  */
+                $("#pageCONFIRMACIO").style(".ui-page" , "{ background: gray;}");
             }
             catch(err)
             {                
