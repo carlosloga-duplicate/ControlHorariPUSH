@@ -80,6 +80,9 @@ var app = {
             }
         }); 
 
+        $('body').on('click','imgENTRADA',function(){Confirmar('ENTRADA');})
+        $('body').on('click','imgSORTIDA',function(){Confirmar('SORTIDA');})
+
     },
     setupPush: function() {
         console.log('calling push init');
@@ -130,3 +133,21 @@ var app = {
        });
     }
 };
+
+function Confirmar(sQue)
+{
+    if(sQue == "ENTRADA")
+    {
+        $.mobile.changePage('#pageCONFIRMACIO', { transition: 'slideup', changeHash: false });
+        $("#divConfirmar").css( "background-color", "#D2F1CE");
+    }
+    else
+    {
+        $.mobile.changePage('#pageCONFIRMACIO', { transition: 'slideup', changeHash: false });
+        $("#divConfirmar").css( "background-color", "#FCC6B6");
+    }
+}
+
+
+
+

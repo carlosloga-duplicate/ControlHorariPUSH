@@ -2,10 +2,10 @@
 <widget id="com.phonegap.helloworld" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>ControlHorari</name>
     <description>
-        Push sample application that receives push notifications.
+        App per enviar hores d'entrada i sortida
     </description>
-    <author email="support@phonegap.com" href="http://phonegap.com">
-        PhoneGap Team
+    <author email="setting@SettingConsultoria.com" href="http://SettingConsultoria.com">
+        Setting Consultoria en T.I.
     </author>
     <content src="index.html" />
     <preference name="DisallowOverscroll" value="true" />

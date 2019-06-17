@@ -22,12 +22,14 @@
         <meta charset="utf-8" />
         <meta name="format-detection" content="telephone=no" />
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <!-- <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" /> -->
+        <meta name="msapplication-tap-highlight" content="no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=medium-dpi", viewport-fit="cover”> />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
 
         <link rel="stylesheet" href="jquery.ui.datepicker.mobile.css" /> 
 
-        <meta name="author" content="ICS" />
+        <meta name="author" content="Setting consultoria en T.I." />
 
         <link href="css/index.css" rel="stylesheet" type="text/css" />
         <link href="css/jquery.mobile-1.4.5.min.css" rel="stylesheet" type="text/css" />
@@ -58,7 +60,7 @@
         <title>Control Horari</title>
     </head>
 
-    <body style="margin:auto; width: 100%;">
+    <body style="margin:auto; width: 99%;">
 
 <!--         <div class="app">
             <div id="deviceready" class="blink">
@@ -143,7 +145,7 @@
                                 </tr>
                                 <tr>                            
                                     <td style="text-align: center; width: 100%;">
-                                        <img src="img/ENTRADA.png" width="282px"/>
+                                        <img style="width: 282px;" id="imgENTRADA" data-role="button" src="img/ENTRADA.png" data-iconpos="notext" data-theme="a" /> 
                                     </td>   
                                 </tr></table>
                             </div></td></tr>
@@ -204,7 +206,7 @@
                                     </tr>
                                     <tr>                            
                                         <td style="text-align: center; width: 100%;">
-                                            <img src="img/SORTIDA.png" width="282px"/>
+                                            <img style="width: 282px;" id="imgSORTIDA" data-role="button" src="img/SORTIDA.png" data-iconpos="notext" data-theme="a" /> 
                                         </td>   
                                     </tr>
                                 </table>
@@ -251,8 +253,19 @@
                 </div>
     
                 <!-- CONTENIDO -->
-                <div data-role="content" data-theme="a">
-                
+                <div data-role="content" data-theme="a" id="divConfirmar">
+                        <center><h3>DADES QUE S'ENVIEN</h3></center>
+                        <table>
+                            <tr><td><h4>Usuari</h4></td><td></td></tr>
+                            <tr><td><h4>Dia</h4></td><td></td></tr>
+                            <tr><td><h4>Hora</h4></td><td></td></tr>
+                            <tr><td><h4>Descans</h4></td><td></td></tr>
+                            <tr><td>&nbsp;</td><td></td></tr>
+                            <tr>    
+                                <td><a class="ui-btn ui-btn-b ui-btn ui-icon-delete ui-btn-icon-left" href="#pageSETHORA" data-mini="true">CANCELAR</a></td>
+                                <td><a class="ui-btn ui-btn-a ui-btn ui-icon-check ui-btn-icon-left" href="#pageSETHORA" data-mini="true">GUARDAR</a></td>
+                            </tr>
+                        </table>
                 </div>
     
                 <!-- LINEA DE PIE DE PÁGINA -->
@@ -276,73 +289,69 @@
             </div>
 
             <!-- CONTENIDO -->
-            <div data-role="content" data-theme="a" style="text-align: center;">
-                <h1>CONFIGURACIÓ</h1><br/>
-                <table style="width: 100%;">
-                    <tr><td><h3>Usuari</h3></td><td colspan="2"><input type="text" name="inputUSUARI" id="inputUSUARI" required="required" /></td></tr>
-                    <tr><td><h3>Password</h3></td><td colspan="2"><input type="text" name="inputPASSW" id="inputPASSW" required="required" /></td></tr>
-                    <tr><td><h3>Hora entrada</h3></td>
-                    <td>   
-                        <select name="selectE_H_Defecte" id="selectE_H_Defecte" data-mini="true" style="z-index: 500; width: 100px;">
-                            <option value="1">07:00</option>
-                            <option value="2">07:05</option>
-                            <option value="3">07:10</option>
-                            <option value="4">07:15</option>
-                            <option value="5">07:15</option>
-                            <option value="6">07:15</option>
-                            <option value="7">07:15</option>
-                            <option value="8">07:15</option>
-                            <option value="9">07:15</option>
-                            <option value="10">07:15</option>
-                            <option value="11">07:15</option>
-                            <option value="12">07:15</option>
-                            <option value="13">07:15</option>
-                            <option value="14">07:15</option>
-                            <option value="15">07:15</option>
-                            <option value="16">07:15</option>
-                            <option value="17">07:15</option>
-                        </select> 
-                    </td>
-                    <td><label><input type="checkbox" name="cbE_H_Defecte">avisa'm</label></td>
-                </tr>
-
-                <tr><td><h3>Hora sortida</h3></td>
-                    <td>
-                    <select name="selectS_H_Defecte" id="selectS_H_Defecte" data-mini="true" style="z-index: 500; width: 100px;">
-                        <option value="1">17:00</option>
-                        <option value="2">17:05</option>
-                        <option value="3">17:10</option>
-                        <option value="4">17:15</option>
-                        <option value="5">17:20</option>
-                        <option value="6">17:25</option>
-                        <option value="7">17:30</option>
-                        <option value="8">17:35</option>
-                    </select>
-                </td>
-                <td><label><input type="checkbox" name="cbS_H_Defecte">avisa'm</label> </td>
-                </tr>
-                <tr>
-                <td><h3>Temps descans</h3></td>
-                <td colspan="2"><select name="selecT_Defecte" id="selecT_Defecte" data-mini="true">
-                        <option value="1">00:05</option>
-                        <option value="2">00:10</option>
-                        <option value="3">00:15</option>
-                        <option value="4">00:30</option>
-                        <option value="4">00:35</option>
-                    </select>  
-                    </td>
-                </tr>
-                <tr><td colspan="3">&nbsp;</td></tr>
-                <tr><td colspan="3">&nbsp;</td></tr>
-                <tr><td colspan="3">&nbsp;</td></tr>
-                <tr><td colspan="3">&nbsp;</td></tr>
-                <tr><td colspan="3">&nbsp;</td></tr>
-                <tr>
-                    <td>&nbsp;</td>
-                    <td><a class="ui-btn ui-btn-b ui-btn ui-icon-delete ui-btn-icon-left" href="#pageSETHORA">CANCELAR</a></td>
-                    <td><a class="ui-btn ui-btn-a ui-btn ui-icon-check ui-btn-icon-left" href="#pageSETHORA">GUARDAR</a></td>
-                </tr>
-            </table>  
+            <div data-role="content" data-theme="a">
+                <center><h3>CONFIGURACIÓ</h3></center> 
+                <table>
+                    <tr><td><h4>Usuari</h4></td><td colspan="2"><input type="text" name="inputUSUARI" id="inputUSUARI" required="required" data-mini="true" /></td></tr>
+                    <tr><td><h4>Password</h4></td><td colspan="2"><input type="text" name="inputPASSW" id="inputPASSW" required="required" data-mini="true" /></td></tr>
+                    <tr><td><h4>Hora entrada</h4></td>
+                        <td>   
+                            <select name="selectE_H_Defecte" id="selectE_H_Defecte" data-mini="true">
+                                <option value="1">07:00</option>
+                                <option value="2">07:05</option>
+                                <option value="3">07:10</option>
+                                <option value="4">07:15</option>
+                                <option value="5">07:15</option>
+                                <option value="6">07:15</option>
+                                <option value="7">07:15</option>
+                                <option value="8">07:15</option>
+                                <option value="9">07:15</option>
+                                <option value="10">07:15</option>
+                                <option value="11">07:15</option>
+                                <option value="12">07:15</option>
+                                <option value="13">07:15</option>
+                                <option value="14">07:15</option>
+                                <option value="15">07:15</option>
+                                <option value="16">07:15</option>
+                                <option value="17">07:15</option>
+                            </select> 
+                        </td>
+                        <td><label><input type="checkbox" name="cbE_H_Defecte" data-mini="true">avisa'm</label></td>
+                    </tr>
+                    <tr><td><h4>Hora sortida</h4></td>
+                        <td>
+                            <select name="selectS_H_Defecte" id="selectS_H_Defecte" data-mini="true" >
+                                <option value="1">17:00</option>
+                                <option value="2">17:05</option>
+                                <option value="3">17:10</option>
+                                <option value="4">17:15</option>
+                                <option value="5">17:20</option>
+                                <option value="6">17:25</option>
+                                <option value="7">17:30</option>
+                                <option value="8">17:35</option>
+                            </select>
+                        </td>
+                        <td><label><input type="checkbox" name="cbS_H_Defecte" data-mini="true">avisa'm</label></td>
+                    </tr>
+                    <tr>
+                        <td><h4>Temps descans</h4></td>
+                        <td colspan="2">
+                            <select name="selecT_Defecte" id="selecT_Defecte" data-mini="true">
+                                <option value="1">00:05</option>
+                                <option value="2">00:10</option>
+                                <option value="3">00:15</option>
+                                <option value="4">00:30</option>
+                                <option value="4">00:35</option>
+                            </select>  
+                        </td>
+                    </tr>
+                    <tr><td colspan="3">&nbsp;</td></tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td><a class="ui-btn ui-btn-b ui-btn ui-icon-delete ui-btn-icon-left" href="#pageSETHORA" data-mini="true">CANCELAR</a></td>
+                        <td><a class="ui-btn ui-btn-a ui-btn ui-icon-check ui-btn-icon-left" href="#pageSETHORA" data-mini="true">GUARDAR</a></td>
+                    </tr>
+                </table>  
             </div>
 
             <!-- LINEA DE PIE DE PÁGINA -->
