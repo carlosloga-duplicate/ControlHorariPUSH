@@ -29,7 +29,7 @@ var app = {
         document.addEventListener('deviceready', this.onDeviceReady, false);
     },
     onDeviceReady: function() {
-        app.receivedEvent('deviceready');
+/*         app.receivedEvent('deviceready'); */
 
         $.doTimeout(2000, function(){ 
             cordova.getAppVersion.getVersionNumber(function (version) {  //coge la v. del tag version del config.xml
