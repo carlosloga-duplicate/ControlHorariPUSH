@@ -82,16 +82,23 @@ var app = {
         });
 
         $('#botonSORTIDA').click(function() {
-            $.mobile.changePage('#pageCONFIRMACIO', { dataUrl : "pageCONFIRMACIO?color=FCC6B6", data : { 'color' : 'FCC6B6' }, reloadPage : true, changeHash : true });
+            $.mobile.changePage('#pageCONFIRMACIO', { dataUrl : "pageCONFIRMACIO?color=FCC6B6", data : { 'color' : 'FCC6B6' }, reloadPage : true, changeHash : false, transition: 'slideup' });
         });
 
-/*         $(document).on('pagebeforeshow', "#pageCONFIRMACIO", function (event, data) {
+        $(document).on('pagebeforeshow', "#pageCONFIRMACIO", function (event, data) {
             alert('en pagebeforeshow de pageCONFIRMACIO');
+
+            try
+            {
             var parameters = $(this).data("url").split("?")[1];;
             parameter = parameters.replace("color=","");  
-            alert(parameter);
+            alert(parameter);            
             $("#divConfirmar").css( "background-color", parameter);
-        }); */
+            }
+            catch(err)
+            {                
+            }
+        });
 
         /* SALIR DE LA APP CUANDO SE PULSE LA TECLA BACK */
         $(window).on("navigate", function (event, data) {            
