@@ -90,8 +90,8 @@ function cargarCombos()
     $('#selectS_H_Defecte').find('option').remove().end();   
     $('#selecTempsDESCANS').find('option').remove().end();   
     $('#selecT_Defecte').find('option').remove().end();   
-    for (i=0; i<(24*12); i+=5) {    
-        dHora = new Date(dHora.getTime() + i * 60000);
+    for (i=0; i<(24*12)-1; i++) {    
+        dHora = new Date(dHora.getTime() + (5 * 60000));
         sHora = dHora.getHours().toString().padStart(2,'0') + ":" + dHora.getMinutes().toString().padStart(2,'0');
         $("#selectHoraENTRADA").append('<option value="' + i + '">' + sHora + '</option>');
         $("#selectHoraSORTIDA").append('<option value="' + i + '">' + sHora + '</option>');

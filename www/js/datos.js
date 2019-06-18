@@ -1,8 +1,11 @@
 
-function guardaDatosUSU(sUsu, sPassw)
+function guardaDatosCONFIGURACIO(sUsu, sPassw, horaEdefecte, horaSdefecte, tempsDefecte)
 {
     localStorage.setItem('USU', sUsu);
     localStorage.setItem('PASSW', sPassw);
+    localStorage.setItem('ENTRADA_DEFECTE', horaEdefecte);
+    localStorage.setItem('SORTIDA_DEFECTE', horaSdefecte);
+    localStorage.setItem('DESCANS_DEFECTE', tempsDefecte);
 }
 
 function recuperaDatosUSU()
@@ -14,6 +17,23 @@ function recuperaDatosUSU()
             return constants('NOConfig');
         else
             return sUsu + "|" + sPassw;
+    }
+    catch(err)
+    {
+        return constants('ERRORConfig') + err.message;
+    }
+}
+
+function recuperaDatosDEFECTE()
+{
+    try{
+        var horaEdefecte = localStorage.getItem('ENTRADA_DEFECTE');
+        var horaSdefecte = localStorage.getItem('SORTIDA_DEFECTE');
+        var tempsDefecte = localStorage.getItem('DESCANS_DEFECTE');
+        if(sUsu == null || sPassw == null)
+            return constants('NOConfig');
+        else
+            return horaEdefecte + "|" + horaSdefecte + "|" + tempsDefecte;
     }
     catch(err)
     {

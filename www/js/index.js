@@ -145,6 +145,13 @@ var app = {
                 $("#inputUSUARI").val(usu_passw.split('|')[0]);
                 $("#inputPASSW").val(usu_passw.split('|')[1]);
             }
+            var defectes = recuperaDatosDEFECTE();
+            if(!defectes.startsWith('ERROR'))
+            {
+                $("#selectE_H_Defecte").val(usu_passw.split('|')[0]);
+                $("#selectS_H_Defecte").val(usu_passw.split('|')[1]);
+                $("#selecT_Defecte").val(usu_passw.split('|')[2]);
+            }
         });
         
         $('#botonCancelaCONFIRMAR').click(function() {            
@@ -160,7 +167,11 @@ var app = {
         $('#botonGuardarCONFIGURACIO').click(function() {            
             var usu = $("#inputUSUARI").val();
             var passw = $("#inputPASSW").val();
-            guardaDatosUSU(usu, passw);
+            var horaEdefecte = $("#selectE_H_Defecte").find(":selected").text();
+            var horaSdefecte = $("#selectS_H_Defecte").find(":selected").text();
+            var tempsDefecte = $("#selecT_Defecte").find(":selected").text();
+            guardaDatosCONFIGURACIO(usu, passw, horaEdefecte, horaSdefecte, tempsDefecte);
+
             $.mobile.changePage('#pageSETHORA', { transition: 'slideup', changeHash: false });
             $('#acordeonENTRADA_SORTIDA').collapsible( "collapse" );           
         });    
