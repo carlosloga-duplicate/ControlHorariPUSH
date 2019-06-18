@@ -53,6 +53,7 @@ var app = {
 
                 $.mobile.changePage('#pageSETHORA', { transition: 'slideup', changeHash: false });
 
+                alert('cargaCombos');
                 cargarCombos();
 
                 /* acceder al combo que hay dentro del radioButton */
