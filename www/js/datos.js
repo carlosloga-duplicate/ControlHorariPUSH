@@ -31,10 +31,7 @@ function recuperaDatosDEFECTE()
         var horaEdefecte = localStorage.getItem('ENTRADA_DEFECTE');
         var horaSdefecte = localStorage.getItem('SORTIDA_DEFECTE');
         var tempsDefecte = localStorage.getItem('DESCANS_DEFECTE');
-        if(sUsu == null || sPassw == null)
-            return constants('NOConfig');
-        else
-            return horaEdefecte + "|" + horaSdefecte + "|" + tempsDefecte;
+        return horaEdefecte + "|" + horaSdefecte + "|" + tempsDefecte;
     }
     catch(err)
     {
