@@ -35,7 +35,7 @@ var app = {
             colorFondoConfirmacio: null
         }
 
-        $.doTimeout(1000, function(){ 
+        $.doTimeout(2000, function(){ 
             cordova.getAppVersion.getVersionNumber(function (version) {  //coge la v. del tag version del config.xml
                 $("#tdPie").html("v." + version); 
 
@@ -73,6 +73,9 @@ var app = {
                         $("#selectHoraSORTIDA").selectmenu("open");
                     }
                 }); 
+
+                $("#inputDIA").val(GetDiaFormateado());
+
             });
         });
 
