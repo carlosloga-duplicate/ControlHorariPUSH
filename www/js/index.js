@@ -31,12 +31,16 @@ var app = {
     onDeviceReady: function() {
         app.receivedEvent('deviceready'); 
 
+        var usu_passw = recuperaDatosUSU();
+
         var storeObject = {
-            colorFondoConfirmacio: null,            
+            colorFondoConfirmacio: null,  
+            usuari: usu_passw.split('|')[0],
+            passw: usu_passw.split('|')[1],         
             accion: null,
             dia: null,
             hora: null,
-            descans: null,
+            descans: null
         }
 
         $.doTimeout(2000, function(){ 
@@ -102,6 +106,7 @@ var app = {
             $.mobile.changePage('#pageCONFIRMACIO', { transition: 'slideup', changeHash: false });
         });
 
+        /* Antes de abrir la pagina de CONFIRMACIÓ */
         $(document).on('pagebeforeshow', "#pageCONFIRMACIO", function (event, data) {
             try
             {                
@@ -110,7 +115,12 @@ var app = {
                /*  $("#divConfirmar").css("background-color", storeObject.colorFondoConfirmacio.toString);  */
                 var color = storeObject.colorFondoConfirmacio;
                 $(this).css('background-color', color );
-                $("#divConfirmar").css('background-color', color );
+                $("#divConfirmar").css('background-color', color ); 
+                $("#labelAccio").val(storeObject.accion);
+                $("#labelUSU").val(storeObject.usuari);
+                $("#labelDIA").val(storeObject.dia);
+                $("#labelHORA").val(storeObject.hora);
+                $("#labelDESCANS").val(storeObject.descans);                
             }
             catch(err)
             {         
@@ -127,6 +137,14 @@ var app = {
             $.mobile.changePage('#pageSETHORA', { transition: 'slideup', changeHash: false });
             $("#acordeonENTRADA_SORTIDA").children(":last").trigger("collapse");            
         });
+
+        $('#botonGuardarCONFIGURACIO').click(function() {            
+            var usu = $("#inputUSUARI").val();
+            var passw = $("#inputPASSW").val();
+            guardaDatosUSU(usu, passw);
+            $.mobile.changePage('#pageSETHORA', { transition: 'slideup', changeHash: false });
+            $("#acordeonENTRADA_SORTIDA").children(":last").trigger("collapse");            
+        });    
 
         /* SALIR DE LA APP CUANDO SE PULSE LA TECLA BACK */
         $(window).on("navigate", function (event, data) {            

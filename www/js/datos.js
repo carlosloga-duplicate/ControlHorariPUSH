@@ -1,51 +1,19 @@
 
-function EstadoUSUsector(bVer)
-{
-    if(bVer)
-    {
-        $('#txtCampUSU').prop('readonly', false);
-        $('#txtCampSECTOR').prop('readonly', false);
-        $('#txtCampUSU').prop('style', "background-color:white;"); 
-        $('#txtCampSECTOR').prop('style', "background-color:white;"); 
-
-        $('#txtCampOBS').prop('disabled', true);  
-        $('#divBotonEnviar').prop('disabled', true);        
-        
-        $("#trBotonGuardaDatosUSU").show();   
-    }
-    else
-    {
-        $("#trBotonGuardaDatosUSU").hide();
-        $('#txtCampUSU').prop('readonly', true);
-        $('#txtCampSECTOR').prop('readonly', true);
-
-        $('#txtCampUSU').prop('class', "");
-        $('#txtCampUSU').prop('style', "border:none !important;"); 
-        $('#txtCampUSU').prop('style', "background-color:silver;");           
-        $('#txtCampSECTOR').prop('class', "");                              
-        $('#txtCampSECTOR').prop('style', "border:none !important;");           
-        $('#txtCampSECTOR').prop('style', "background-color:silver;"); 
-
-        $('#txtCampOBS').prop('disabled', false);  
-        $('#divBotonEnviar').prop('disabled', false);       
-    }
-}
-
-function guardaDatosUSU(sUsu, sSector)
+function guardaDatosUSU(sUsu, sPassw)
 {
     localStorage.setItem('USU', sUsu);
-    localStorage.setItem('SECTOR', sSector);
+    localStorage.setItem('PASSW', sPassw);
 }
 
 function recuperaDatosUSU()
 {
     try{
         var sUsu = localStorage.getItem('USU');
-        var sSector = localStorage.getItem('SECTOR');
-        if(sUsu == null || sSector == null)
+        var sPassw = localStorage.getItem('PASSW');
+        if(sUsu == null || sPassw == null)
             return constants('NOConfig');
         else
-            return sUsu + "|" + sSector;
+            return sUsu + "|" + sPassw;
     }
     catch(err)
     {
@@ -53,26 +21,6 @@ function recuperaDatosUSU()
     }
 }
 
-function guardaUsuSector()
-{
-    var sUsu = $("#txtCampUSU").val();
-    var sSector = $("#txtCampSECTOR").val();
-    guardaDatosUSU(sUsu,sSector);
-    EstadoUSUsector(false);
-}
-
-function cancelaUsuSector()
-{
-    EstadoUSUsector(false);
-}
-
-function cambiaUsuSector()
-{
-    if($("#trBotonGuardaDatosUSU").is(':visible') )    
-        EstadoUSUsector(false); 
-    else
-        EstadoUSUsector(true); 
-}
 
 function historicoUsuSector()
 {
