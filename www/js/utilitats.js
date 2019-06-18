@@ -80,6 +80,40 @@ function GetHoraSel(sAccion)
     return sHora;
 }
 
+function HoraActual5Min()
+{
+    var sHoraActual5 = '';
+    var dAhora = new Date();    
+    var nMinuto = dAhora.getMinutes();
+    var sMinuto = dAhora.getMinutes().toString().padStart(2,'0')
+    var sHora = dAhora.getHours().toString().padStart(2,'0');
+    var restoMinuto = nMinuto % 5; 
+    if(restoMinuto == 0)
+    {
+        sHoraActual5 = sHora + ":" + sMinuto
+    }
+    else
+    {        
+        var nMinEntero = Math.trunc(nMinuto/10) * 10;
+        if(nMinuto > (nMinEntero + 5) )
+        {
+            if(restoMinuto < 5) 
+                sMinuto = (nMinEntero + 5).toString(); 
+            else
+                sMinuto = (nMinEntero  + 10).toString(); 
+        }
+        else
+        {
+            if(restoMinuto < 5) 
+                sMinuto = nMinEntero.toString(); 
+            else
+                sMinuto = (nMinEntero + 5).toString(); 
+        }
+        sHoraActual5 = sHora + ":" + sMinuto.padStart(2,'0')
+    }
+    return sHoraActual5
+}
+
 function cargarCombos()
 {
     var dHora = new Date(2019,0,1,0,0,0); 

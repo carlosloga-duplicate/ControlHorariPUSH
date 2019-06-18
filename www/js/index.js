@@ -112,6 +112,30 @@ var app = {
             $.mobile.changePage('#pageCONFIRMACIO', { transition: 'slideup', changeHash: false });
         });
 
+        /* Al abrir la pagina SETHORA */
+        $(document).on('pagebeforeshow', "#pageSETHORA", function (event, data) {
+            try
+            {    
+                var defectes = recuperaDatosDEFECTE();
+
+                $('#labelEHA').text = "Ara<br/>" + HoraActual5Min();  
+                if(!defectes.startsWith('ERROR'))
+                {                    
+                    $('#labelEHD').text = "Def.<br/>" + defectes.split('|')[0]; 
+                } 
+
+                $('#labelSHA').text = "Ara<br/>" + HoraActual5Min();             
+                if(!defectes.startsWith('ERROR'))
+                {                    
+                    $('#labelSHD').text = "Def.<br/>" + defectes.split('|')[1]; 
+                } 
+            }
+            catch(err)
+            {         
+                alert(err.toString());       
+            }
+        });
+
         /* Al abrir la pagina de CONFIRMACIÓ */
         $(document).on('pagebeforeshow', "#pageCONFIRMACIO", function (event, data) {
             try
@@ -148,9 +172,9 @@ var app = {
             var defectes = recuperaDatosDEFECTE();
             if(!defectes.startsWith('ERROR'))
             {
-                $("#selectE_H_Defecte").val(usu_passw.split('|')[0]);
-                $("#selectS_H_Defecte").val(usu_passw.split('|')[1]);
-                $("#selecT_Defecte").val(usu_passw.split('|')[2]);
+                $("#labelEHD").text(defectes.split('|')[0]);
+                $("#labelSHD").text(defectes.split('|')[1]);
+                $("#labelDTD").text(defectes.split('|')[2]);
             }
         });
         
