@@ -121,13 +121,13 @@ alert(storeObject.dia + "|" + storeObject.hora);
                 var color = storeObject.colorFondoConfirmacio;
                 $(this).css('background-color', color );
                 $("#divConfirmar").css('background-color', color ); 
-                $("#labelAccio").val(storeObject.accion.toString);
-                $("#labelUSU").val(storeObject.usuari.toString);
-                $("#labelDIA").val(storeObject.dia.toString);
-                $("#labelHORA").val(storeObject.hora.toString);
+                $("#labelAccio").text(storeObject.accion.toString);
+                $("#labelUSU").text(storeObject.usuari.toString);
+                $("#labelDIA").text(storeObject.dia.toString);
+                $("#labelHORA").text(storeObject.hora.toString);
                 if(storeObject.accion.toString == "SORTIDA")
                 {
-                    $("#labelDESCANS").val(storeObject.descans.toString);                
+                    $("#labelDESCANS").text(storeObject.descans.toString);                
                 }
             }
             catch(err)
