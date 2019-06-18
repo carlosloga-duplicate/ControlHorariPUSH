@@ -23,8 +23,8 @@ function GetDiaFormateado() {
     var dia = todayTime.getDate().toString().padStart(2,'0');
     var mes = (todayTime.getMonth() + 1).toString().padStart(2,'0');
     var anyo = todayTime.getFullYear().toString();
-    return dia + "/" + mes + "/" + anyo; 
-/*     return anyo + "-" + mes + "-" + dia; */
+    /* return dia + "/" + mes + "/" + anyo;  */
+    return anyo + "-" + mes + "-" + dia; 
 }
 
 function constants(sCual)
