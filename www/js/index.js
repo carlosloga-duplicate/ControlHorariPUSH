@@ -118,17 +118,26 @@ var app = {
             {    
                 /* Hora d'ara */
                 var ara = HoraActual5Min();
-alert("Ara" + HoraActual5Min());
-                $("#labelEHA").text = "Ara" + ara;  
-                $("#labelSHA").text = "Ara" + ara;   
+              
+                $("#labelEHA").text = "Ara " + ara;  
+                $("#cgTipoHoraENTRADA").controlgroup("refresh");
+
+                $("#labelSHA").text = "Ara " + ara;   
+                $("#cgTipoHoraSORTIDA").controlgroup("refresh");
 
                 /* Hores per defecte */
                 var defectes = recuperaDatosDEFECTE();
                 if(!defectes.startsWith('ERROR'))
                 {                    
                     $("#labelEHD").text = "Def." + defectes.split('|')[0]; 
+                    $("#cgTipoHoraENTRADA").controlgroup("refresh");
+
                     $("#labelSHD").text = "Def." + defectes.split('|')[1]; 
+                    $("#cgTipoHoraSORTIDA").controlgroup("refresh");
+
                     $("#labelDTD").text = "Defecte" + defectes.split('|')[2];
+                    $("#cgTipoHoraDESCANS").controlgroup("refresh");
+
                 }                                      
             }
             catch(err)
