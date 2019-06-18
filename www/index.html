@@ -80,7 +80,7 @@
             <!-- LINEA DE CABECERA -->
             <div data-role="header" data-theme="a" style="margin-bottom: 0px; margin-top: 0px;">  
                 <table width="100%" cellpadding="0" cellspacing="0"><tr>
-                    <td style="padding: 0px; vertical-align: middle;"><img src="img/logo.png" /></td>
+                    <td style="padding: 0px; vertical-align: middle;"><img src="img/logo.png" onclick="linkWebsite();" /></td>
                     <td style="padding: 0px; text-align: center; width: 100%;"><h3>Control Horari</h3></td>
                     <td style="padding: 0px; text-align: right;"><a href="#panelMenu" data-role="button" data-inline="true" data-icon="bars"></a></td>
                 </tr></table>                
@@ -92,7 +92,7 @@
                 <!-- SELECCIÓ DEL DIA-->
                 <table style="width: 100%;"><tr>
                     <td><label style="font-size: large; font-weight:bold;" for="DIA">Jornada dia</label></td>
-                     <td><input type="date" name="inputDIA" id="inputDIA" required="required" /></td>
+                     <td><input type="date" name="inputDIA" id="inputDIA" required="required" value="GetDiaFormateado();" /></td>
 
 <!--                     <td>
                     <input type="date" 

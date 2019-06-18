@@ -44,9 +44,9 @@ var app = {
                 /* Informar data actual */
                 /* var today = new Date().toString();     */
                 /* $("input[type=date]").val(today);      yyyy-MM-dd  */  
-                var hoy = GetFormattedDate();
+/*                 var hoy = GetFormattedDate();
                 alert(hoy);
-                $("#inputDIA").val(hoy);
+                $("#inputDIA").val(hoy); */
 
                 /* acceder al combo que hay dentro del radioButton */
                 $(document).on('change', '[name="radioENTRADA"]', function(){ 

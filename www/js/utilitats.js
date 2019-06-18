@@ -32,13 +32,12 @@ function constants(sCual)
     var sRet = "";
     try
     {
-        dict['urlServeiREST'] = "http://a200.ecap.intranet.gencat.cat/REST_1_ICS/api/Foto";
+        dict['urlServeiREST'] = "http://...";
 
         dict['ERRORGenerico'] = "S´ha produit un error ";
         dict['ERROREnviant'] = "ERROR enviant les dades ";
         dict['ERRORRevent'] = "ERROR rebent dades ";    
-        dict['ERRORFoto'] = "ERROR capturant foto ";
-        dict['ERRORConfig'] = "ERROR recuperant l´usuari/sector d´aquest mòvil: ";
+        dict['ERRORConfig'] = "ERROR recuperant l´usuari d´aquest mòvil ";
         dict['ERRORtimeOut'] = "S'ha excedit el temps d'enviament";
 
         dict['OKEnviant'] = "Les dades s´han enviat correctament";
@@ -48,7 +47,7 @@ function constants(sCual)
         dict['WAITEnviant'] = "Enviant dades al servidor";
         dict['WAITTancant'] = "tancant l'aplicació";
 
-        dict['NOConfig'] = "Mòvil no  configurat. Informi usuari i sector si us plau";
+        dict['NOConfig'] = "Mòvil no configurat. Informi al menys l'usuari i el password si us plau";
         
         sRet = dict[sCual].toString();
     }
@@ -78,8 +77,8 @@ function mensajePopup(cual, txtMsg, esperar)
     }
 }
 
-function linkWebsiteICS()
+function linkWebsite()
 {
-    location.href='http://ics.gencat.cat/ca/inici';
+    location.href='http://www.SettingConsultoria.com';
 }
 
