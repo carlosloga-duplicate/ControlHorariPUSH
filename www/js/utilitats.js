@@ -18,12 +18,13 @@ function Ahora()
     return ahora;
 }
 
-function GetFormattedDate() {
-    var todayTime = new Date();
-    var month = (todayTime.getMonth() + 1).toString();
-    var day = todayTime.getDate().toString();
-    var year = todayTime.getFullYear().toString();
-    return year + "-" + month + "-" + day;
+function GetDiaFormateado() {
+    var todayTime = new Date();    
+    var dia = todayTime.getDate().toString().padStart(2,'0');
+    var mes = (todayTime.getMonth() + 1).toString().padStart(2,'0');
+    var anyo = todayTime.getFullYear().toString();
+    /* return dia + "/" + mes + "/" + anyo; */
+    return anyo + "-" + mes + "-" + dia;
 }
 
 function constants(sCual)
