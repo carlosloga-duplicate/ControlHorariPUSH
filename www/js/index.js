@@ -97,7 +97,6 @@ var app = {
             storeObject.accion = 'ENTRADA';
             storeObject.dia = $("#inputDIA").val();
             storeObject.hora = GetHoraSel('E');
-alert(storeObject.dia + "|" + storeObject.hora);
             $.mobile.changePage('#pageCONFIRMACIO', { transition: 'slideup', changeHash: false });
         });
 
@@ -117,22 +116,31 @@ alert(storeObject.dia + "|" + storeObject.hora);
             {                
 /*              var parameters = $(this).data("url").split("?")[1];;
                 parameter = parameters.replace("color=","");  */           
-               /*  $("#divConfirmar").css("background-color", storeObject.colorFondoConfirmacio.toString);  */
+               /*  $("#divConfirmar").css("background-color", storeObject.colorFondoConfirmacio.toString());  */
                 var color = storeObject.colorFondoConfirmacio;
                 $(this).css('background-color', color );
                 $("#divConfirmar").css('background-color', color ); 
-                $("#labelAccio").text(storeObject.accion.toString);
-                $("#labelUSU").text(storeObject.usuari.toString);
-                $("#labelDIA").text(storeObject.dia.toString);
-                $("#labelHORA").text(storeObject.hora.toString);
-                if(storeObject.accion.toString == "SORTIDA")
+                $("#labelAccio").text(storeObject.accion.toString());
+                $("#labelUSU").text(storeObject.usuari.toString());
+                $("#labelDIA").text(storeObject.dia.toString());
+                $("#labelHORA").text(storeObject.hora.toString());
+                if(storeObject.accion.toString() == "SORTIDA")
                 {
-                    $("#labelDESCANS").text(storeObject.descans.toString);                
+                    $("#labelDESCANS").text(storeObject.descans.toString());                
                 }
             }
             catch(err)
             {         
-                alert(err.toString);       
+                alert(err.toString());       
+            }
+        });
+
+        $(document).on('pagebeforeshow', "#pageCONFIGURACIO", function (event, data) {
+            var usu_passw = recuperaDatosUSU();
+            if(!usu_passw.startsWith('ERROR'))
+            {
+                $("#inputUSUARI").val(usu_passw.split('|')[0]);
+                $("#inputPASSW").val(usu_passw.split('|')[1]);
             }
         });
         

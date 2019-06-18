@@ -30,12 +30,10 @@ function GetDiaFormateado() {
 function GetHoraSel(sAccion)
 {
     var radioSelec = '';
-    var sHora = '';
-alert('sAccion: ' + sAccion);    
+    var sHora = '';   
     switch(sAccion) {
         case 'E':  /* entrada */
             radioSelec = $("#cgTipoHoraENTRADA :radio:checked").val().toString();
-alert('radioSelec: '); alert(radioSelec);
             switch(radioSelec)  
             {
                 case 'EHA':  /* hora actual */
@@ -47,19 +45,39 @@ alert('radioSelec: '); alert(radioSelec);
                 case 'EHO':  /* otra hora (manual) */
                     sHora = $("#selectHoraENTRADA").find(":selected").text();
                     break;
-            }
-alert(sHora);            
-            return sHora;
+            }                 
           break;
 
         case 'D':  /* descans */
-          
+            radioSelec = $("#cgTipoHoraDESCANS :radio:checked").val().toString();
+            switch(radioSelec)  
+            {
+                case 'DTD':  /* tiempo por defecto */
+                    sHora = $("#labelDTD").text().substring($("#labelDTD").text().length - 5);
+                    break;
+                case 'DTO':  /* otra tiempo (manual) */
+                    sHora = $("#selecTempsDESCANS").find(":selected").text();
+                    break;
+            }        
           break;
 
         case 'S':  /* sortida */
-
+            radioSelec = $("#cgTipoHoraSORTIDA :radio:checked").val().toString();
+            switch(radioSelec)  
+            {
+                case 'SHA':  /* hora actual */
+                    sHora = $("#labelSHA").text().substring($("#labelSHA").text().length - 5);
+                    break;
+                case 'SHD':  /* hora por defecto */
+                    sHora = $("#labelSHD").text().substring($("#labelSHD").text().length - 5);
+                    break;
+                case 'SHO':  /* otra hora (manual) */
+                    sHora = $("#selectHoraSORTIDA").find(":selected").text();
+                    break;
+            }        
           break;
     }
+    return sHora;
 }
 
 function constants(sCual)
