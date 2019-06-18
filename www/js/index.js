@@ -182,7 +182,7 @@ var app = {
             var defectes = recuperaDatosDEFECTE();
             if(!defectes.startsWith('ERROR'))
             {
-                $('#selectE_H_Defecte').val(defectes.split('|')[0]).attr('selected', true).siblings('option').removeAttr('selected');
+                $('#selectE_H_Defecte').val("'" + defectes.split('|')[0] + "'").attr('selected', true).siblings('option').removeAttr('selected');
                 $('#selectE_H_Defecte').selectmenu("refresh", true);
 
                 $('#selectS_H_Defecte').val(defectes.split('|')[1]).attr('selected', true).siblings('option').removeAttr('selected');
