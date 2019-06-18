@@ -35,18 +35,11 @@ var app = {
             colorFondoConfirmacio: null
         }
 
-        $.doTimeout(2000, function(){ 
+        $.doTimeout(1000, function(){ 
             cordova.getAppVersion.getVersionNumber(function (version) {  //coge la v. del tag version del config.xml
                 $("#tdPie").html("v." + version); 
 
                 $.mobile.changePage('#pageSETHORA', { transition: 'slideup', changeHash: false });
-
-                /* Informar data actual */
-                /* var today = new Date().toString();     */
-                /* $("input[type=date]").val(today);      yyyy-MM-dd  */  
-/*                 var hoy = GetFormattedDate();
-                alert(hoy);
-                $("#inputDIA").val(hoy); */
 
                 /* acceder al combo que hay dentro del radioButton */
                 $(document).on('change', '[name="radioENTRADA"]', function(){ 
