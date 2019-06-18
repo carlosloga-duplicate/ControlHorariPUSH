@@ -116,22 +116,20 @@ var app = {
         $(document).on('pagebeforeshow', "#pageSETHORA", function (event, data) {
             try
             {    
+                /* Hora d'ara */
+                var ara = HoraActual5Min();
+alert("Ara" + HoraActual5Min());
+                $("#labelEHA").text = "Ara" + ara;  
+                $("#labelSHA").text = "Ara" + ara;   
+
+                /* Hores per defecte */
                 var defectes = recuperaDatosDEFECTE();
-
-                $("#labelEHA").text = "Ara\n" + HoraActual5Min();  
                 if(!defectes.startsWith('ERROR'))
                 {                    
-                    $("#labelEHD").text = "Def.\n" + defectes.split('|')[0]; 
-                } 
-
-                $("#labelSHA").text = "Ara\n" + HoraActual5Min();             
-                if(!defectes.startsWith('ERROR'))
-                {                    
-                    $("#labelSHD").text = "Def.\n" + defectes.split('|')[1]; 
-                } 
-
-                $("#labelDTD").text = "Defecte\n" + defectes.split('|')[2];             
-
+                    $("#labelEHD").text = "Def." + defectes.split('|')[0]; 
+                    $("#labelSHD").text = "Def." + defectes.split('|')[1]; 
+                    $("#labelDTD").text = "Defecte" + defectes.split('|')[2];
+                }                                      
             }
             catch(err)
             {         
