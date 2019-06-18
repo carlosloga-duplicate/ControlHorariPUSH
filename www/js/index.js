@@ -34,7 +34,11 @@ var app = {
         var usu_passw = recuperaDatosUSU();
         if(usu_passw.startsWith('ERROR'))
         {
-            mensajePopup("ERROR", usu_passw,0);
+            mensajePopup("ERROR", usu_passw,0);        
+        }
+        else
+        {
+            alert(usu_passw);
         }
 
         var storeObject = {
@@ -96,7 +100,7 @@ var app = {
             storeObject.colorFondoConfirmacio = '#D2F1CE';
             storeObject.accion = 'ENTRADA';
             storeObject.dia = $("#inputDIA").val();
-            storeObject.hora = GetHoraSel("E");
+            storeObject.hora = GetHoraSel('E');
 alert(storeObject.dia + "|" + storeObject.hora);
             $.mobile.changePage('#pageCONFIRMACIO', { transition: 'slideup', changeHash: false });
         });
@@ -106,8 +110,8 @@ alert(storeObject.dia + "|" + storeObject.hora);
             storeObject.colorFondoConfirmacio = '#FCC6B6';
             storeObject.accion = 'SORTIDA';
             storeObject.dia = $("#inputDIA").val();
-            storeObject.hora = GetHoraSel("S");
-            storeObject.descans = GetHoraSel("D");            
+            storeObject.hora = GetHoraSel('S');
+            storeObject.descans = GetHoraSel('D');            
             $.mobile.changePage('#pageCONFIRMACIO', { transition: 'slideup', changeHash: false });
         });
 

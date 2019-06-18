@@ -31,16 +31,18 @@ function GetHoraSel(sAccion)
 {
     var radioSelec = '';
     var sHora = '';
+alert('sAccion: ' + sAccion);    
     switch(sAccion) {
         case 'E':  /* entrada */
-            radioSelec = $("#tipoHoraENTRADA :radio:checked").val();
+            radioSelec = $("#tipoHoraENTRADA :radio:checked").val().toString();
+alert('radioSelec: ' + radioSelec);
             switch(radioSelec)  
             {
                 case 'EHA':  /* hora actual */
-                    sHora = $("#labelEHA").val().substring($("#labelEHA").val().length - 5);
+                    sHora = $("#labelEHA").text().substring($("#labelEHA").text().length - 5);
                     break;
                 case 'EHD':  /* hora por defecto */
-                sHora = $("#labelEHD").val().substring($("#labelEHD").val().length - 5);
+                    sHora = $("#labelEHD").text().substring($("#labelEHD").text().length - 5);
                     break;
                 case 'EHO':  /* otra hora (manual) */
                     sHora = $("#selectHoraENTRADA").find(":selected").text();
