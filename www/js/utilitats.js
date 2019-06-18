@@ -80,6 +80,23 @@ function GetHoraSel(sAccion)
     return sHora;
 }
 
+function cargarCombos()
+{
+    var dHora = new Date(2019,1,1,0,0,0); 
+    /* Hora de entrada */ 
+    $('#mySelect').find('option').remove().end();    
+    for (i=0; i<(24*12); i+=5) {    
+        dHora = dHora.setMinutes(dHora.getMinutes() + i);
+        sHora = dHora.getHours().toString().padStart(2,'0'); + ":" + dHora.getMinutes().toString().padStart(2,'0');
+        $("#selectHoraENTRADA").append('<option value="' + i + '">' + sHora + '</option>');
+    }    
+
+    /* Tiempo de descanso */ 
+
+    /* Hora de salida */ 
+
+}
+
 function constants(sCual)
 {
     var dict = {};
