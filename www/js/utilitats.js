@@ -127,14 +127,14 @@ function cargarCombos()
     for (i=0; i<(24*12)-1; i++) {    
         dHora = new Date(dHora.getTime() + (5 * 60000));
         sHora = dHora.getHours().toString().padStart(2,'0') + ":" + dHora.getMinutes().toString().padStart(2,'0');
-        $("#selectHoraENTRADA").append('<option value="' + i + '">' + sHora + '</option>');
-        $("#selectHoraSORTIDA").append('<option value="' + i + '">' + sHora + '</option>');
-        $("#selectE_H_Defecte").append('<option value="' + i + '">' + sHora + '</option>');
-        $("#selectS_H_Defecte").append('<option value="' + i + '">' + sHora + '</option>');
+        $("#selectHoraENTRADA").append('<option value="' + sHora + '">' + sHora + '</option>');
+        $("#selectHoraSORTIDA").append('<option value="' + sHora + '">' + sHora + '</option>');
+        $("#selectE_H_Defecte").append('<option value="' + sHora + '">' + sHora + '</option>');
+        $("#selectS_H_Defecte").append('<option value="' + sHora + '">' + sHora + '</option>');
         if(dHora.getHours() < 4)
         {
-            $("#selecTempsDESCANS").append('<option value="' + i + '">' + sHora + '</option>');
-            $("#selecT_Defecte").append('<option value="' + i + '">' + sHora + '</option>');
+            $("#selecTempsDESCANS").append('<option value="' + sHora + '">' + sHora + '</option>');
+            $("#selecT_Defecte").append('<option value="' + sHora + '">' + sHora + '</option>');
         }
     }    
 }

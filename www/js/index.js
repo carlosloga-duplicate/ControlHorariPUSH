@@ -182,14 +182,19 @@ var app = {
             var defectes = recuperaDatosDEFECTE();
             if(!defectes.startsWith('ERROR'))
             {
-                $('#selectE_H_Defecte').val("'" + defectes.split('|')[0] + "'").attr('selected', true).siblings('option').removeAttr('selected');
+                /* $('#selectE_H_Defecte').val("'" + defectes.split('|')[0] + "'").attr('selected', true).siblings('option').removeAttr('selected'); */
+                $('#selectE_H_Defecte option[value='+ defectes.split('|')[0] +']').attr('selected', 'selected');
                 $('#selectE_H_Defecte').selectmenu("refresh", true);
 
-                $('#selectS_H_Defecte').val(defectes.split('|')[1]).attr('selected', true).siblings('option').removeAttr('selected');
+                $('#selectS_H_Defecte option[value='+ defectes.split('|')[1] +']').attr('selected', 'selected');
                 $('#selectS_H_Defecte').selectmenu("refresh", true);
 
-                $('#selecT_Defecte').val(defectes.split('|')[2]).attr('selected', true).siblings('option').removeAttr('selected');
+                $('#selecT_Defecte option[value='+ defectes.split('|')[2] +']').attr('selected', 'selected');
                 $('#selecT_Defecte').selectmenu("refresh", true);
+            }
+            else
+            {
+                mensajePopup("ERROR", defectes,0);  
             }
         });
         
