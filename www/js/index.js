@@ -32,6 +32,10 @@ var app = {
         app.receivedEvent('deviceready'); 
 
         var usu_passw = recuperaDatosUSU();
+        if(usu_passw.startsWith('ERROR'))
+        {
+            mensajePopup("ERROR", usu_passw,0);
+        }
 
         var storeObject = {
             colorFondoConfirmacio: null,  
@@ -93,6 +97,7 @@ var app = {
             storeObject.accion = 'ENTRADA';
             storeObject.dia = $("#inputDIA").val();
             storeObject.hora = GetHoraSel("E");
+alert(storeObject.dia + "|" + storeObject.hora);
             $.mobile.changePage('#pageCONFIRMACIO', { transition: 'slideup', changeHash: false });
         });
 
@@ -102,7 +107,7 @@ var app = {
             storeObject.accion = 'SORTIDA';
             storeObject.dia = $("#inputDIA").val();
             storeObject.hora = GetHoraSel("S");
-            storeObject.descans = GetHoraSel("D");
+            storeObject.descans = GetHoraSel("D");            
             $.mobile.changePage('#pageCONFIRMACIO', { transition: 'slideup', changeHash: false });
         });
 
@@ -116,11 +121,14 @@ var app = {
                 var color = storeObject.colorFondoConfirmacio;
                 $(this).css('background-color', color );
                 $("#divConfirmar").css('background-color', color ); 
-                $("#labelAccio").val(storeObject.accion);
-                $("#labelUSU").val(storeObject.usuari);
-                $("#labelDIA").val(storeObject.dia);
-                $("#labelHORA").val(storeObject.hora);
-                $("#labelDESCANS").val(storeObject.descans);                
+                $("#labelAccio").val(storeObject.accion.toString);
+                $("#labelUSU").val(storeObject.usuari.toString);
+                $("#labelDIA").val(storeObject.dia.toString);
+                $("#labelHORA").val(storeObject.hora.toString);
+                if(storeObject.accion.toString == "SORTIDA")
+                {
+                    $("#labelDESCANS").val(storeObject.descans.toString);                
+                }
             }
             catch(err)
             {         
