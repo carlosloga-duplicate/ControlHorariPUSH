@@ -1,6 +1,7 @@
 
 function guardaDatosCONFIGURACIO(sUsu, sPassw, horaEdefecte, horaSdefecte, tempsDefecte)
 {
+alert('guardo: ' + sUsu + "|" + sPassw + "|" + horaEdefecte + "|" + horaSdefecte + "|" + tempsDefecte);
     localStorage.setItem('USU', sUsu);
     localStorage.setItem('PASSW', sPassw);
     localStorage.setItem('ENTRADA_DEFECTE', horaEdefecte);

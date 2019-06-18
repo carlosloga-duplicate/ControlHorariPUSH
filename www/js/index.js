@@ -117,18 +117,21 @@ var app = {
             try
             {    
                 var defectes = recuperaDatosDEFECTE();
-
-                $('#labelEHA').text = "Ara<br/>" + HoraActual5Min();  
+alert('recupero: ' + defectes);
+                $("#labelEHA").text = "Ara<br/>" + HoraActual5Min();  
                 if(!defectes.startsWith('ERROR'))
                 {                    
-                    $('#labelEHD').text = "Def.<br/>" + defectes.split('|')[0]; 
+                    $("#labelEHD").text = "Def.<br/>" + defectes.split('|')[0]; 
                 } 
 
-                $('#labelSHA').text = "Ara<br/>" + HoraActual5Min();             
+                $("#labelSHA").text = "Ara<br/>" + HoraActual5Min();             
                 if(!defectes.startsWith('ERROR'))
                 {                    
-                    $('#labelSHD').text = "Def.<br/>" + defectes.split('|')[1]; 
+                    $("#labelSHD").text = "Def.<br/>" + defectes.split('|')[1]; 
                 } 
+
+                $("#labelDTD").text = "Defecte<br/>" + defectes.split('|')[2];             
+
             }
             catch(err)
             {         
