@@ -21,6 +21,22 @@ function recuperaDatosUSU()
     }
 }
 
+function cargarCombos()
+{
+    var dHora = new Date(2019,1,1,0,0,0); 
+    /* Hora de entrada */ 
+    $('#mySelect').find('option').remove().end();    
+    for (i=0; i<(24*12); i+=5) {    
+        dHora = new Date(dHora + i * 60000);
+        sHora = dHora.getHours.toString() + ":" + dHora.getMinutes.toString();
+        $("#selectHoraENTRADA").append('<option value="' + i + '">' + sHora + '</option>');
+    }    
+
+    /* Tiempo de descanso */ 
+
+    /* Hora de salida */ 
+
+}
 
 function historicoUsuSector()
 {
