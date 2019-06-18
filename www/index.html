@@ -133,7 +133,7 @@
                 </tr></table>
                 
                 <!-- ACORDEON -->
-                <div data-role="collapsible-set" data-theme="c" data-content-theme="d" data-mini="true" style="width: 100%;">
+                <div data-role="collapsible-set" data-theme="c" data-content-theme="d" data-mini="true" style="width: 100%;" id="acordeonENTRADA_SORTIDA" name="acordeonENTRADA_SORTIDA">
                     <!-- ACORDEON ENTRADA -->
                     <div data-role="collapsible">
                         <h1>ENTRADA</h1>
@@ -144,7 +144,7 @@
                                 <tr><td style="text-align: center;"><label style="font-size: large; font-weight:bold;">Hora d'entrada</label></td></tr>
                                 <tr>
                                 <td style="text-align: center; width: 100%; padding: 0px;">
-                                <fieldset data-role="controlgroup" data-type="horizontal">                                
+                                <fieldset data-role="controlgroup" data-type="horizontal" id="cgTipoHoraENTRADA" name="cgTipoHoraENTRADA">                                
                                         <input type="radio" name="radioENTRADA" id="radioENTRADA_HORA_ACTUAL" value="EHA" checked="checked">
                                         <label for="radioENTRADA_HORA_ACTUAL" style="height: 55px; vertical-align: middle;">Ara<br/>08:10</label>
                                         <input type="radio" name="radioENTRADA" id="radioENTRADA_HORA_DEFECTE" value="EHD">
@@ -196,7 +196,7 @@
                                                 <tr><td style="text-align: center;"><label style="font-size: large">Temps de descans</label></td></tr>
                                                 <tr>
                                                     <td style="text-align: center;">
-                                                        <fieldset data-role="controlgroup" data-type="horizontal">                                                                                    
+                                                        <fieldset data-role="controlgroup" data-type="horizontal"  id="cgTipoHoraDESCANS" name="cgTipoHoraDESCANS">     
                                                             <input type="radio" name="radioDESCANS" id="radioDESCANS_TEMPS_DEFECTE"  value="DTD" checked="checked">
                                                             <label for="radioDESCANS_TEMPS_DEFECTE" style="height: 55px; vertical-align: middle;">Defecte<br/>00:45</label>
                                                             <input type="radio" name="radioDESCANS" id="radioDESCANS_TEMPS_ALTRE" value="DTO"> 
@@ -218,7 +218,7 @@
                                     <tr><td style="text-align: center;" ><label style="font-size: large; font-weight:bold;">Hora de sortida</label></td></tr>
                                     <tr>
                                         <td  style="text-align: center; padding: 0px; width: 100%;">
-                                            <fieldset data-role="controlgroup" data-type="horizontal">                                
+                                            <fieldset data-role="controlgroup" data-type="horizontal" id="cgTipoHoraSORTIDA" name="cgTipoHoraSORTIDA">                                
                                                 <input type="radio" name="radioSORTIDA" id="radioSORTIDA_HORA_ACTUAL" value="SHA" checked="checked">
                                                 <label for="radioSORTIDA_HORA_ACTUAL" style="height: 55px; vertical-align: middle;">Ara<br/>17:45</label>
                                                 <input type="radio" name="radioSORTIDA" id="radioSORTIDA_HORA_DEFECTE" value="SHD">
@@ -290,8 +290,8 @@
                         <table>
                             <thead><tr><th>&nbsp;</th><th>&nbsp;</th></tr></thead>
                             <tfoot><tr>
-                                <td style="text-align: left;"><a class="ui-btn ui-btn-b ui-btn ui-icon-delete ui-btn-icon-left" href="#pageSETHORA" data-mini="true">CANCELAR</a></td>
-                                <td style="text-align: right;"><a class="ui-btn ui-btn-a ui-btn ui-icon-check ui-btn-icon-left" href="#pageSETHORA" data-mini="true">ENVIAR</a></td>
+                                <td style="text-align: left;"><a id="botonCancelaCONFIRMAR" name="botonCancelaCONFIRMAR" class="ui-btn ui-btn-b ui-btn ui-icon-delete ui-btn-icon-left" href="#" data-mini="true">CANCELAR</a></td>
+                                <td style="text-align: right;"><a id="botonEnviaCONFIRMAR" name="botonEnviaCONFIRMAR" class="ui-btn ui-btn-a ui-btn ui-icon-check ui-btn-icon-left" href="#" data-mini="true">ENVIAR</a></td>
                             </tr></tfoot>
                             <tbody>
                                 <tr><td colspan="2" style="font-weight: bold; text-align: center;">SORTIDA</td></tr>

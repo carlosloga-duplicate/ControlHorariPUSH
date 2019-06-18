@@ -32,7 +32,11 @@ var app = {
         app.receivedEvent('deviceready'); 
 
         var storeObject = {
-            colorFondoConfirmacio: null
+            colorFondoConfirmacio: null,            
+            accion: null,
+            dia: null,
+            hora: null,
+            descans: null,
         }
 
         $.doTimeout(2000, function(){ 
@@ -82,12 +86,19 @@ var app = {
         $('#botonENTRADA').click(function() {
             /* $.mobile.changePage('#pageCONFIRMACIO', { dataUrl : "pageCONFIRMACIO?color=D2F1CE", data : { 'color' : 'D2F1CE' }, reloadPage : true, changeHash : true }); */
             storeObject.colorFondoConfirmacio = '#D2F1CE';
+            storeObject.accion = 'ENTRADA';
+            storeObject.dia = $("#inputDIA").val();
+            storeObject.hora = GetHoraSel("E");
             $.mobile.changePage('#pageCONFIRMACIO', { transition: 'slideup', changeHash: false });
         });
 
         $('#botonSORTIDA').click(function() {
             /* $.mobile.changePage('#pageCONFIRMACIO', { dataUrl : "pageCONFIRMACIO?color=FCC6B6", data : { 'color' : 'FCC6B6' }, changeHash : false, transition: 'slideup' }); */
             storeObject.colorFondoConfirmacio = '#FCC6B6';
+            storeObject.accion = 'SORTIDA';
+            storeObject.dia = $("#inputDIA").val();
+            storeObject.hora = GetHoraSel("S");
+            storeObject.descans = GetHoraSel("D");
             $.mobile.changePage('#pageCONFIRMACIO', { transition: 'slideup', changeHash: false });
         });
 
@@ -105,6 +116,16 @@ var app = {
             {         
                 alert(err.toString);       
             }
+        });
+        
+        $('#botonCancelaCONFIRMAR').click(function() {            
+            $.mobile.changePage('#pageSETHORA', { transition: 'slideup', changeHash: false });
+            $("#acordeonENTRADA_SORTIDA").children(":last").trigger("collapse");            
+        });
+
+        $('#botonEnviaCONFIRMAR').click(function() {            
+            $.mobile.changePage('#pageSETHORA', { transition: 'slideup', changeHash: false });
+            $("#acordeonENTRADA_SORTIDA").children(":last").trigger("collapse");            
         });
 
         /* SALIR DE LA APP CUANDO SE PULSE LA TECLA BACK */
@@ -126,6 +147,7 @@ var app = {
         receivedElement.setAttribute('style', 'display:block;');        
     }   
 };
+
 
 
 

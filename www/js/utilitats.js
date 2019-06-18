@@ -27,6 +27,38 @@ function GetDiaFormateado() {
     return anyo + "-" + mes + "-" + dia; 
 }
 
+function GetHoraSel(sAccion)
+{
+    var radioSelec = '';
+    var sHora = '';
+    switch(sAccion) {
+        case 'E':  /* entrada */
+            radioSelec = $("#tipoHoraENTRADA :radio:checked").val();
+            switch(radioSelec)  
+            {
+                case 'EHA':  /* hora actual */
+                    sHora = $("#labelEHA").val().substring($("#labelEHA").val().length - 5);
+                    break;
+                case 'EHD':  /* hora por defecto */
+                sHora = $("#labelEHD").val().substring($("#labelEHD").val().length - 5);
+                    break;
+                case 'EHO':  /* otra hora (manual) */
+                    sHora = $("#selectHoraENTRADA").find(":selected").text();
+                    break;
+            }
+            return sHora;
+          break;
+
+        case 'D':  /* descans */
+          
+          break;
+
+        case 'S':  /* sortida */
+
+          break;
+    }
+}
+
 function constants(sCual)
 {
     var dict = {};
