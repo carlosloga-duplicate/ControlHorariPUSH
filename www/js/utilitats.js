@@ -82,27 +82,27 @@ function GetHoraSel(sAccion)
 
 function cargarCombos()
 {
-    var dHora = new Date(2019,1,1,0,0,0); 
-
-
-    sHora = dHora.getHours().toString().padStart(2,'0'); + ":" + dHora.getMinutes().toString().padStart(2,'0');
-alert(sHora);
-    dHora = dHora.setMinutes(dHora.getMinutes() + 5);
-    sHora = dHora.getHours().toString().padStart(2,'0'); + ":" + dHora.getMinutes().toString().padStart(2,'0');
-alert(sHora);
-
-    /* Hora de entrada */ 
-    $('#selectHoraENTRADA').find('option').remove().end();    
+    var dHora = new Date(2019,0,1,0,0,0); 
+    /* Hora de entrada, hora de sortida, hora de entrada por defecto, hora de sortida por defecto, Tiempo de descanso y Tiempo de descanso por defecto*/ 
+    $('#selectHoraENTRADA').find('option').remove().end();  
+    $('#selectHoraSORTIDA').find('option').remove().end();
+    $('#selectE_H_Defecte').find('option').remove().end();
+    $('#selectS_H_Defecte').find('option').remove().end();   
+    $('#selecTempsDESCANS').find('option').remove().end();   
+    $('#selecT_Defecte').find('option').remove().end();   
     for (i=0; i<(24*12); i+=5) {    
-        dHora = dHora.setMinutes(dHora.getMinutes() + i);
-        sHora = dHora.getHours().toString().padStart(2,'0'); + ":" + dHora.getMinutes().toString().padStart(2,'0');
+        dHora = new Date(dHora.getTime() + i * 60000);
+        sHora = dHora.getHours().toString().padStart(2,'0') + ":" + dHora.getMinutes().toString().padStart(2,'0');
         $("#selectHoraENTRADA").append('<option value="' + i + '">' + sHora + '</option>');
+        $("#selectHoraSORTIDA").append('<option value="' + i + '">' + sHora + '</option>');
+        $("#selectE_H_Defecte").append('<option value="' + i + '">' + sHora + '</option>');
+        $("#selectS_H_Defecte").append('<option value="' + i + '">' + sHora + '</option>');
+        if(dHora.getHours() < 4)
+        {
+            $("#selecTempsDESCANS").append('<option value="' + i + '">' + sHora + '</option>');
+            $("#selecT_Defecte").append('<option value="' + i + '">' + sHora + '</option>');
+        }
     }    
-
-    /* Tiempo de descanso */ 
-
-    /* Hora de salida */ 
-
 }
 
 function constants(sCual)

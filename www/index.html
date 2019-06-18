@@ -38,7 +38,7 @@
         <script>
             //reset type=date inputs to text
             $( document ).bind( "mobileinit", function(){
-                $.mobile.page.prototype.options.degradeInputs.inputDIA = true;
+                $.mobile.page.prototype.options.degradeInputs.data = true;
             });	
         </script>
 
@@ -149,11 +149,6 @@
                                                             <input type="radio" name="radioDESCANS" id="radioDESCANS_TEMPS_ALTRE" value="DTO"> 
                                                             <label id="labelDTO" name="labelDTO" for="radioDESCANS_TEMPS_ALTRE">Altre<br/> 
                                                                 <select name="selecTempsDESCANS" id="selecTempsDESCANS" data-mini="true" style="z-index: 500;">
-                                                                    <option value="1">00:05</option>
-                                                                    <option value="2">00:10</option>
-                                                                    <option value="3">00:15</option>
-                                                                    <option value="4">00:30</option>
-                                                                    <option value="4">00:35</option>
                                                                 </select> 
                                                             </label>
                                                         </fieldset>
@@ -173,10 +168,6 @@
                                                 <input type="radio" name="radioSORTIDA" id="radioSORTIDA_HORA_ALTRE" value="SHO"> 
                                                 <label id="labelSHO" name="labelSHO" for="radioSORTIDA_HORA_ALTRE">Altre<br/> 
                                                     <select name="selectHoraSORTIDA" id="selectHoraSORTIDA" data-mini="true" style="z-index: 500;">
-                                                        <option value="1">17:00</option>
-                                                        <option value="2">17:05</option>
-                                                        <option value="3">17:10</option>
-                                                        <option value="4">17:15</option>
                                                     </select> 
                                                 </label>
                                             </fieldset>
@@ -291,23 +282,6 @@
                                 <td style="text-align: left;font-weight: bold;">Hora entrada</td>
                                 <td>   
                                     <select name="selectE_H_Defecte" id="selectE_H_Defecte" data-mini="true">
-                                        <option value="1">07:00</option>
-                                        <option value="2">07:05</option>
-                                        <option value="3">07:10</option>
-                                        <option value="4">07:15</option>
-                                        <option value="5">07:15</option>
-                                        <option value="6">07:15</option>
-                                        <option value="7">07:15</option>
-                                        <option value="8">07:15</option>
-                                        <option value="9">07:15</option>
-                                        <option value="10">07:15</option>
-                                        <option value="11">07:15</option>
-                                        <option value="12">07:15</option>
-                                        <option value="13">07:15</option>
-                                        <option value="14">07:15</option>
-                                        <option value="15">07:15</option>
-                                        <option value="16">07:15</option>
-                                        <option value="17">07:15</option>
                                     </select> 
                                 </td>
                                 <td><label><input type="checkbox" name="cbE_H_Defecte" data-mini="true">avisa'm</label></td>
@@ -316,14 +290,6 @@
                                 <td style="font-weight: bold;">Hora sortida</td>
                                 <td>
                                     <select name="selectS_H_Defecte" id="selectS_H_Defecte" data-mini="true" >
-                                        <option value="1">17:00</option>
-                                        <option value="2">17:05</option>
-                                        <option value="3">17:10</option>
-                                        <option value="4">17:15</option>
-                                        <option value="5">17:20</option>
-                                        <option value="6">17:25</option>
-                                        <option value="7">17:30</option>
-                                        <option value="8">17:35</option>
                                     </select>
                                 </td>
                                 <td><label><input type="checkbox" name="cbS_H_Defecte" data-mini="true">avisa'm</label></td>
@@ -332,11 +298,6 @@
                                 <td style="font-weight: bold;">Temps descans</td>
                                 <td colspan="2">
                                     <select name="selecT_Defecte" id="selecT_Defecte" data-mini="true">
-                                        <option value="1">00:05</option>
-                                        <option value="2">00:10</option>
-                                        <option value="3">00:15</option>
-                                        <option value="4">00:30</option>
-                                        <option value="4">00:35</option>
                                     </select>  
                                 </td>
                             </tr>
