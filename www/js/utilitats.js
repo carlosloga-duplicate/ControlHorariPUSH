@@ -34,8 +34,8 @@ function GetHoraSel(sAccion)
 alert('sAccion: ' + sAccion);    
     switch(sAccion) {
         case 'E':  /* entrada */
-            radioSelec = $("#tipoHoraENTRADA :radio:checked").val().toString();
-alert('radioSelec: ' + radioSelec);
+            radioSelec = $("#cgTipoHoraENTRADA :radio:checked").val().toString();
+alert('radioSelec: '); alert(radioSelec);
             switch(radioSelec)  
             {
                 case 'EHA':  /* hora actual */
@@ -48,6 +48,7 @@ alert('radioSelec: ' + radioSelec);
                     sHora = $("#selectHoraENTRADA").find(":selected").text();
                     break;
             }
+alert(sHora);            
             return sHora;
           break;
 

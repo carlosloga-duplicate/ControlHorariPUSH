@@ -36,10 +36,6 @@ var app = {
         {
             mensajePopup("ERROR", usu_passw,0);        
         }
-        else
-        {
-            alert(usu_passw);
-        }
 
         var storeObject = {
             colorFondoConfirmacio: null,  
