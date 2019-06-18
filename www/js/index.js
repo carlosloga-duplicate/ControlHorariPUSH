@@ -117,20 +117,20 @@ var app = {
             try
             {    
                 var defectes = recuperaDatosDEFECTE();
-alert('recupero: ' + defectes);
-                $("#labelEHA").text = "Ara<br/>" + HoraActual5Min();  
+
+                $("#labelEHA").text = "Ara\n" + HoraActual5Min();  
                 if(!defectes.startsWith('ERROR'))
                 {                    
-                    $("#labelEHD").text = "Def.<br/>" + defectes.split('|')[0]; 
+                    $("#labelEHD").text = "Def.\n" + defectes.split('|')[0]; 
                 } 
 
-                $("#labelSHA").text = "Ara<br/>" + HoraActual5Min();             
+                $("#labelSHA").text = "Ara\n" + HoraActual5Min();             
                 if(!defectes.startsWith('ERROR'))
                 {                    
-                    $("#labelSHD").text = "Def.<br/>" + defectes.split('|')[1]; 
+                    $("#labelSHD").text = "Def.\n" + defectes.split('|')[1]; 
                 } 
 
-                $("#labelDTD").text = "Defecte<br/>" + defectes.split('|')[2];             
+                $("#labelDTD").text = "Defecte\n" + defectes.split('|')[2];             
 
             }
             catch(err)
@@ -175,9 +175,14 @@ alert('recupero: ' + defectes);
             var defectes = recuperaDatosDEFECTE();
             if(!defectes.startsWith('ERROR'))
             {
-                $("#labelEHD").text(defectes.split('|')[0]);
-                $("#labelSHD").text(defectes.split('|')[1]);
-                $("#labelDTD").text(defectes.split('|')[2]);
+                $('#selectE_H_Defecte').val(defectes.split('|')[0]).attr('selected', true).siblings('option').removeAttr('selected');
+                $('#selectE_H_Defecte').selectmenu("refresh", true);
+
+                $('#selectS_H_Defecte').val(defectes.split('|')[1]).attr('selected', true).siblings('option').removeAttr('selected');
+                $('#selectS_H_Defecte').selectmenu("refresh", true);
+
+                $('#selecT_Defecte').val(defectes.split('|')[2]).attr('selected', true).siblings('option').removeAttr('selected');
+                $('#selecT_Defecte').selectmenu("refresh", true);
             }
         });
         
