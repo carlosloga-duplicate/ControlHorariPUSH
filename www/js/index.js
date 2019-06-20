@@ -225,7 +225,10 @@ var app = {
             var horaEdefecte = $("#selectE_H_Defecte").find(":selected").text();
             var horaSdefecte = $("#selectS_H_Defecte").find(":selected").text();
             var tempsDefecte = $("#selecT_Defecte").find(":selected").text();
-            guardaDatosCONFIGURACIO(usu, passw, horaEdefecte, horaSdefecte, tempsDefecte);
+            var avisaEntrada = ($("#cbE_H_Defecte").attr('checked') ? 1 : 0);
+            var avisaSortida = ($("#cbS_H_Defecte").attr('checked') ? 1 : 0);
+
+            guardaDatosCONFIGURACIO(usu, passw, horaEdefecte, horaSdefecte, tempsDefecte, avisaEntrada, avisaSortida);
 
             $.mobile.changePage('#pageSETHORA', { transition: 'slideup', changeHash: false });
             $('#acordeonENTRADA_SORTIDA').collapsible( "collapse" );           
