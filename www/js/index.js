@@ -119,7 +119,8 @@ var app = {
                 /* Hora d'ara */
                 var ara = HoraActual5Min();
               
-                $("#labelEHA").text = "Ara " + ara;  
+                document.getElementById('labelEHA').innerHTML = "Ara " + ara;  
+                //$("#labelEHA").text = "Ara " + ara;  
                 $("#cgTipoHoraENTRADA").controlgroup("refresh");
 
                 $("#labelSHA").text = "Ara " + ara;   
