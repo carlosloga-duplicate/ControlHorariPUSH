@@ -1,12 +1,13 @@
 
-function guardaDatosCONFIGURACIO(sUsu, sPassw, horaEdefecte, horaSdefecte, tempsDefecte)
+function guardaDatosCONFIGURACIO(sUsu, sPassw, horaEdefecte, horaSdefecte, tempsDefecte,AvisEntrada,AvisSortida)
 {
-alert('guardo: ' + sUsu + "|" + sPassw + "|" + horaEdefecte + "|" + horaSdefecte + "|" + tempsDefecte);
     localStorage.setItem('USU', sUsu);
     localStorage.setItem('PASSW', sPassw);
     localStorage.setItem('ENTRADA_DEFECTE', horaEdefecte);
     localStorage.setItem('SORTIDA_DEFECTE', horaSdefecte);
     localStorage.setItem('DESCANS_DEFECTE', tempsDefecte);
+    localStorage.setItem('AVISA_ENTRADA', AvisEntrada);
+    localStorage.setItem('AVISA_SORTIDA', AvisSortida);
 }
 
 function recuperaDatosUSU()
@@ -31,7 +32,9 @@ function recuperaDatosDEFECTE()
         var horaEdefecte = localStorage.getItem('ENTRADA_DEFECTE');
         var horaSdefecte = localStorage.getItem('SORTIDA_DEFECTE');
         var tempsDefecte = localStorage.getItem('DESCANS_DEFECTE');
-        return horaEdefecte + "|" + horaSdefecte + "|" + tempsDefecte;
+        var avisaEntrada = localStorage.getItem('AVISA_ENTRADA');
+        var avisaSortida = localStorage.getItem('AVISA_SORTIDA');
+        return horaEdefecte + "|" + horaSdefecte + "|" + tempsDefecte + "|" + avisaEntrada + "|" + avisaSortida;
     }
     catch(err)
     {
