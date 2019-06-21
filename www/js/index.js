@@ -226,9 +226,14 @@ var app = {
             var horaEdefecte = $("#selectE_H_Defecte").find(":selected").text();
             var horaSdefecte = $("#selectS_H_Defecte").find(":selected").text();
             var tempsDefecte = $("#selecT_Defecte").find(":selected").text();
-            var avisaEntrada = ($("#cbE_H_Defecte").prop("checked") ? 1 : 0);
-            var avisaSortida = ($("#cbS_H_Defecte").prop("checked") ? 1 : 0);
-            
+/*             var avisaEntrada = ($("#cbE_H_Defecte").prop("checked") ? 1 : 0);
+            var avisaSortida = ($("#cbS_H_Defecte").prop("checked") ? 1 : 0); */
+            if($("#cbE_H_Defecte").is(":checked"))
+            { alert('E cheked!'); avisaEntrada = 1;  } else { alert('E no checked!'); avisaEntrada = 0; }
+
+            if($("#cbS_H_Defecte").is(":checked"))
+            { alert('S cheked!'); avisaSortida = 1;  } else { alert('S no checked!'); avisaSortida = 0; }
+
             guardaDatosCONFIGURACIO(usu, passw, horaEdefecte, horaSdefecte, tempsDefecte, avisaEntrada, avisaSortida);
 
             $.mobile.changePage('#pageSETHORA', { transition: 'slideup', changeHash: false });
