@@ -193,12 +193,13 @@ var app = {
 
                 var avisaEntrada = defectes.split('|')[3];
                 var avisaSortida = defectes.split('|')[4];
-                if(avisaEntrada == 1) 
+
+                if(avisaEntrada == 1 || avisaEntrada == '1') 
                     $("#cbE_H_Defecte").prop('checked', true).checkboxradio('refresh');
                 else
                     $("#cbE_H_Defecte").prop('checked', false).checkboxradio('refresh');
 
-                if(avisaSortida == 1) 
+                if(avisaSortida == 1 || avisaSortida=='1') 
                     $("#cbS_H_Defecte").prop('checked', true).checkboxradio('refresh');
                 else
                     $("#cbS_H_Defecte").prop('checked', false).checkboxradio('refresh');
