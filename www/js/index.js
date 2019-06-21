@@ -161,7 +161,8 @@ var app = {
                 $("#labelHORA").text(storeObject.hora.toString());
                 if(storeObject.accion.toString() == "SORTIDA")
                 {
-                    $("#labelDESCANS").text(storeObject.descans.toString());                
+                    document.getElementById("trDescans").style.display = 'block';
+                    $("#labelDESCANS").text(storeObject.descans.toString());  
                 }
                 else
                 {
@@ -227,7 +228,7 @@ var app = {
             $('#panelENTRADA').collapsible( "collapse" );
             $('#panelSORTIDA').collapsible( "collapse" );
             $('#panelENTRADA').trigger('collapse');
-            $('#panelSORTIDA').trigger('collapse');         
+            $('#panelSORTIDA').trigger('collapse');                     
         });
 
         $('#botonGuardarCONFIGURACIO').click(function() {            
@@ -242,6 +243,11 @@ var app = {
             if( document.getElementById('cbS_H_Defecte').checked ) { avisaSortida = 1;  } 
 
             guardaDatosCONFIGURACIO(usu, passw, horaEdefecte, horaSdefecte, tempsDefecte, avisaEntrada, avisaSortida);
+            if(avisaEntrada==1 || avisaSortida==1)
+            {
+                if(avisaEntrada==1 ) crearNotificacio("21/06/2019",horaEdefecte,"FICHAR","Ficha la entrada !!!");
+                if(avisaSortida==1 ) crearNotificacio("21/06/2019",horaSdefecte,"FICHAR","Ficha la salida y el tiempo de descanso !!!");
+            }
 
             $.mobile.changePage('#pageSETHORA', { transition: 'slideup', changeHash: false });
             $('#acordeonENTRADA_SORTIDA').collapsible( "collapse" );           
