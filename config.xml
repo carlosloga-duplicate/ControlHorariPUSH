@@ -8,7 +8,7 @@
         Setting Consultoria en T.I.
     </author>
     <content src="index.html" />
-    <preference name="phonegap-version" value="3.1.0" />
+
     <preference name="DisallowOverscroll" value="true" />
     <preference name="android-minSdkVersion" value="14" />
     <preference name="StatusBarOverlaysWebView" value="false" />
