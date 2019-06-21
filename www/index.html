@@ -99,7 +99,7 @@
                 <!-- ACORDEON -->
                 <div data-role="collapsible-set" data-theme="c" data-content-theme="d" data-mini="true" style="width: 100%;" id="acordeonENTRADA_SORTIDA" name="acordeonENTRADA_SORTIDA">
                     <!-- ACORDEON ENTRADA -->
-                    <div data-role="collapsible">
+                    <div data-role="collapsible" id="panelENTRADA" name="panelENTRADA">
                         <h1>ENTRADA</h1>
                         <!-- PANEL D'ENTRADA -->
                         <table style="width: 100%;" cellpadding="0" cellspacing="0">
@@ -109,13 +109,13 @@
                                 <tr>
                                 <td style="text-align: center; width: 100%; padding: 0px;">
                                 <fieldset data-role="controlgroup" data-type="horizontal" id="cgTipoHoraENTRADA" name="cgTipoHoraENTRADA">                                
-                                        <input type="radio" name="radioENTRADA" id="radioENTRADA_HORA_ACTUAL" value="EHA" checked="checked" style="height: 80px;">
-                                        <label id="labelEHA" name="labelEHA" for="radioENTRADA_HORA_ACTUAL" style="height: 55px; vertical-align: middle;"></label>
+                                        <input type="radio" name="radioENTRADA" id="radioENTRADA_HORA_ACTUAL" value="EHA" checked="checked">
+                                        <label id="labelEHA" name="labelEHA" for="radioENTRADA_HORA_ACTUAL" style="height: 60px; vertical-align: middle; font-size:small;"></label>
                                         <input type="radio" name="radioENTRADA" id="radioENTRADA_HORA_DEFECTE" value="EHD">
                                         <label id="labelEHD" name="labelEHD"  for="radioENTRADA_HORA_DEFECTE" style="height: 55px; vertical-align: middle;"></label>
                                         <input type="radio" name="radioENTRADA" id="radioENTRADA_HORA_ALTRE" value="EHO"> 
                                         <label id="labelEHO" name="labelEHO"  for="radioENTRADA_HORA_ALTRE">Altre<br/>
-                                            <select name="selectHoraENTRADA" id="selectHoraENTRADA" data-mini="true" style="z-index: 500; width: 100px;">
+                                            <select name="selectHoraENTRADA" id="selectHoraENTRADA" data-mini="true" style="z-index: 500; width: 100px; font-size: small;">
                                             </select> 
                                         </label>                                 
                                     </fieldset>
@@ -131,7 +131,7 @@
                         </table>
                     </div>
                     <!-- ACORDEON SORTIDA -->
-                    <div data-role="collapsible">
+                    <div data-role="collapsible" id="panelSORTIDA" name="panelSORTIDA">
                         <h1>SORTIDA</h1>
                         <!-- PANEL DE SORTIDA -->
                         <table style="width: 100%;" cellpadding="0" cellspacing="0">
