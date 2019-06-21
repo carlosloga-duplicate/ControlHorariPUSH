@@ -163,6 +163,10 @@ var app = {
                 {
                     $("#labelDESCANS").text(storeObject.descans.toString());                
                 }
+                else
+                {
+                    document.getElementById("trDescans").style.display = 'none';
+                }
             }
             catch(err)
             {         
