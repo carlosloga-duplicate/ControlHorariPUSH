@@ -137,18 +137,6 @@ var app = {
 
                     document.getElementById('labelDTD').innerHTML = "Defecte<br/>" + defectes.split('|')[2];
                     $("#cgTipoHoraDESCANS").controlgroup("refresh");
-
-                    var avisaEntrada = defectes.split('|')[3];
-                    var avisaSortida = defectes.split('|')[4];
-                    if(avisaEntrada == 1) 
-                        $("#cbE_H_Defecte").prop('checked', true).checkboxradio('refresh');
-                    else
-                        $("#cbE_H_Defecte").prop('checked', false).checkboxradio('refresh');
-
-                    if(avisaSortida == 1) 
-                        $("#cbS_H_Defecte").prop('checked', true).checkboxradio('refresh');
-                    else
-                        $("#cbS_H_Defecte").prop('checked', false).checkboxradio('refresh');
                 }                                      
             }
             catch(err)
@@ -202,6 +190,18 @@ var app = {
 
                 $("#selecT_Defecte option[value='" + defectes.split('|')[2] + "']").attr('selected', 'selected');
                 $('#selecT_Defecte').selectmenu("refresh", true);
+
+                var avisaEntrada = defectes.split('|')[3];
+                var avisaSortida = defectes.split('|')[4];
+                if(avisaEntrada == 1) 
+                    $("#cbE_H_Defecte").prop('checked', true).checkboxradio('refresh');
+                else
+                    $("#cbE_H_Defecte").prop('checked', false).checkboxradio('refresh');
+
+                if(avisaSortida == 1) 
+                    $("#cbS_H_Defecte").prop('checked', true).checkboxradio('refresh');
+                else
+                    $("#cbS_H_Defecte").prop('checked', false).checkboxradio('refresh');
             }
             else
             {
@@ -225,9 +225,9 @@ var app = {
             var horaEdefecte = $("#selectE_H_Defecte").find(":selected").text();
             var horaSdefecte = $("#selectS_H_Defecte").find(":selected").text();
             var tempsDefecte = $("#selecT_Defecte").find(":selected").text();
-            var avisaEntrada = ($("#cbE_H_Defecte").attr('checked') ? 1 : 0);
-            var avisaSortida = ($("#cbS_H_Defecte").attr('checked') ? 1 : 0);
-
+            var avisaEntrada = ($("#cbE_H_Defecte").prop("checked") ? 1 : 0);
+            var avisaSortida = ($("#cbS_H_Defecte").prop("checked") ? 1 : 0);
+            
             guardaDatosCONFIGURACIO(usu, passw, horaEdefecte, horaSdefecte, tempsDefecte, avisaEntrada, avisaSortida);
 
             $.mobile.changePage('#pageSETHORA', { transition: 'slideup', changeHash: false });
