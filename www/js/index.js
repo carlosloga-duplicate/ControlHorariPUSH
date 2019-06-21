@@ -212,14 +212,16 @@ var app = {
         
         $('#botonCancelaCONFIRMAR').click(function() {            
             $.mobile.changePage('#pageSETHORA', { transition: 'slideup', changeHash: false }); 
-            /* $('#acordeonENTRADA_SORTIDA').collapsible( "collapse" ); */         
+            $('#panelENTRADA').collapsible( "collapse" );
+            $('#panelSORTIDA').collapsible( "collapse" );
             $('#panelENTRADA').trigger('collapse');
             $('#panelSORTIDA').trigger('collapse');
         });
 
         $('#botonEnviaCONFIRMAR').click(function() {            
             $.mobile.changePage('#pageSETHORA', { transition: 'slideup', changeHash: false });
-            /* $('#acordeonENTRADA_SORTIDA').collapsible( "collapse" );   */ 
+            $('#panelENTRADA').collapsible( "collapse" );
+            $('#panelSORTIDA').collapsible( "collapse" );
             $('#panelENTRADA').trigger('collapse');
             $('#panelSORTIDA').trigger('collapse');         
         });

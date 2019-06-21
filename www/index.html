@@ -83,7 +83,7 @@
                 <table width="100%" cellpadding="0" cellspacing="0"><tr>
                     <td style="padding: 0px; vertical-align: middle;"><img src="img/logo.png" onclick="linkWebsite();" /></td>
                     <td style="padding: 0px; text-align: center; width: 100%;"><h3>Control Horari</h3></td>
-                    <td style="padding: 0px; text-align: right;"><a href="#panelMenu" data-role="button" data-inline="true" data-icon="bars"></a></td>
+                    <td style="padding: 0px; text-align: right;"><a href="#panelMenu" data-iconpos="notext" data-role="button" data-inline="true" data-icon="bars" data-mini="true"></a></td>
                 </tr></table>                
             </div>
 
@@ -110,11 +110,11 @@
                                 <td style="text-align: center; width: 100%; padding: 0px;">
                                 <fieldset data-role="controlgroup" data-type="horizontal" id="cgTipoHoraENTRADA" name="cgTipoHoraENTRADA">                                
                                         <input type="radio" name="radioENTRADA" id="radioENTRADA_HORA_ACTUAL" value="EHA" checked="checked">
-                                        <label id="labelEHA" name="labelEHA" for="radioENTRADA_HORA_ACTUAL" style="height: 60px; vertical-align: middle; font-size:small;"></label>
+                                        <label id="labelEHA" name="labelEHA" for="radioENTRADA_HORA_ACTUAL" style="height: 70px !important; vertical-align: middle; font-size:small;"></label>
                                         <input type="radio" name="radioENTRADA" id="radioENTRADA_HORA_DEFECTE" value="EHD">
-                                        <label id="labelEHD" name="labelEHD"  for="radioENTRADA_HORA_DEFECTE" style="height: 55px; vertical-align: middle;"></label>
+                                        <label id="labelEHD" name="labelEHD"  for="radioENTRADA_HORA_DEFECTE" style="height: 55px; vertical-align: middle; font-size:small;"></label>
                                         <input type="radio" name="radioENTRADA" id="radioENTRADA_HORA_ALTRE" value="EHO"> 
-                                        <label id="labelEHO" name="labelEHO"  for="radioENTRADA_HORA_ALTRE">Altre<br/>
+                                        <label id="labelEHO" name="labelEHO"  for="radioENTRADA_HORA_ALTRE" style="font-size:small;">Altre<br/>
                                             <select name="selectHoraENTRADA" id="selectHoraENTRADA" data-mini="true" style="z-index: 500; width: 100px; font-size: small;">
                                             </select> 
                                         </label>                                 
@@ -132,23 +132,23 @@
                     </div>
                     <!-- ACORDEON SORTIDA -->
                     <div data-role="collapsible" id="panelSORTIDA" name="panelSORTIDA">
-                        <h1>SORTIDA</h1>
+                        <h1>SORTIDA (i temps de descans)</h1>
                         <!-- PANEL DE SORTIDA -->
                         <table style="width: 100%;" cellpadding="0" cellspacing="0">
                             <tr><td style="padding: 0px; width: 100%;"><div style="width:100%; border: 1px solid #FCC6B6; background-color: #FCC6B6; border-radius: 15px;-moz-border-radius: 15px;">
                                 <table style="width: 100%; text-align: center;" cellpadding="0" cellspacing="0">
                                     <tr><td style="text-align: center; width: 100%;">
-                                        <div style="width: 100%; border: 1px solid #FFDBD0; background-color: #FFDBD0; border-radius: 15px;-moz-border-radius: 15px;">
+                                        <div style="padding-left: 20px; width: 80%; border: 1px solid #FFDBD0; background-color: #FFDBD0; border-radius: 15px;-moz-border-radius: 15px;">
                                             <table style="width: 100%; text-align: center;" cellpadding="0" cellspacing="0">
                                                 <tr><td style="text-align: center;"><label style="font-size: large">Temps de descans</label></td></tr>
                                                 <tr>
                                                     <td style="text-align: center;">
                                                         <fieldset data-role="controlgroup" data-type="horizontal"  id="cgTipoHoraDESCANS" name="cgTipoHoraDESCANS">     
                                                             <input type="radio" name="radioDESCANS" id="radioDESCANS_TEMPS_DEFECTE"  value="DTD" checked="checked">
-                                                            <label id="labelDTD" name="labelDTD" for="radioDESCANS_TEMPS_DEFECTE" style="height: 55px; vertical-align: middle;"></label>
+                                                            <label id="labelDTD" name="labelDTD" for="radioDESCANS_TEMPS_DEFECTE" style="height: 55px; vertical-align: middle; font-size:small;"></label>
                                                             <input type="radio" name="radioDESCANS" id="radioDESCANS_TEMPS_ALTRE" value="DTO"> 
-                                                            <label id="labelDTO" name="labelDTO" for="radioDESCANS_TEMPS_ALTRE">Altre<br/> 
-                                                                <select name="selecTempsDESCANS" id="selecTempsDESCANS" data-mini="true" style="z-index: 500; height: 20px;">
+                                                            <label id="labelDTO" name="labelDTO" for="radioDESCANS_TEMPS_ALTRE" style="font-size:small;">Altre<br/> 
+                                                                <select name="selecTempsDESCANS" id="selecTempsDESCANS" data-mini="true" style="z-index: 500; height: 20px; font-size:small;">
                                                                 </select> 
                                                             </label>
                                                         </fieldset>
@@ -162,12 +162,12 @@
                                         <td  style="text-align: center; padding: 0px; width: 100%;">
                                             <fieldset data-role="controlgroup" data-type="horizontal" id="cgTipoHoraSORTIDA" name="cgTipoHoraSORTIDA">                                
                                                 <input type="radio" name="radioSORTIDA" id="radioSORTIDA_HORA_ACTUAL" value="SHA" checked="checked">
-                                                <label id="labelSHA" name="labelSHA" for="radioSORTIDA_HORA_ACTUAL" style="height: 55px; vertical-align: middle;"></label>
+                                                <label id="labelSHA" name="labelSHA" for="radioSORTIDA_HORA_ACTUAL" style="height: 55px; vertical-align: middle; font-size:small;"></label>
                                                 <input type="radio" name="radioSORTIDA" id="radioSORTIDA_HORA_DEFECTE" value="SHD">
-                                                <label id="labelSHD" name="labelSHD" for="radioSORTIDA_HORA_DEFECTE" style="height: 55px; vertical-align: middle;"></label>
+                                                <label id="labelSHD" name="labelSHD" for="radioSORTIDA_HORA_DEFECTE" style="height: 55px; vertical-align: middle; font-size:small;"></label>
                                                 <input type="radio" name="radioSORTIDA" id="radioSORTIDA_HORA_ALTRE" value="SHO"> 
-                                                <label id="labelSHO" name="labelSHO" for="radioSORTIDA_HORA_ALTRE">Altre<br/> 
-                                                    <select name="selectHoraSORTIDA" id="selectHoraSORTIDA" data-mini="true" style="z-index: 500;">
+                                                <label id="labelSHO" name="labelSHO" for="radioSORTIDA_HORA_ALTRE" style="font-size:small;">Altre<br/> 
+                                                    <select name="selectHoraSORTIDA" id="selectHoraSORTIDA" data-mini="true" style="z-index: 500; font-size:small;">
                                                     </select> 
                                                 </label>
                                             </fieldset>
@@ -233,11 +233,11 @@
                                 <td style="text-align: right;"><a id="botonEnviaCONFIRMAR" name="botonEnviaCONFIRMAR" class="ui-btn ui-btn-a ui-btn ui-icon-check ui-btn-icon-left" href="#" data-mini="true">ENVIAR</a></td>
                             </tr></tfoot>
                             <tbody>
-                                <tr><td colspan="2" style="font-weight: bold; text-align: center;"><label style="font-weight: bold;" id="labelAccio" name="labelAccio"></label></td></tr>
-                                <tr><td style="font-weight: bold; text-align: right;">Usuari</td><td style="text-align: left;"><label id="labelUSU" name="labelUSU"></label></td></tr>
-                                <tr><td style="font-weight: bold; text-align: right;">Dia</td><td style="text-align: left;"><label id="labelDIA" name="labelDIA"></label></td></tr>
-                                <tr><td style="font-weight: bold; text-align: right;">Hora</td><td style="text-align: left;"><label id="labelHORA" name="labelHORA"></label></td></tr>
-                                <tr><td style="font-weight: bold; text-align: right;">Descans</td><td style="text-align: left;"><label id="labelDESCANS" name="labelDESCANS"></label></td></tr>
+                                <tr><td colspan="2" style="font-weight: bold; text-align: center;"><label style="font-weight: bold; font-size: large;" id="labelAccio" name="labelAccio"></label></td></tr>
+                                <tr><td style="font-weight: bold; text-align: left;">Usuari</td><td style="text-align: left;"><label id="labelUSU" name="labelUSU"></label></td></tr>
+                                <tr><td style="font-weight: bold; text-align: left;">Dia</td><td style="text-align: left;"><label id="labelDIA" name="labelDIA"></label></td></tr>
+                                <tr><td style="font-weight: bold; text-align: left;">Hora</td><td style="text-align: left;"><label id="labelHORA" name="labelHORA"></label></td></tr>
+                                <tr><td style="font-weight: bold; text-align: left;">Descans</td><td style="text-align: left;"><label id="labelDESCANS" name="labelDESCANS"></label></td></tr>
                                 <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
                             </tbSody>
                         </table>
