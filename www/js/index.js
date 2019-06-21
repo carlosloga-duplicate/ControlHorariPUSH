@@ -229,10 +229,10 @@ var app = {
 /*             var avisaEntrada = ($("#cbE_H_Defecte").prop("checked") ? 1 : 0);
             var avisaSortida = ($("#cbS_H_Defecte").prop("checked") ? 1 : 0); */
 
-            if(  $("#cbE_H_Defecte").prop("checked") == true)
+            if( document.getElementById('cbE_H_Defecte').checked )
             { alert('E cheked!'); avisaEntrada = 1;  } else { alert('E no checked!'); avisaEntrada = 0; }
 
-            if($("#cbS_H_Defecte").attr("checked") == true)
+            if( document.getElementById('cbS_H_Defecte').checked )
             { alert('S cheked!'); avisaSortida = 1;  } else { alert('S no checked!'); avisaSortida = 0; }
 
             guardaDatosCONFIGURACIO(usu, passw, horaEdefecte, horaSdefecte, tempsDefecte, avisaEntrada, avisaSortida);
