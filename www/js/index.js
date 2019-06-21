@@ -228,9 +228,8 @@ var app = {
             var tempsDefecte = $("#selecT_Defecte").find(":selected").text();
             var avisaEntrada = 0;
             var avisaSortida = 0; 
-
-            if( document.getElementById('cbE_H_Defecte').checked ) { alert('E cheked!'); avisaEntrada = 1;  }
-            if( document.getElementById('cbS_H_Defecte').checked ) { alert('S cheked!'); avisaSortida = 1;  } 
+            if( document.getElementById('cbE_H_Defecte').checked ) { avisaEntrada = 1;  }
+            if( document.getElementById('cbS_H_Defecte').checked ) { avisaSortida = 1;  } 
 
             guardaDatosCONFIGURACIO(usu, passw, horaEdefecte, horaSdefecte, tempsDefecte, avisaEntrada, avisaSortida);
 
@@ -242,7 +241,7 @@ var app = {
         $(window).on("navigate", function (event, data) {            
             var direction = data.state.direction;
             if (direction == 'back') {
-                setTimeout(function(){ navigator.app.exitApp(); }, 1500);                
+                setTimeout(function(){ navigator.app.exitApp(); }, 500);                
             }
         });
 
