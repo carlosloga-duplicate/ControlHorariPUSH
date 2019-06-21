@@ -226,14 +226,11 @@ var app = {
             var horaEdefecte = $("#selectE_H_Defecte").find(":selected").text();
             var horaSdefecte = $("#selectS_H_Defecte").find(":selected").text();
             var tempsDefecte = $("#selecT_Defecte").find(":selected").text();
-/*             var avisaEntrada = ($("#cbE_H_Defecte").prop("checked") ? 1 : 0);
-            var avisaSortida = ($("#cbS_H_Defecte").prop("checked") ? 1 : 0); */
+            var avisaEntrada = 0;
+            var avisaSortida = 0; 
 
-            if( document.getElementById('cbE_H_Defecte').checked )
-            { alert('E cheked!'); avisaEntrada = 1;  } else { alert('E no checked!'); avisaEntrada = 0; }
-
-            if( document.getElementById('cbS_H_Defecte').checked )
-            { alert('S cheked!'); avisaSortida = 1;  } else { alert('S no checked!'); avisaSortida = 0; }
+            if( document.getElementById('cbE_H_Defecte').checked ) { alert('E cheked!'); avisaEntrada = 1;  }
+            if( document.getElementById('cbS_H_Defecte').checked ) { alert('S cheked!'); avisaSortida = 1;  } 
 
             guardaDatosCONFIGURACIO(usu, passw, horaEdefecte, horaSdefecte, tempsDefecte, avisaEntrada, avisaSortida);
 
