@@ -41,8 +41,11 @@ alert('schedule_time = ' + schedule_time.toString());
     schedule_time = new Date(schedule_time);
 alert('schedule_time = ' + schedule_time.toString()); 
  */
-    var schedule_time = new Date();
+
+    var now = new Date().getTime();
+    var schedule_time = new Date(now + 60*1000); //1 mi. más 
 alert('schedule_time = ' + schedule_time.toString()); 
+
     var id = 1; //info.data.length;
 
     cordova.plugins.notification.local.hasPermission(function(granted){

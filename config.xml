@@ -26,8 +26,8 @@
     <!-- ocultar statusbar en ios -->
     <plugin name="cordova-plugin-statusbar-hide-on-startup" source="npm"/>
     <plugin name="cordova-plugin-whitelist" spec="1" />
-    <plugin-name="cordova.plugin.local-notification" />
-
+    <plugin spec=" https://github.com/acianti/cordova-plugin-local-notifications.git" />
+ 
     <feature name="File">
         <param name="android-package" value="org.apache.cordova.file.FileUtils" />
         <param name="ios-package" value="CDVFile" />
