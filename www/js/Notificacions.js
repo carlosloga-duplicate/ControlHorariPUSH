@@ -27,7 +27,8 @@ function configurarNotificacio(titol, missatge, quan, cadaMinutos, id)
 }
 
 function crearNotificacio(id, date, time, title, message)
-{
+{   
+    alert("en crearNotificacio");
     cordova.plugin.notification.local.hasPermission(function (granted) {
 
         alert("Testing permission");
@@ -43,7 +44,7 @@ function crearNotificacio(id, date, time, title, message)
     
               alert("Permission accepted");
               // If app is given permission try again
-              testNotifications();
+              crearNotificacio();
     
             } else {
               alert("We need permission to show you notifications");
@@ -52,11 +53,13 @@ function crearNotificacio(id, date, time, title, message)
           });
         } else {
     
-          var pathArray = window.location.pathname.split( "/www/" ),
-              secondLevelLocation = window.location.protocol +"//"+ pathArray[0],
+          alert("sending notification");
+
+          var pathArray = window.location.pathname.split( "/www/" );
+              secondLevelLocation = window.location.protocol +"//"+ pathArray[0];
               now = new Date();
         
-          alert("sending notification");
+          alert(secondLevelLocation);
     
           var isAndroid = false;    
           if ( device.platform === "Android" ) {
