@@ -26,6 +26,58 @@ function configurarNotificacio(titol, missatge, quan, cadaMinutos, id)
     });
 }
 
+function creaNotificacio(id, date, time, title, message)
+{
+    cordova.plugin.notification.local.hasPermission(function (granted) {
+
+        alert("Testing permission");
+    
+        if( granted == false ) {
+    
+          alert("No permission");
+          // If app doesnt have permission request it
+          cordova.plugin.notification.local.registerPermission(function (granted) {
+    
+            alert("Ask for permission");
+            if( granted == true ) {
+    
+              alert("Permission accepted");
+              // If app is given permission try again
+              testNotifications();
+    
+            } else {
+              alert("We need permission to show you notifications");
+            }
+    
+          });
+        } else {
+    
+          var pathArray = window.location.pathname.split( "/www/" ),
+              secondLevelLocation = window.location.protocol +"//"+ pathArray[0],
+              now = new Date();
+        
+          alert("sending notification");
+    
+          var isAndroid = false;    
+          if ( device.platform === "Android" ) {
+            isAndroid = true;
+          }
+    
+            alert(Date( new Date().getTime() + 10 ).toString());
+
+          cordova.plugin.notification.local.schedule({
+              id: 9,
+              title: "Test notification 9",
+              text: "This is a test notification",
+              sound: isAndroid ? "file://sounds/notification.mp3" : "file://sounds/notification.caf",
+              at: new Date( new Date().getTime() + 10 )
+              // data: { secret:key }
+          });    
+        }    
+      });
+    
+}
+
 function crearNotificacio(id, date, time, title, message)
 {
 //alert('en crearNotificacio: ' + date + '|' + time + '|' + title + '|' + message);  
@@ -65,7 +117,7 @@ alert('schedule_time = ' + schedule_time.toString());
                     message: message,
                     at: schedule_time
                 });
-                alert("L'avís s'ha creat correctament");
+                alert("L'avís s'ha creat correctament pel dia " + schedule_time.getDay.toString() + "/" + (schedule_time.getMonth + 1).toString() + "/" + schedule_time.getFullYear.toString() + " a les " + schedule_time.getHours.toString() + ":" + schedule_time.getMinutes.toString());
             }
             else
             {
