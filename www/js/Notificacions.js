@@ -29,15 +29,16 @@ function configurarNotificacio(titol, missatge, quan, cadaMinutos, id)
 function crearNotificacio(date, time, title, message)
 {
     if(date == "" || time == "" || title == "" || message == "")
-    {
-      navigator.notification.alert("Please enter all details");
+    {      
+      mensajePopup("ERROR", "No s'han rebut tots els paràmetres necessaris per crear l'avis",0);    
       return;
     }
 
     var schedule_time = new Date((date + " " + time).replace(/-/g, "/")).getTime();
+alert('schedule_time = ' + schedule_time.toString());    
     schedule_time = new Date(schedule_time);
-
-    var id = info.data.length;
+alert('schedule_time = ' + schedule_time.toString()); 
+    var id = 1; //info.data.length;
 
     cordova.plugins.notification.local.hasPermission(function(granted){
       if(granted == true)
@@ -53,7 +54,7 @@ function crearNotificacio(date, time, title, message)
             }
             else
             {
-              navigator.notification.alert("Reminder cannot be added because app doesn't have permission");
+              mensajePopup("ERROR", "No s'han pogut crear l'avis perquè aquesta app no té permís",0); 
             }
         });
       }
@@ -62,6 +63,7 @@ function crearNotificacio(date, time, title, message)
 
 function schedule(id, title, message, schedule_time)
 {
+alert('en shedule');  
     cordova.plugins.notification.local.schedule({
         id: id,
         title: title,
@@ -74,6 +76,7 @@ function schedule(id, title, message, schedule_time)
     localStorage.setItem("rp_data", JSON.stringify(info)); */
 
     navigator.notification.alert("Reminder added successfully");
+    mensajePopup("OK", "L'avís s'ha creat correctament",2000); 
 }
 
 function cancelarNotificacio(id)
