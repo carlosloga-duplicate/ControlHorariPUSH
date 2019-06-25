@@ -45,8 +45,8 @@ alert('schedule_time = ' + schedule_time.toString());
     var schedule_time = new Date(now + 60*2000); //2 mi. más 
 alert('schedule_time = ' + schedule_time.toString()); 
 
-    cancelarNotificacio(1);
-    cancelarNotificacio(2);
+/*     cancelarNotificacio(1);
+    cancelarNotificacio(2); */
 
     cordova.plugins.notification.local.hasPermission(function(granted){
       if(granted == true)
