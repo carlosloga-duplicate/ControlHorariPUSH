@@ -248,8 +248,7 @@ var app = {
             if( document.getElementById('cbS_H_Defecte').checked ) { avisaSortida = 1;  } 
 
             guardaDatosCONFIGURACIO(usu, passw, horaEdefecte, horaSdefecte, tempsDefecte, avisaEntrada, avisaSortida);
-
-alert('avisaEntrada + avisaSortida = ' + avisaEntrada.toString() + '|' + avisaSortida.toString());            
+          
             if(avisaEntrada==1 ) crearNotificacio("2019/25/06",horaEdefecte,"FICHAR","Ficha la entrada !!!");
             
             if(avisaSortida==1 ) crearNotificacio("2019/25/06",horaSdefecte,"FICHAR","Ficha la salida y el tiempo de descanso !!!");

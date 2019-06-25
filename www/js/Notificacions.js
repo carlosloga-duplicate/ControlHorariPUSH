@@ -36,9 +36,12 @@ alert('falta algo');
       return;
     }
 
-    var schedule_time = new Date((date + " " + time).replace(/-/g, "/")).getTime();
+/*     var schedule_time = new Date((date + " " + time).replace(/-/g, "/")).getTime();
 alert('schedule_time = ' + schedule_time.toString());    
     schedule_time = new Date(schedule_time);
+alert('schedule_time = ' + schedule_time.toString()); 
+ */
+    var schedule_time = new Date();
 alert('schedule_time = ' + schedule_time.toString()); 
     var id = 1; //info.data.length;
 
