@@ -28,8 +28,10 @@ function configurarNotificacio(titol, missatge, quan, cadaMinutos, id)
 
 function crearNotificacio(date, time, title, message)
 {
+alert('en crearNotificacio: ' + + date + '|' + time + '|' + title + '|' + message);  
     if(date == "" || time == "" || title == "" || message == "")
     {      
+alert('falta algo');      
       mensajePopup("ERROR", "No s'han rebut tots els paràmetres necessaris per crear l'avis",0);    
       return;
     }
