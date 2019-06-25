@@ -43,7 +43,7 @@ alert('schedule_time = ' + schedule_time.toString());
  */
 
     var now = new Date().getTime();
-    var schedule_time = new Date(now + 60*1000); //1 mi. más 
+    var schedule_time = new Date(now + 60*3000); //1 mi. más 
 alert('schedule_time = ' + schedule_time.toString()); 
 
     var id = 1; //info.data.length;
