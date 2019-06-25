@@ -45,6 +45,8 @@ alert('schedule_time = ' + schedule_time.toString());
     var schedule_time = new Date(now + 60*2000); //2 mi. más 
 alert('schedule_time = ' + schedule_time.toString()); 
 
+    cancelarNotificacio(1);
+    cancelarNotificacio(2);
 
     cordova.plugins.notification.local.hasPermission(function(granted){
       if(granted == true)
@@ -80,7 +82,7 @@ alert('en shedule');
 /*     var array = [id, title, message, schedule_time];
     info.data[info.data.length] = array;
     localStorage.setItem("rp_data", JSON.stringify(info)); */
-
+    alert("L'avís s'ha creat correctament");
     mensajePopup("OK", "L'avís s'ha creat correctament",2000); 
 }
 
