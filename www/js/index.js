@@ -250,9 +250,9 @@ var app = {
             guardaDatosCONFIGURACIO(usu, passw, horaEdefecte, horaSdefecte, tempsDefecte, avisaEntrada, avisaSortida);
 
 alert('avisaEntrada + avisaSortida = ' + avisaEntrada.toString() + '|' + avisaSortida.toString());            
-            if(avisaEntrada==1 ) crearNotificacio("25/06/2019",horaEdefecte,"FICHAR","Ficha la entrada !!!");
+            if(avisaEntrada==1 ) crearNotificacio("2019/25/06",horaEdefecte,"FICHAR","Ficha la entrada !!!");
             
-            if(avisaSortida==1 ) crearNotificacio("25/06/2019",horaSdefecte,"FICHAR","Ficha la salida y el tiempo de descanso !!!");
+            if(avisaSortida==1 ) crearNotificacio("2019/25/06",horaSdefecte,"FICHAR","Ficha la salida y el tiempo de descanso !!!");
         
             $.mobile.changePage('#pageSETHORA', { transition: 'slideup', changeHash: false });
             $('#acordeonENTRADA_SORTIDA').collapsible( "collapse" );           
