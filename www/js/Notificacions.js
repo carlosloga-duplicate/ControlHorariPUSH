@@ -58,7 +58,14 @@ alert('schedule_time = ' + schedule_time.toString());
         cordova.plugins.notification.local.registerPermission(function(granted) {
             if(granted == true)
             {
-              schedule(id, title, message, schedule_time);
+              //schedule(id, title, message, schedule_time);
+              cordova.plugins.notification.local.schedule({
+                    id: id,
+                    title: title,
+                    message: message,
+                    at: schedule_time
+                });
+                alert("L'avís s'ha creat correctament");
             }
             else
             {
