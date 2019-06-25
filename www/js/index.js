@@ -93,6 +93,7 @@ var app = {
             });
         });
 
+        /* FITXAR ENTRADA ······················································ */
         $('#botonENTRADA').click(function() {
             /* $.mobile.changePage('#pageCONFIRMACIO', { dataUrl : "pageCONFIRMACIO?color=D2F1CE", data : { 'color' : 'D2F1CE' }, reloadPage : true, changeHash : true }); */
             storeObject.colorFondoConfirmacio = '#D2F1CE';
@@ -102,6 +103,7 @@ var app = {
             $.mobile.changePage('#pageCONFIRMACIO', { transition: 'slideup', changeHash: false });
         });
 
+        /* FITXAR SORTIDA ······················································ */
         $('#botonSORTIDA').click(function() {
             /* $.mobile.changePage('#pageCONFIRMACIO', { dataUrl : "pageCONFIRMACIO?color=FCC6B6", data : { 'color' : 'FCC6B6' }, changeHash : false, transition: 'slideup' }); */
             storeObject.colorFondoConfirmacio = '#FCC6B6';
@@ -112,7 +114,7 @@ var app = {
             $.mobile.changePage('#pageCONFIRMACIO', { transition: 'slideup', changeHash: false });
         });
 
-        /* Al abrir la pagina SETHORA */
+        /* Al abrir la pagina PRINCIPAL (SETHORA) ······················································ */
         $(document).on('pagebeforeshow', "#pageSETHORA", function (event, data) {
             try
             {    
@@ -145,7 +147,7 @@ var app = {
             }
         });
 
-        /* Al abrir la pagina de CONFIRMACIÓ */
+        /* Al abrir la pagina de CONFIRMACIÓ ······················································ */
         $(document).on('pagebeforeshow', "#pageCONFIRMACIO", function (event, data) {
             try
             {                
@@ -175,7 +177,7 @@ var app = {
             }
         });
 
-        /* Al abrir la pagina de CONFIGURACIÓ */
+        /* Al abrir la pagina de CONFIGURACIÓ ······················································ */
         $(document).on('pagebeforeshow', "#pageCONFIGURACIO", function (event, data) {
             var usu_passw = recuperaDatosUSU();
             if(!usu_passw.startsWith('ERROR'))
@@ -215,6 +217,7 @@ var app = {
             }
         });
         
+        /* CANDELAR ENVIAMENT ······················································ */
         $('#botonCancelaCONFIRMAR').click(function() {            
             $.mobile.changePage('#pageSETHORA', { transition: 'slideup', changeHash: false }); 
             $('#panelENTRADA').collapsible( "collapse" );
@@ -223,6 +226,7 @@ var app = {
             $('#panelSORTIDA').trigger('collapse');
         });
 
+        /* CONFIRMAR ENVIAMENT ····················································· */
         $('#botonEnviaCONFIRMAR').click(function() {            
             $.mobile.changePage('#pageSETHORA', { transition: 'slideup', changeHash: false });
             $('#panelENTRADA').collapsible( "collapse" );
@@ -231,6 +235,7 @@ var app = {
             $('#panelSORTIDA').trigger('collapse');                     
         });
 
+        /* GUARDAR CONFIGURACIÓ ····················································· */
         $('#botonGuardarCONFIGURACIO').click(function() {            
             var usu = $("#inputUSUARI").val();
             var passw = $("#inputPASSW").val();
@@ -244,15 +249,16 @@ var app = {
 
             guardaDatosCONFIGURACIO(usu, passw, horaEdefecte, horaSdefecte, tempsDefecte, avisaEntrada, avisaSortida);
 
-            if(avisaEntrada==1 ) crearNotificacio("21/06/2019",horaEdefecte,"FICHAR","Ficha la entrada !!!");
+alert('avisaEntrada + avisaSortida = ' + avisaEntrada.toString() + '|' + avisaSortida.toString());            
+            if(avisaEntrada==1 ) crearNotificacio("25/06/2019",horaEdefecte,"FICHAR","Ficha la entrada !!!");
             
-            if(avisaSortida==1 ) crearNotificacio("21/06/2019",horaSdefecte,"FICHAR","Ficha la salida y el tiempo de descanso !!!");
+            if(avisaSortida==1 ) crearNotificacio("25/06/2019",horaSdefecte,"FICHAR","Ficha la salida y el tiempo de descanso !!!");
         
             $.mobile.changePage('#pageSETHORA', { transition: 'slideup', changeHash: false });
             $('#acordeonENTRADA_SORTIDA').collapsible( "collapse" );           
         });    
 
-        /* SALIR DE LA APP CUANDO SE PULSE LA TECLA BACK */
+        /* SALIR DE LA APP CUANDO SE PULSE LA TECLA BACK ··········································· */
         $(window).on("navigate", function (event, data) {            
             var direction = data.state.direction;
             if (direction == 'back') {
