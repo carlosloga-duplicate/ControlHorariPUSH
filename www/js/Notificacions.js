@@ -26,7 +26,7 @@ function configurarNotificacio(titol, missatge, quan, cadaMinutos, id)
     });
 }
 
-function creaNotificacio(id, date, time, title, message)
+function crearNotificacio(id, date, time, title, message)
 {
     cordova.plugin.notification.local.hasPermission(function (granted) {
 
@@ -66,7 +66,7 @@ function creaNotificacio(id, date, time, title, message)
             alert(Date( new Date().getTime() + 10 ).toString());
 
           cordova.plugin.notification.local.schedule({
-              id: 9,
+              id: id,
               title: "Test notification 9",
               text: "This is a test notification",
               sound: isAndroid ? "file://sounds/notification.mp3" : "file://sounds/notification.caf",
@@ -78,7 +78,7 @@ function creaNotificacio(id, date, time, title, message)
     
 }
 
-function crearNotificacio(id, date, time, title, message)
+function ____crearNotificacio(id, date, time, title, message)
 {
 //alert('en crearNotificacio: ' + date + '|' + time + '|' + title + '|' + message);  
     if(date == "" || time == "" || title == "" || message == "")
