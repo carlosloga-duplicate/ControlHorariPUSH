@@ -26,12 +26,11 @@ function configurarNotificacio(titol, missatge, quan, cadaMinutos, id)
     });
 }
 
-function crearNotificacio(date, time, title, message)
+function crearNotificacio(id, date, time, title, message)
 {
-alert('en crearNotificacio: ' + date + '|' + time + '|' + title + '|' + message);  
+//alert('en crearNotificacio: ' + date + '|' + time + '|' + title + '|' + message);  
     if(date == "" || time == "" || title == "" || message == "")
-    {      
-alert('falta algo');      
+    {         
       mensajePopup("ERROR", "No s'han rebut tots els paràmetres necessaris per crear l'avis",0);    
       return;
     }
@@ -43,10 +42,9 @@ alert('schedule_time = ' + schedule_time.toString());
  */
 
     var now = new Date().getTime();
-    var schedule_time = new Date(now + 60*3000); //1 mi. más 
+    var schedule_time = new Date(now + 60*2000); //2 mi. más 
 alert('schedule_time = ' + schedule_time.toString()); 
 
-    var id = 1; //info.data.length;
 
     cordova.plugins.notification.local.hasPermission(function(granted){
       if(granted == true)
@@ -83,7 +81,6 @@ alert('en shedule');
     info.data[info.data.length] = array;
     localStorage.setItem("rp_data", JSON.stringify(info)); */
 
-    navigator.notification.alert("Reminder added successfully");
     mensajePopup("OK", "L'avís s'ha creat correctament",2000); 
 }
 
