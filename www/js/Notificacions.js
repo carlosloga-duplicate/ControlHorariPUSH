@@ -74,8 +74,7 @@ alert('schedule_time = ' + schedule_time.toString());
               title: title,
               text: message,
               sound: isAndroid ? "file://sounds/notification.mp3" : "file://sounds/notification.caf",
-              at: new Date( new Date().getTime() + 5000 ), 
-              every: day 
+              at: new Date( new Date().getTime() + 5000 ) 
               // data: { secret:key }
           });    
         }    
