@@ -28,7 +28,7 @@
     <plugin name="cordova-plugin-statusbar-hide-on-startup" source="npm"/>
     <plugin name="cordova-plugin-whitelist" spec="1" />
     <!-- <plugin spec="https://github.com/acianti/cordova-plugin-local-notifications.git"/> -->
-	<plugin name="cordova-plugin-local-notifications" source="npm"/> 
+	<plugin name="cordova-plugin-local-notification" source="npm"/> 
     <!-- <plugin name="https://github.com/extendedmind/cordova-plugin-local-notifications"/> -->
 
     <feature name="File">
