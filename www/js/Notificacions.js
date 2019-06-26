@@ -160,3 +160,4 @@ function cancelarNotificacio(id)
         // Notification was cancelled
     }, scope);
 }
+
