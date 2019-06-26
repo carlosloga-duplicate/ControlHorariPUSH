@@ -26,15 +26,13 @@ function configurarNotificacio(titol, missatge, quan, cadaMinutos, id)
     });
 }
 
-function crearNotificacio(id, date, time, title, message)
+function crearNotificacio(id, date, hora, title, message)
 {   
 
     try{
 
-      var schedule_time = new Date((date + " " + time).replace(/-/g, "/")).getTime();
+      var schedule_time = new Date(2019,1,1, hora.replace(':',','),0,0,0);
 alert('schedule_time = ' + schedule_time.toString());    
-    schedule_time = new Date(schedule_time);
-alert('schedule_time = ' + schedule_time.toString()); 
 
     cordova.plugins.notification.local.hasPermission(function (granted) {
         if( granted == false ) {
