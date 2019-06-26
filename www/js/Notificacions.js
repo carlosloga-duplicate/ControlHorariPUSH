@@ -28,54 +28,52 @@ function configurarNotificacio(titol, missatge, quan, cadaMinutos, id)
 
 function crearNotificacio(id, date, time, title, message)
 {   
-    alert("en crearNotificacio");
-    try{
-    
-    cordova.plugins.notification.local.hasPermission(function (granted) {
 
-        alert("Testing permission");
-    
+    try{
+
+      var schedule_time = new Date((date + " " + time).replace(/-/g, "/")).getTime();
+alert('schedule_time = ' + schedule_time.toString());    
+    schedule_time = new Date(schedule_time);
+alert('schedule_time = ' + schedule_time.toString()); 
+
+    cordova.plugins.notification.local.hasPermission(function (granted) {
         if( granted == false ) {
     
-          alert("No permission");
+          alert("No hi ha permís per mostrar notificacions!");
           // If app doesnt have permission request it
           cordova.plugins.notification.local.registerPermission(function (granted) {
     
-            alert("Ask for permission");
+            alert("Demanant permís per mostrar notificacions");
             if( granted == true ) {
     
-              alert("Permission accepted");
               // If app is given permission try again
               crearNotificacio();
     
             } else {
-              alert("We need permission to show you notifications");
+              alert("No hi ha permís per mostrar notificacions!");
             }
     
           });
         } else {
     
-          alert("sending notification");
-
           var pathArray = window.location.pathname.split( "/www/" );
               secondLevelLocation = window.location.protocol +"//"+ pathArray[0];
-              now = new Date();
-        
-          alert(secondLevelLocation);
+              now = new Date();      
     
           var isAndroid = false;    
           if ( device.platform === "Android" ) {
             isAndroid = true;
           }
     
-            alert(Date( new Date().getTime() + 10 ).toString());
+/*             alert(Date( new Date().getTime() + 10 ).toString()); */
 
           cordova.plugins.notification.local.schedule({
               id: id,
-              title: "Test notification 9",
-              text: "This is a test notification",
+              title: title,
+              text: message,
               sound: isAndroid ? "file://sounds/notification.mp3" : "file://sounds/notification.caf",
-              at: new Date( new Date().getTime() + 10 )
+              at: schedule_time,  //new Date( new Date().getTime() + 10 )
+              every: day 
               // data: { secret:key }
           });    
         }    
@@ -83,7 +81,7 @@ function crearNotificacio(id, date, time, title, message)
     }
     catch(err)
     {
-      alert(err.message);
+      alert('ERROR (exception): ' + err.message);
     }
 }
 

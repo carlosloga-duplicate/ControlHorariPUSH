@@ -217,7 +217,7 @@ var app = {
             }
         });
         
-        /* CANDELAR ENVIAMENT ······················································ */
+        /* CANCELAR ENVIAMENT ······················································ */
         $('#botonCancelaCONFIRMAR').click(function() {            
             $.mobile.changePage('#pageSETHORA', { transition: 'slideup', changeHash: false }); 
             $('#panelENTRADA').collapsible( "collapse" );
@@ -241,7 +241,7 @@ var app = {
             var passw = $("#inputPASSW").val();
             var horaEdefecte = $("#selectE_H_Defecte").find(":selected").text();
             var horaSdefecte = $("#selectS_H_Defecte").find(":selected").text();
-            var tempsDefecte = $("#selecT_Defecte").find(":selected").text();
+            var tempsDefecte = $("#selecT_Defecte").find(":selected").text();            
             var avisaEntrada = 0;
             var avisaSortida = 0; 
             if( document.getElementById('cbE_H_Defecte').checked ) { avisaEntrada = 1;  }
@@ -249,9 +249,9 @@ var app = {
 
             guardaDatosCONFIGURACIO(usu, passw, horaEdefecte, horaSdefecte, tempsDefecte, avisaEntrada, avisaSortida);
           
-            if(avisaEntrada==1 ) crearNotificacio(4,"2019/25/06",horaEdefecte,"FICHAR","Ficha la entrada !!!");
+            if(avisaEntrada==1 ) crearNotificacio(6,"2019/25/06",horaEdefecte,"FICHAR","Ficha la entrada !!!");
             
-            if(avisaSortida==1 ) crearNotificacio(5,"2019/25/06",horaSdefecte,"FICHAR","Ficha la salida y el tiempo de descanso !!!");
+            if(avisaSortida==1 ) crearNotificacio(7,"2019/25/06",horaSdefecte,"FICHAR","Ficha la salida y el tiempo de descanso !!!");
         
             $.mobile.changePage('#pageSETHORA', { transition: 'slideup', changeHash: false });
             $('#acordeonENTRADA_SORTIDA').collapsible( "collapse" );           
