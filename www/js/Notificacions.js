@@ -31,7 +31,7 @@ function crearNotificacio(id, date, time, title, message)
     alert("en crearNotificacio");
     try{
     
-    cordova.plugin.notification.local.hasPermission(function (granted) {
+    cordova.plugins.notification.local.hasPermission(function (granted) {
 
         alert("Testing permission");
     
@@ -39,7 +39,7 @@ function crearNotificacio(id, date, time, title, message)
     
           alert("No permission");
           // If app doesnt have permission request it
-          cordova.plugin.notification.local.registerPermission(function (granted) {
+          cordova.plugins.notification.local.registerPermission(function (granted) {
     
             alert("Ask for permission");
             if( granted == true ) {
@@ -70,7 +70,7 @@ function crearNotificacio(id, date, time, title, message)
     
             alert(Date( new Date().getTime() + 10 ).toString());
 
-          cordova.plugin.notification.local.schedule({
+          cordova.plugins.notification.local.schedule({
               id: id,
               title: "Test notification 9",
               text: "This is a test notification",
