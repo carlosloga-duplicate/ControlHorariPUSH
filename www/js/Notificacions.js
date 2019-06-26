@@ -29,6 +29,8 @@ function configurarNotificacio(titol, missatge, quan, cadaMinutos, id)
 function crearNotificacio(id, date, time, title, message)
 {   
     alert("en crearNotificacio");
+    try{
+    
     cordova.plugin.notification.local.hasPermission(function (granted) {
 
         alert("Testing permission");
@@ -78,7 +80,11 @@ function crearNotificacio(id, date, time, title, message)
           });    
         }    
       });
-    
+    }
+    catch(err)
+    {
+      alert(err.message);
+    }
 }
 
 function ____crearNotificacio(id, date, time, title, message)
