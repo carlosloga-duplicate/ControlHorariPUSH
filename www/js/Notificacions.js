@@ -31,7 +31,11 @@ function crearNotificacio(id, date, hora, title, message)
 
     try{
 
-      var schedule_time = new Date(2019,1,1, hora.replace(':',','),0,0,0);
+      var nHora = 0;
+      var nMinuto = 0; 
+      nHora = parseInt(hora.split(':')[0]);
+      nMinuto = parseInt(hora.split(':')[1]);
+      var schedule_time = new Date(2019,1,1,nHora,nMinuto,0,0,0);
 alert('schedule_time = ' + schedule_time.toString());    
 
     cordova.plugins.notification.local.hasPermission(function (granted) {
