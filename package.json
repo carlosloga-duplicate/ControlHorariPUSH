@@ -4,5 +4,8 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
     },
-    "displayName": "ControlHorariPUSH"
+    "displayName": "ControlHorariPUSH",
+    "dependencies": {
+        "cordova-plugin-local-notification": "^0.9.0-beta.2"
+    }
 }
