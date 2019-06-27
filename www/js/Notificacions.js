@@ -28,10 +28,12 @@ function configurarNotificacio(titol, missatge, quan, cadaMinutos, id)
 
 function crearNotificacio(id, date, hora, titulo, msg)
 {
+    var h = parseInt(hora.split(':')[0]);
+    var m = parseInt(hora.split(':')[1]);
     var date = new Date()
     date.setDate(date.getDate());
-    date.setHours(12);
-    date.setMinutes(27);
+    date.setHours(h);
+    date.setMinutes(m);
     date.setSeconds(0);
     $cordovaLocalNotification.schedule({
         id: 3,
