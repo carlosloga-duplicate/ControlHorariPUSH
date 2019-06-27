@@ -26,7 +26,7 @@ function configurarNotificacio(titol, missatge, quan, cadaMinutos, id)
     });
 }
 
-function crearNotificacio(id, date, hora, title, message)
+function crearNotificacio(id, date, hora, titulo, msg)
 {   
 
     try{
@@ -74,11 +74,13 @@ alert('granted OK');
             vibrate: true 
           });
 
+alert('setDefaults OK');
+
           /* sound: isAndroid ? "file://sounds/notification.mp3" : "file://sounds/notification.caf", */
           cordova.plugins.notification.local.schedule({
-              title: title,
-              text: message,        
-              trigger: { every: { hour: 11, minute: 35 } }
+              title: titulo,
+              text: msg,        
+              trigger: { every: { hour: 11, minute: 45 } }
           }); 
           
           alert('notificació/ns activada/es');
