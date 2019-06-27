@@ -41,12 +41,12 @@ function crearNotificacio(id, date, hora, title, message)
 
 //alert('schedule_time = ' + schedule_time.toString());    
 
-    cordova.plugins.notification.local.hasPermission(function (granted) {
+    cordova.plugin.notification.local.hasPermission(function (granted) {
         if( granted == false ) {
     
           alert("No hi ha permís per mostrar notificacions!");
           // If app doesnt have permission request it
-          cordova.plugins.notification.local.registerPermission(function (granted) {
+          cordova.plugin.notification.local.registerPermission(function (granted) {
     
             alert("Demanant permís per mostrar notificacions");
             if( granted == true ) {
@@ -67,7 +67,7 @@ alert('granted OK');
           }
     
           /* sound: isAndroid ? "file://sounds/notification.mp3" : "file://sounds/notification.caf", */
-          cordova.plugins.notification.local.schedule({
+          cordova.plugin.notification.local.schedule({
               id: id,
               title: title,
               text: message,              
