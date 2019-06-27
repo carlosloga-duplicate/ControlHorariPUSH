@@ -116,7 +116,7 @@ alert('granted OK');
           /* trigger: { every: 'day' } */
           var fecha = new Date(new Date().getTime() + 60*1000);
           cordova.plugins.notification.local.schedule({
-              id: 22,
+              id: 23,
               title: "Control Horari",
               text: "Informa la hora", 
               at: fecha                                 
