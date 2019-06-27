@@ -79,14 +79,14 @@ alert('granted OK');
             vibrate: true 
           }); */
 
-/*           var nId = parseInt(id);
+/*           var nId = parseInt(id); */
           var h = parseInt(hora.split(':')[0]);
           var m = parseInt(hora.split(':')[1]);
           var hoy = new Date()
           hoy.setDate(date.getDate());
           hoy.setHours(h);
           hoy.setMinutes(m);
-          hoy.setSeconds(0); */
+          hoy.setSeconds(0); 
 
 
 /* 
@@ -122,7 +122,7 @@ alert('granted OK');
               id: Math.floor(Math.random() * (1000000000 - 1) + 1),
               title: "Control Horari",
               text: "Informa la hora", 
-              at: quan                            
+              at: hoy                            
           }); 
           
           alert('notificació/ns activada/es');
