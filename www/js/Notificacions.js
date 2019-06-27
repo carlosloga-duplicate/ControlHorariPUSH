@@ -87,7 +87,7 @@ alert('granted OK');
           hoy.setSeconds(0); */
 
 
-
+/* 
           let notification = {
             id: 1,
             title: 'Control Horari',
@@ -95,20 +95,20 @@ alert('granted OK');
             trigger: { every: { hour: 14, minute: 5 } }
            };
            alert('notif creada');
-           cordova.plugins.notification.local.schedule(notification);
+           cordova.plugins.notification.local.schedule(notification); */
 
 
-/*            cordova.plugins.notification.local.schedule({
+           cordova.plugins.notification.local.schedule({
             title: titulo,
             trigger: {
               every: {
               hour: 14,
-              minute: 0
+              minute: 10
             },
             before: new Date(8640000000000000),
             foreground: true
             }
-          }); */
+          });
 
 
           /* sound: isAndroid ? "file://sounds/notification.mp3" : "file://sounds/notification.caf", */
