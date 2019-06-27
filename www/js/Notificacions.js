@@ -27,6 +27,24 @@ function configurarNotificacio(titol, missatge, quan, cadaMinutos, id)
 }
 
 function crearNotificacio(id, date, hora, titulo, msg)
+{
+    var date = new Date()
+    date.setDate(date.getDate());
+    date.setHours(12);
+    date.setMinutes(27);
+    date.setSeconds(0);
+    $cordovaLocalNotification.schedule({
+        id: 3,
+        title: 'Warning',
+        text: 'Dont fall asleep',
+        firstAt: date,
+        every: 'day'
+    }).then(function (result) {
+        alert('Notification 3 triggered');
+    });
+}
+
+function _crearNotificacio(id, date, hora, titulo, msg)
 {   
 
     try{
