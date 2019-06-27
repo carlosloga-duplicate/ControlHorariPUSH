@@ -31,11 +31,18 @@ function crearNotificacio(id, date, hora, title, message)
 
     try{
 
-      var nHora = 0;
+/*       var nHora = 0;
       var nMinuto = 0; 
       nHora = parseInt(hora.split(':')[0]);
       nMinuto = parseInt(hora.split(':')[1]);
       var schedule_time = new Date(2019,5,26,nHora,nMinuto,0,0,0);
+ */
+      var unTime = new Date();
+      unTime.setHours(parseInt(hora.split(':')[0]));
+      unTime.setMinutes(parseInt(hora.split(':')[1]));
+      unTime.setSeconds(0);
+      var schedule_time = new Date(unTime);
+
 //alert('schedule_time = ' + schedule_time.toString());    
 
     cordova.plugins.notification.local.hasPermission(function (granted) {
@@ -74,8 +81,8 @@ function crearNotificacio(id, date, hora, title, message)
               title: title,
               text: message,
               sound: isAndroid ? "file://sounds/notification.mp3" : "file://sounds/notification.caf",
-              at: schedule_time, // new Date( new Date().getTime() + 5000 ) 
-              every: 'day' 
+              firstAt: schedule_time, // new Date( new Date().getTime() + 5000 ) 
+              every: "day"  
               // data: { secret:key }
           });    
         }    
