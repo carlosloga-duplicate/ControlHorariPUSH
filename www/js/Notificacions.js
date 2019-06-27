@@ -39,8 +39,8 @@ function crearNotificacio(id, date, hora, title, message)
       var schedule_time = new Date(unTime);
       alert(schedule_time.toString());
 
-      var hora = parseInt(hora.split(':')[0]);
-      var minu = parseInt(hora.split(':')[1]);
+      var h = parseInt(hora.split(':')[0]);
+      var m = parseInt(hora.split(':')[1]);
 
 //alert('schedule_time = ' + schedule_time.toString());    
 
@@ -78,7 +78,7 @@ alert('granted OK');
           cordova.plugins.notification.local.schedule({
               title: title,
               text: message,        
-              trigger: { every: { hour: hora, minute: minu } }
+              trigger: { every: { hour: h, minute: m } }
           }); 
           
           alert('notificació/ns activada/es');
