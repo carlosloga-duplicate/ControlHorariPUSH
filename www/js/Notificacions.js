@@ -39,14 +39,17 @@ function crearNotificacio(id, date, hora, title, message)
       var schedule_time = new Date(unTime);
       alert(schedule_time.toString());
 
+      var hora = parseInt(hora.split(':')[0]);
+      var minu = parseInt(hora.split(':')[1]);
+
 //alert('schedule_time = ' + schedule_time.toString());    
 
-    cordova.plugin.notification.local.hasPermission(function (granted) {
+    cordova.plugins.notification.local.hasPermission(function (granted) {
         if( granted == false ) {
     
           alert("No hi ha permís per mostrar notificacions!");
           // If app doesnt have permission request it
-          cordova.plugin.notification.local.registerPermission(function (granted) {
+          cordova.plugins.notification.local.registerPermission(function (granted) {
     
             alert("Demanant permís per mostrar notificacions");
             if( granted == true ) {
@@ -66,13 +69,16 @@ alert('granted OK');
             isAndroid = true;
           }
     
+          cordova.plugins.notification.local.setDefaults({
+            led: { color: '#FF00FF', on: 500, off: 500 },
+            vibrate: true 
+          });
+
           /* sound: isAndroid ? "file://sounds/notification.mp3" : "file://sounds/notification.caf", */
-          cordova.plugin.notification.local.schedule({
-              id: id,
+          cordova.plugins.notification.local.schedule({
               title: title,
-              text: message,              
-              firstAt: schedule_time, // new Date( new Date().getTime() + 5000 ) 
-              every: "day"  
+              text: message,        
+              trigger: { every: { hour: hora, minute: minu } }
           }); 
           
           alert('notificació/ns activada/es');
