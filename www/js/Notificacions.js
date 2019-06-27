@@ -79,6 +79,7 @@ alert('setDefaults OK');
           /* sound: isAndroid ? "file://sounds/notification.mp3" : "file://sounds/notification.caf", */
           /* trigger: { every: { hour: 11, minute: 45 } } */
           cordova.plugins.notification.local.schedule({
+              id: 5,
               title: "Control Horari Setting",
               text: "Has informat l'hora d'entrada?",                      
               trigger: { in: 1, unit: 'minute' }
