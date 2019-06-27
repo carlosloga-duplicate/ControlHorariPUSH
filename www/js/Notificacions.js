@@ -98,7 +98,7 @@ alert('granted OK');
            cordova.plugins.notification.local.schedule(notification); */
 
 
-           cordova.plugins.notification.local.schedule({
+/*            cordova.plugins.notification.local.schedule({
             title: titulo,
             trigger: {
               every: {
@@ -109,18 +109,18 @@ alert('granted OK');
             foreground: true
             }
           });
-
+ */
 
           /* sound: isAndroid ? "file://sounds/notification.mp3" : "file://sounds/notification.caf", */
           /* trigger: { every: { hour: 11, minute: 45 } } */
-/*           cordova.plugins.notification.local.schedule({
-              id: nId,
+          /* trigger: { every: 'day' } */
+          cordova.plugins.notification.local.schedule({
+              id: 22,
               title: "Control Horari",
               text: "Informa la hora", 
-              firstAt: hoy.getDate(),                     
-              trigger: { every: 'day' }
+              firstAt: new Date(new Date().getTime() + 60*1000)                                  
           }); 
-           */
+          
           alert('notificació/ns activada/es');
 
         }    
