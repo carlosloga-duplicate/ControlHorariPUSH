@@ -62,17 +62,20 @@ function crearNotificacio(id, date, hora, titulo, msg)
             }
     
           });
-        } else {
+        } 
+        else 
+        {
+
 alert('granted OK');    
           var isAndroid = false;    
           if ( device.platform === "Android" ) {
             isAndroid = true;
           }
     
-          cordova.plugins.notification.local.setDefaults({
+/*           cordova.plugins.notification.local.setDefaults({
             led: { color: '#FF00FF', on: 500, off: 500 },
             vibrate: true 
-          });
+          }); */
 
 /*           var nId = parseInt(id);
           var h = parseInt(hora.split(':')[0]);
@@ -83,16 +86,30 @@ alert('granted OK');
           hoy.setMinutes(m);
           hoy.setSeconds(0); */
 
+
+
           let notification = {
             id: 1,
             title: 'Control Horari',
             text: 'Informa la hora',
-            trigger: { every: { hour: 13, minute: 50 } }
+            trigger: { every: { hour: 14, minute: 5 } }
            };
-           
            alert('notif creada');
-           
            cordova.plugins.notification.local.schedule(notification);
+
+
+/*            cordova.plugins.notification.local.schedule({
+            title: titulo,
+            trigger: {
+              every: {
+              hour: 14,
+              minute: 0
+            },
+            before: new Date(8640000000000000),
+            foreground: true
+            }
+          }); */
+
 
           /* sound: isAndroid ? "file://sounds/notification.mp3" : "file://sounds/notification.caf", */
           /* trigger: { every: { hour: 11, minute: 45 } } */
