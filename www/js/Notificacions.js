@@ -78,7 +78,7 @@ alert('granted OK');
           cordova.plugins.notification.local.schedule({
               title: title,
               text: message,        
-              trigger: { every: { hour: h, minute: m } }
+              trigger: { every: { hour: 11, minute: 35 } }
           }); 
           
           alert('notificació/ns activada/es');
