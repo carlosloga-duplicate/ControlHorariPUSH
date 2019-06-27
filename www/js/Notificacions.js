@@ -30,17 +30,17 @@ function crearNotificacio(id, date, hora, titulo, msg)
 {   
 
     try{
-      var unTime = new Date();
+/*       var unTime = new Date();
       unTime.setHours(parseInt(hora.split(':')[0]));
       unTime.setMinutes(parseInt(hora.split(':')[1]));
       unTime.setSeconds(0);
 
-      alert(hora.split(':')[0] + "|" + hora.split(':')[1]);
+      alert(hora.split(':')[0] + "|" + hora.split(':')[1]); 
       var schedule_time = new Date(unTime);
       alert(schedule_time.toString());
 
       var h = parseInt(hora.split(':')[0]);
-      var m = parseInt(hora.split(':')[1]);
+      var m = parseInt(hora.split(':')[1]); */
 
 //alert('schedule_time = ' + schedule_time.toString());    
 
@@ -77,10 +77,11 @@ alert('granted OK');
 alert('setDefaults OK');
 
           /* sound: isAndroid ? "file://sounds/notification.mp3" : "file://sounds/notification.caf", */
+          /* trigger: { every: { hour: 11, minute: 45 } } */
           cordova.plugins.notification.local.schedule({
-              title: titulo,
-              text: msg,        
-              trigger: { every: { hour: 11, minute: 45 } }
+              title: "Control Horari Setting",
+              text: "Has informat l'hora d'entrada?",                      
+              trigger: { in: 1, unit: 'minute' }
           }); 
           
           alert('notificació/ns activada/es');
