@@ -44,12 +44,12 @@ function crearNotificacio(id, date, hora, titulo, msg)
 
 //alert('schedule_time = ' + schedule_time.toString());    
 
-    cordova.plugins.notification.local.hasPermission(function (granted) {
+    cordova.plugins.notification.local.fixed.hasPermission(function (granted) {
         if( granted == false ) {
     
           alert("No hi ha permís per mostrar notificacions!");
           // If app doesnt have permission request it
-          cordova.plugins.notification.local.registerPermission(function (granted) {
+          cordova.plugins.notification.local.fixed.registerPermission(function (granted) {
     
             alert("Demanant permís per mostrar notificacions");
             if( granted == true ) {
@@ -115,7 +115,7 @@ alert('granted OK');
           /* trigger: { every: { hour: 11, minute: 45 } } */
           /* trigger: { every: 'day' } */
           var nMin = 1;
-          cordova.plugins.notification.local.schedule({
+          cordova.plugins.notification.local.fixed.schedule({
               id: Math.floor(Math.random() * (1000000000 - 1) + 1),
               title: "Control Horari",
               text: "Informa la hora", 
