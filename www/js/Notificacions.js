@@ -27,26 +27,6 @@ function configurarNotificacio(titol, missatge, quan, cadaMinutos, id)
 }
 
 function crearNotificacio(id, date, hora, titulo, msg)
-{
-    var h = parseInt(hora.split(':')[0]);
-    var m = parseInt(hora.split(':')[1]);
-    var date = new Date()
-    date.setDate(date.getDate());
-    date.setHours(h);
-    date.setMinutes(m);
-    date.setSeconds(0);
-    $cordovaLocalNotification.schedule({
-        id: 3,
-        title: 'Warning',
-        text: 'Dont fall asleep',
-        firstAt: date,
-        every: 'day'
-    }).then(function (result) {
-        alert('Notification 3 triggered');
-    });
-}
-
-function _crearNotificacio(id, date, hora, titulo, msg)
 {   
 
     try{
@@ -96,13 +76,23 @@ alert('granted OK');
 
 alert('setDefaults OK');
 
+          var nId = parseInt(id);
+          var h = parseInt(hora.split(':')[0]);
+          var m = parseInt(hora.split(':')[1]);
+          var hoy = new Date()
+          hoy.setDate(date.getDate());
+          hoy.setHours(h);
+          hoy.setMinutes(m);
+          hoy.setSeconds(0);
+
           /* sound: isAndroid ? "file://sounds/notification.mp3" : "file://sounds/notification.caf", */
           /* trigger: { every: { hour: 11, minute: 45 } } */
           cordova.plugins.notification.local.schedule({
-              id: 5,
-              title: "Control Horari Setting",
-              text: "Has informat l'hora d'entrada?",                      
-              trigger: { in: 1, unit: 'minute' }
+              id: nId,
+              title: titulo,
+              text: msg, 
+              firstAt: hoy ,                     
+              trigger: { every: 'day' }
           }); 
           
           alert('notificació/ns activada/es');
