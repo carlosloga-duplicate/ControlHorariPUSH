@@ -117,11 +117,12 @@ alert('granted OK');
           /* trigger: { every: { hour: 11, minute: 45 } } */
           /* trigger: { every: 'day' } */
           var nMin = 1;
+          let quan = new Date(new Date().getTime() + (60*1000*nMin)) ;
           cordova.plugins.notification.local.schedule({
               id: Math.floor(Math.random() * (1000000000 - 1) + 1),
               title: "Control Horari",
               text: "Informa la hora", 
-              at: new Date(new Date().getTime() + (60*1000*nMin))                                
+              at: quan                            
           }); 
           
           alert('notificació/ns activada/es');
