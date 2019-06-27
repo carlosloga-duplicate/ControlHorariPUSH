@@ -116,13 +116,25 @@ alert('granted OK');
           /* sound: isAndroid ? "file://sounds/notification.mp3" : "file://sounds/notification.caf", */
           /* trigger: { every: { hour: 11, minute: 45 } } */
           /* trigger: { every: 'day' } */
+          
+
+/*        RESTA HORAS :    
+          var hora1 = ("04:29:01").split(":"),
+          hora2 = ("03:28:56").split(":"),
+          t1 = new Date(),
+          t2 = new Date();       
+          t1.setHours(hora1[0], hora1[1], hora1[2]);
+          t2.setHours(hora2[0], hora2[1], hora2[2]);       
+          //Aquí hago la resta
+          t1.setHours(t1.getHours() - t2.getHours(), t1.getMinutes() - t2.getMinutes(), t1.getSeconds() - t2.getSeconds()); */
+
           var nMin = 1;
           let quan = new Date(new Date().getTime() + (60*1000*nMin)) ;
           cordova.plugins.notification.local.schedule({
               id: Math.floor(Math.random() * (1000000000 - 1) + 1),
               title: "Control Horari",
               text: "Informa la hora", 
-              at: hoy                            
+              at: quan                            
           }); 
           
           alert('notificació/ns activada/es');
