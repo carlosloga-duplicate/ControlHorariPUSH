@@ -74,8 +74,6 @@ alert('granted OK');
             vibrate: true 
           });
 
-alert('setDefaults OK');
-
           var nId = parseInt(id);
           var h = parseInt(hora.split(':')[0]);
           var m = parseInt(hora.split(':')[1]);
@@ -85,13 +83,14 @@ alert('setDefaults OK');
           hoy.setMinutes(m);
           hoy.setSeconds(0);
 
+
           /* sound: isAndroid ? "file://sounds/notification.mp3" : "file://sounds/notification.caf", */
           /* trigger: { every: { hour: 11, minute: 45 } } */
           cordova.plugins.notification.local.schedule({
               id: nId,
-              title: titulo,
-              text: msg, 
-              firstAt: hoy ,                     
+              title: "Control Horari",
+              text: "Informa la hora", 
+              firstAt: hoy.getDate(),                     
               trigger: { every: 'day' }
           }); 
           
