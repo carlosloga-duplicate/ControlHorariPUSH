@@ -118,7 +118,7 @@ alert('granted OK');
               id: 22,
               title: "Control Horari",
               text: "Informa la hora", 
-              firstAt: new Date(new Date().getTime() + 60*1000)                                  
+              at: new Date(new Date().getTime() + 60*1000)                                  
           }); 
           
           alert('notificació/ns activada/es');
