@@ -110,15 +110,16 @@ alert('granted OK');
             }
           });
  */
-
+ 
           /* sound: isAndroid ? "file://sounds/notification.mp3" : "file://sounds/notification.caf", */
           /* trigger: { every: { hour: 11, minute: 45 } } */
           /* trigger: { every: 'day' } */
+          var fecha = new Date(new Date().getTime() + 60*1000);
           cordova.plugins.notification.local.schedule({
               id: 22,
               title: "Control Horari",
               text: "Informa la hora", 
-              at: new Date(new Date().getTime() + 60*1000)                                  
+              at: fecha                                 
           }); 
           
           alert('notificació/ns activada/es');
