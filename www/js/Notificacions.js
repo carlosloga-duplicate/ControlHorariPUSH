@@ -30,18 +30,14 @@ function crearNotificacio(id, date, hora, title, message)
 {   
 
     try{
-
-/*       var nHora = 0;
-      var nMinuto = 0; 
-      nHora = parseInt(hora.split(':')[0]);
-      nMinuto = parseInt(hora.split(':')[1]);
-      var schedule_time = new Date(2019,5,26,nHora,nMinuto,0,0,0);
- */
       var unTime = new Date();
       unTime.setHours(parseInt(hora.split(':')[0]));
       unTime.setMinutes(parseInt(hora.split(':')[1]));
       unTime.setSeconds(0);
+
+      alert(hora.split(':')[0] + "|" + hora.split(':')[1]);
       var schedule_time = new Date(unTime);
+      alert(schedule_time.toString());
 
 //alert('schedule_time = ' + schedule_time.toString());    
 
@@ -56,7 +52,7 @@ function crearNotificacio(id, date, hora, title, message)
             if( granted == true ) {
     
               // If app is given permission try again
-              crearNotificacio();
+              crearNotificacio(id, date, hora, title, message);
     
             } else {
               alert("No hi ha permís per mostrar notificacions!");
@@ -64,27 +60,23 @@ function crearNotificacio(id, date, hora, title, message)
     
           });
         } else {
-    
-          var pathArray = window.location.pathname.split( "/www/" );
-              secondLevelLocation = window.location.protocol +"//"+ pathArray[0];
-              now = new Date();      
-    
+alert('granted OK');    
           var isAndroid = false;    
           if ( device.platform === "Android" ) {
             isAndroid = true;
           }
     
-/*             alert(Date( new Date().getTime() + 10 ).toString()); */
-
+          /* sound: isAndroid ? "file://sounds/notification.mp3" : "file://sounds/notification.caf", */
           cordova.plugins.notification.local.schedule({
               id: id,
               title: title,
-              text: message,
-              sound: isAndroid ? "file://sounds/notification.mp3" : "file://sounds/notification.caf",
+              text: message,              
               firstAt: schedule_time, // new Date( new Date().getTime() + 5000 ) 
               every: "day"  
-              // data: { secret:key }
-          });    
+          }); 
+          
+          alert('notificació/ns activada/es');
+
         }    
       });
     }
