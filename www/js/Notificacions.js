@@ -150,14 +150,14 @@ alert('granted OK');
           }
           var d = new Date(new Date().getTime() + (60*1000*minuts));
 
-alert(d.toDateString());
-
+alert(horaAra.toString() + "|" + minuAra.toString() + "  |  " + horaDef.toString() + "|" + minuDef.toString());          
+alert(minuts.toString());
 
           cordova.plugins.notification.local.schedule({
               id: Math.floor(Math.random() * (1000000000 - 1) + 1),
               title: "Control Horari",
               text: "Informa la hora", 
-              at: new Date(new Date().getTime() + (60*1000*minuts))                            
+              at: new Date(new Date().getTime() + (60000*minuts))                            
           }); 
           
           alert('notificació/ns activada/es');
