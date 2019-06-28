@@ -28,7 +28,7 @@
     });
 } */
 
-function crearNotificacio(id, date, hora, titulo, msg)
+function crearNotificacio(id, dia, hora, titulo, msg)
 {   
 
     try{
@@ -80,13 +80,14 @@ alert('granted OK');
           }); */
 
 /*           var nId = parseInt(id); */
-          var h = parseInt(hora.split(':')[0]);
-          var m = parseInt(hora.split(':')[1]);
+/*           var h = parseInt(hora.split(':')[0]);
+          var m = parseInt(hora.split(':')[1]); */
+/* 
           var hoy = new Date()
           hoy.setDate(date.getDate());
           hoy.setHours(h);
           hoy.setMinutes(m);
-          hoy.setSeconds(0); 
+          hoy.setSeconds(0);  */
 
 
 /* 
@@ -128,13 +129,35 @@ alert('granted OK');
           //Aquí hago la resta
           t1.setHours(t1.getHours() - t2.getHours(), t1.getMinutes() - t2.getMinutes(), t1.getSeconds() - t2.getSeconds()); */
 
-          var nMin = 1;
-          let quan = new Date(new Date().getTime() + (60*1000*nMin)) ;
+          var nMinDiferencia = 0; 
+
+          var horaDef = parseInt(hora.split(':')[0]);
+          var minuDef = parseInt(hora.split(':')[1]);
+                   
+          var horaAra = HoraActual5Min().split(":")[0];
+          var minuAra = HoraActual5Min().split(":")[1];
+
+          var hores = 0;
+          var minuts = 1;
+
+          if(horaDef > horaAra)
+          {
+              minuts = (60 - minuAra) + ((horaDef - (horaAra + 1)) * 60) + minuAra;
+          }
+          else
+          {
+              minuts = -1 * ( minuAra + ((horaAra - (horaDef)) * 60) - minuDef ) ;
+          }
+          var d = new Date(new Date().getTime() + (60*1000*minuts));
+
+alert(d.toDateString());
+
+
           cordova.plugins.notification.local.schedule({
               id: Math.floor(Math.random() * (1000000000 - 1) + 1),
               title: "Control Horari",
               text: "Informa la hora", 
-              at: quan                            
+              at: new Date(new Date().getTime() + (60*1000*minuts))                            
           }); 
           
           alert('notificació/ns activada/es');
