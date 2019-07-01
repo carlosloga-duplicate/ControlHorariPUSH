@@ -34,7 +34,7 @@ var app = {
         var usu_passw = recuperaDatosUSU();
         if(usu_passw.startsWith('ERROR'))
         {
-            mensajePopup("ERROR", usu_passw,0);        
+            mensajePopup("KO", usu_passw,0);        
         }
 
         var storeObject = {
@@ -51,7 +51,7 @@ var app = {
             cordova.getAppVersion.getVersionNumber(function (version) {  //coge la v. del tag version del config.xml
                 $("#tdPie").html("v." + version); 
 
-                $.mobile.changePage('#pageSETHORA', { transition: 'slideup', changeHash: false });
+                $.mobile.changePage('#pageSETHORA', { transition: 'flow', changeHash: false });
 
                 cargarCombos();
 

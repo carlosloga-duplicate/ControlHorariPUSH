@@ -176,17 +176,17 @@ function mensajePopup(cual, txtMsg, esperar)
     $('#Avis').hide();
     if(cual=='OK')
     {
-        $("#AvisEnvioOK").popup();    
+        $("#AvisOK").popup();    
         $("#txtOK").html(txtMsg);
-        $("#AvisEnvioOK").popup("open");         
-        if(esperar > 0) setTimeout(function(){  $("#AvisEnvioOK").popup("close"); }, esperar);
+        $("#AvisOK").popup("open");         
+        if(esperar > 0) setTimeout(function(){  $("#AvisOK").popup("close"); }, esperar);
     }
     else
     {
-        $("#AvisEnvioKO").popup();    
+        $("#AvisKO").popup();    
         $("#txtKO").html(txtMsg);
-        $("#AvisEnvioKO").popup("open"); 
-        if(esperar > 0) setTimeout(function(){  $("#AvisEnvioKO").popup("close"); }, esperar);
+        $("#AvisKO").popup("open"); 
+        if(esperar > 0) setTimeout(function(){  $("#AvisKO").popup("close"); }, esperar);
     }
 }
 
