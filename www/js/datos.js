@@ -67,8 +67,7 @@ function LS_recuperaIDnotificacio(quin)
 function LS_eliminaIDnotificacio(quin)
 {
     try
-    {
-alert('en LS_eliminaIDnotificacio: ' + 'ID_' + quin);        
+    {       
         localStorage.removeItem("ID_" + quin);
     }
     catch(err)
