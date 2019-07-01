@@ -148,11 +148,6 @@ var app = {
                     $("#cgTipoHoraDESCANS").controlgroup("refresh");
                 }                             
 
-                //Evento al abrir el acordeón de SORTIDA 
-                $('#panelSORTIDA').bind('expand', function () {
-                    ScrollHastaAbajo();
-                });
-
             }
             catch(err)
             {         
@@ -166,6 +161,10 @@ var app = {
             alert('Collapsed');
         }); */
 
+        //Evento al abrir el acordeón de SORTIDA 
+        $('#panelSORTIDA').bind('expand', function () {
+            ScrollHastaAbajo();
+        });
 
         /* Al abrir la pagina de CONFIRMACIÓ ······················································ */
         $(document).on('pagebeforeshow', "#pageCONFIRMACIO", function (event, data) {
@@ -247,7 +246,7 @@ var app = {
             }
             else
             {
-                mensajePopup("ERROR", defectes,0);  
+                mensajePopup("KO", defectes,0);  
             }
         });
         
@@ -292,7 +291,7 @@ var app = {
             {              
                 eliminaNotificacio("ENTRADA");
                 LS_recuperaIDnotificacio(valAntAvisos.checkEntrada);
-                if(valAntAvisos.checkEntrada==1) {  alert('Avís per ENTRADA cancel·lat');  mensajePopup('OK','Avís per ENTRADA cancel·lat',4); }
+                if(valAntAvisos.checkEntrada==1) mensajePopup('OK','Avís per ENTRADA cancel·lat',4); 
             }
             
             if(avisaSortida==1) 
@@ -306,8 +305,12 @@ var app = {
                 if(valAntAvisos.checkSortida==1) mensajePopup('OK','Avís per SORTIDA cancel·lat',4);
             }
         
-            $.mobile.changePage('#pageSETHORA', { transition: 'slideup', changeHash: false });
-            $('#acordeonENTRADA_SORTIDA').collapsible( "collapse" );           
+            setTimeout(function(){
+                $.mobile.changePage('#pageSETHORA', { transition: 'slideup', changeHash: false });  
+                $('#acordeonENTRADA_SORTIDA').collapsible( "collapse" );   
+            }, (4000));
+            /* $.mobile.changePage('#pageSETHORA', { transition: 'slideup', changeHash: false }); */
+            /* $('#acordeonENTRADA_SORTIDA').collapsible( "collapse" );    */        
         });    
 
         /* SALIR DE LA APP CUANDO SE PULSE LA TECLA BACK ··········································· */

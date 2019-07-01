@@ -183,7 +183,7 @@ function mensajePopup(cual, txtMsg, esperar)
         $("#AvisOK").popup();    
         $("#txtOK").html(txtMsg);
         $("#AvisOK").popup("open");         
-        if(esperar > 0) setTimeout(function(){  $("#AvisOK").popup("close"); }, esperar * 1000);
+        if(esperar > 0) setTimeout(function(){  $("#AvisOK").popup("close"); }, (esperar * 1000));
     }
     else
     {
@@ -191,7 +191,7 @@ function mensajePopup(cual, txtMsg, esperar)
         $("#AvisKO").popup();    
         $("#txtKO").html(txtMsg);
         $("#AvisKO").popup("open"); 
-        if(esperar > 0) setTimeout(function(){  $("#AvisKO").popup("close"); }, esperar * 1000);
+        if(esperar > 0) setTimeout(function(){  $("#AvisKO").popup("close"); }, (esperar * 1000));
     }
 }
 
