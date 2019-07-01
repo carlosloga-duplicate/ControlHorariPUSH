@@ -94,8 +94,6 @@ function crearNotificacio(quin, hora, titulo, msg)
           {
               minuts = (-1 * ( minuAra + ((horaAra - (horaDef)) * 60) - minuDef ));
           }
-          var d = new Date(new Date().getTime() + (60000*minuts));
-
 /* alert(horaAra.toString() + "|" + minuAra.toString() + "  |  " + horaDef.toString() + "|" + minuDef.toString());          
 alert(minuts.toString()); */
 
@@ -107,7 +105,7 @@ alert(minuts.toString()); */
               at: new Date(new Date().getTime() + (60000 * minuts))                            
           }); 
                   
-          mensajePopup('OK','Rebràs un avís (' + quin + ') cada dia a les ' + hora, 3);
+          mensajePopup('OK','Rebràs un avís (' + quin + ') cada dia a les ' + hora, 0);
           
           eliminaNotificacio(quin); //Elimina la anterior notificación si había ... 
 

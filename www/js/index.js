@@ -37,6 +37,11 @@ var app = {
             mensajePopup("KO", usu_passw,0);        
         }
 
+        var valAntAvisos = {
+            checkEntrada: null,
+            checkSortida: null
+        }
+
         var storeObject = {
             colorFondoConfirmacio: null,  
             usuari: usu_passw.split('|')[0],
@@ -162,8 +167,8 @@ var app = {
                 $("#labelHORA").text(storeObject.hora.toString());
                 if(storeObject.accion.toString() == "SORTIDA")
                 {
-                    document.getElementById("tdDescansH").style.display = 'inline';
-                    document.getElementById("tdDescansB").style.display = 'inline';
+                    document.getElementById("tdDescansH").style.display = '';
+                    document.getElementById("tdDescansB").style.display = '';
                     $("#labelDESCANS").text(storeObject.descans.toString());  
                 }
                 else
@@ -202,8 +207,11 @@ var app = {
                 var avisaEntrada = defectes.split('|')[3];
                 var avisaSortida = defectes.split('|')[4];
 
-                if(avisaEntrada == 1 || avisaEntrada == '1') 
-                    $("#cbE_H_Defecte").prop('checked', true).checkboxradio('refresh');
+                valAntAvisos,checkEntrada = avisaEntrada;
+                valAntAvisos,checkSortida = avisaSortida;
+
+                if(avisaEntrada == 1 || avisaEntrada == '1')                                     
+                    $("#cbE_H_Defecte").prop('checked', true).checkboxradio('refresh');                
                 else
                     $("#cbE_H_Defecte").prop('checked', false).checkboxradio('refresh');
 
@@ -253,12 +261,18 @@ var app = {
             if(avisaEntrada==1) 
                 crearNotificacio("ENTRADA",horaEdefecte,"Control horari","Has de fitxar l'entrada!!!");
             else
+            {
                 eliminaNotificacio("ENTRADA");
+                if(valAntAvisos.checkEntrada==1) mensajePopup('OK','Avís per ENTRADA cancel·lat',4);
+            }
             
             if(avisaSortida==1) 
                 crearNotificacio("SORTIDA",horaSdefecte,"Control horari","Has de fitxar la sortida (i el temps de descans) !!!");
             else
+            {
                 eliminaNotificacio("SORTIDA");
+                if(valAntAvisos.checkSortida==1) mensajePopup('OK','Avís per SORTIDA cancel·lat',4);
+            }
         
             $.mobile.changePage('#pageSETHORA', { transition: 'slideup', changeHash: false });
             $('#acordeonENTRADA_SORTIDA').collapsible( "collapse" );           
