@@ -234,7 +234,7 @@
                                 <td style="text-align: right;"><a id="botonEnviaCONFIRMAR" name="botonEnviaCONFIRMAR" class="ui-btn ui-btn-a ui-btn ui-icon-check ui-btn-icon-left" href="#" data-mini="true">ENVIAR</a></td>
                             </tr></tfoot>
                             <tbody>
-                                <tr><td colspan="2" style="font-weight: bold; text-align: center;"><label style="font-weight: bold; font-size: large;" id="labelAccio" name="labelAccio"></label></td></tr>
+                                <tr><td id="tdACCIO" name="tdACCIO" colspan="2" style="font-weight: bold; text-align: center;"><label style="font-weight: bold; font-size: large;" id="labelAccio" name="labelAccio"></label></td></tr>
                                 <tr><td style="font-weight: bold; text-align: left;">Usuari</td><td style="text-align: left;"><label id="labelUSU" name="labelUSU"></label></td></tr>
                                 <tr><td style="font-weight: bold; text-align: left;">Dia</td><td style="text-align: left;"><label id="labelDIA" name="labelDIA"></label></td></tr>
                                 <tr><td style="font-weight: bold; text-align: left;">Hora</td><td style="text-align: left;"><label id="labelHORA" name="labelHORA"></label></td></tr>
@@ -319,20 +319,6 @@
                 </table>             
             </div>
 
-            <!-- A L E R T S  ************************************************************************************************ -->
-            <div id="Avis" name="Avis" class="blink" style="display: none; text-align: center;">
-                <p id="pTxtAvis" name="pTxtAvis" class="event listening">...</p>
-            </div>
-            <!-- MENSAJES POP UPs -->
-            <div data-role="popup" id="AvisOK" name="AvisOK" data-dismissible="false" data-history="false" data-position-to="window" class="ui-content" style="max-width:280px; background-color: #c7efc4;">
-                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right" data-mini="true">OK</a>
-                <p id="txtOK" name="txtOK">OK</p>
-            </div>               
-            <div data-role="popup" id="AvisKO" name="AvisKO" data-dismissible="false" data-history="false" data-position-to="window" class="ui-content" style="max-width:280px; background-color: #FFC6C1">
-                <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right" data-mini="true">OK</a>
-                <p id="txtKO" name="txtKO">ERROR</p>
-            </div>
-
         </div>
 
         <!-- H I S T Ò R I C  ************************************************************************************** -->
@@ -379,6 +365,22 @@
                     </table>             
                 </div>
         </div>
+
+
+        <!-- A L E R T S  ************************************************************************************************ -->
+        <div id="Avis" name="Avis" class="blink" style="display: none; text-align: center;">
+            <p id="pTxtAvis" name="pTxtAvis" class="event listening">...</p>
+        </div>
+        <!-- MENSAJES POP UPs -->
+        <div data-role="popup" id="AvisOK" name="AvisOK" data-dismissible="false" data-history="false" data-position-to="window" class="ui-content" style="max-width:280px; background-color: #c7efc4;">
+            <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right" data-mini="true">OK</a>
+            <p id="txtOK" name="txtOK">OK</p>
+        </div>               
+        <div data-role="popup" id="AvisKO" name="AvisKO" data-dismissible="false" data-history="false" data-position-to="window" class="ui-content" style="max-width:280px; background-color: #FFC6C1">
+            <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right" data-mini="true">OK</a>
+            <p id="txtKO" name="txtKO">ERROR</p>
+        </div>
+
 
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>

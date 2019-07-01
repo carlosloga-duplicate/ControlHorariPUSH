@@ -167,12 +167,14 @@ var app = {
                 $("#labelHORA").text(storeObject.hora.toString());
                 if(storeObject.accion.toString() == "SORTIDA")
                 {
+                    document.getElementById("tdACCIO").style.backgroundColor = '#FF0000';
                     document.getElementById("tdDescansH").style.display = '';
                     document.getElementById("tdDescansB").style.display = '';
                     $("#labelDESCANS").text(storeObject.descans.toString());  
                 }
                 else
                 {
+                    document.getElementById("tdACCIO").style.backgroundColor = '#4CFF00';
                     document.getElementById("tdDescansH").style.display = 'none';
                     document.getElementById("tdDescansB").style.display = 'none';
                 }
