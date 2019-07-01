@@ -107,13 +107,9 @@ alert(minuts.toString()); */
               at: new Date(new Date().getTime() + (60000 * minuts))                            
           }); 
                  
-          alert('Rebràs un avís (' + quin + ') cada dia a les ' + hora);
-          mensajePopup('OK','Rebràs un avís (' + quin + ') cada dia a les ' + hora, 4);
-          
+          mensajePopup('OK','Rebràs un avís (' + quin + ') cada dia a les ' + hora, 4);          
           eliminaNotificacio(quin); //Elimina la anterior notificación si había ... 
-
-          guardaIDnotificacio(quin,idAleatori); //Guarda nueva hora de aviso en LocalStorage 
-          
+          guardaIDnotificacio(quin,idAleatori); //Guarda nueva hora de aviso en LocalStorage           
         }    
       });
     }
@@ -125,9 +121,7 @@ alert(minuts.toString()); */
 
 function eliminaNotificacio(quin)
 {  
-alert("elimina: " + quin);  
-    var nId = LS_recuperaIDnotificacio(quin);
-alert(nID.toString());    
+    var nId = LS_recuperaIDnotificacio(quin);   
     if(nId >= 0) cancelarNotificacio(nId, quin);
 }
 

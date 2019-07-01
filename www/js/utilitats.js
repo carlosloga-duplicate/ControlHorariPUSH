@@ -200,3 +200,7 @@ function linkWebsite()
     location.href='http://www.SettingConsultoria.com';
 }
 
+function ScrollHastaAbajo()
+{
+    window.scrollTo(0,document.querySelector(".pageSETHORA").scrollHeight);
+}
