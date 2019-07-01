@@ -106,13 +106,13 @@ alert(minuts.toString()); */
               text: msg, 
               at: new Date(new Date().getTime() + (60000 * minuts))                            
           }); 
-                              
+                  
+          mensajePopup('OK','Rebràs un avís (' + quin + ') cada dia a les ' + hora, 3);
+          
           eliminaNotificacio(quin); //Elimina la anterior notificación si había ... 
 
           guardaIDnotificacio(quin,idAleatori); //Guarda nueva hora de aviso en LocalStorage 
-
-          mensajePopup('OK','Rebràs un avís (' + quin + ') cada dia a les ' + hora, 3);
-
+          
         }    
       });
     }
@@ -124,15 +124,18 @@ alert(minuts.toString()); */
 
 function eliminaNotificacio(quin)
 {  
-    var nId = recuperaIDnotificacio(quin);
+    var nId = LS_recuperaIDnotificacio(quin);
+alert(nID.toString());    
     if(nId >= 0) cancelarNotificacio(nId, quin);
 }
 
 function cancelarNotificacio(id, quin)
 {
+alert('en cancelarNotificacio');  
     cordova.plugins.notification.local.cancel(id, function() {
         //alert("Els avisos diaris per '" + quin + "' s'han eliminat"); 
-        eliminaIDnotificacio(quin);
+alert('cancelada');        
+        LS_eliminaIDnotificacio(quin);
   });
 }
 

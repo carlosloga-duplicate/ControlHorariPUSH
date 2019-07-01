@@ -44,13 +44,13 @@ function recuperaDatosDEFECTE()
     }
 }
 
-function guardaIDnotificacio(quin, id)
+function LS_guardaIDnotificacio(quin, id)
 {
-    eliminaIDnotificacio(quin);
+    LS_eliminaIDnotificacio(quin);
     localStorage.setItem("ID_" + quin, id.toString());
 }
 
-function recuperaIDnotificacio(quin)
+function LS_recuperaIDnotificacio(quin)
 {
     var nID = -1;
     try
@@ -64,10 +64,11 @@ function recuperaIDnotificacio(quin)
     return nID;
 }
 
-function eliminaIDnotificacio(quin)
+function LS_eliminaIDnotificacio(quin)
 {
     try
     {
+alert('en LS_eliminaIDnotificacio: ' + 'ID_' + quin);        
         localStorage.removeItem("ID_" + quin);
     }
     catch(err)
