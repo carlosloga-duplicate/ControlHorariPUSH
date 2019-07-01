@@ -174,11 +174,12 @@ function constants(sCual)
 function mensajePopup(cual, txtMsg, esperar)
 {
     $('#Avis').hide();
-    $("#AvisOK").style.display = "none";
-    $("#AvisKO").style.display = "none";
+    document.getElementById("AvisOK").style.display = "none";
+    document.getElementById("AvisKO").style.display = "none";
+
     if(cual=='OK')
     {
-        $("#AvisOK").style.display = "";
+        document.getElementById("AvisOK").style.display = "";
         $("#AvisOK").popup();    
         $("#txtOK").html(txtMsg);
         $("#AvisOK").popup("open");         
@@ -186,7 +187,7 @@ function mensajePopup(cual, txtMsg, esperar)
     }
     else
     {
-        $("#AvisKO").style.display = "";
+        document.getElementById("AvisKO").style.display = "";
         $("#AvisKO").popup();    
         $("#txtKO").html(txtMsg);
         $("#AvisKO").popup("open"); 

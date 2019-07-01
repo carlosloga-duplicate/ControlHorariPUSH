@@ -106,7 +106,8 @@ alert(minuts.toString()); */
               text: msg, 
               at: new Date(new Date().getTime() + (60000 * minuts))                            
           }); 
-                  
+                 
+          alert('Rebràs un avís (' + quin + ') cada dia a les ' + hora);
           mensajePopup('OK','Rebràs un avís (' + quin + ') cada dia a les ' + hora, 4);
           
           eliminaNotificacio(quin); //Elimina la anterior notificación si había ... 
@@ -124,6 +125,7 @@ alert(minuts.toString()); */
 
 function eliminaNotificacio(quin)
 {  
+alert("elimina: " + quin);  
     var nId = LS_recuperaIDnotificacio(quin);
 alert(nID.toString());    
     if(nId >= 0) cancelarNotificacio(nId, quin);
