@@ -202,8 +202,9 @@ function linkWebsite()
 
 function ScrollHastaAbajo()
 {
+    alert('ScrollHastaAbajo');
     /* window.scrollTo(0,document.querySelector(".pageSETHORA").scrollHeight); */
     $('html, body').animate({
-        scrollTop: $("#bottom").offset().top
+        scrollTop: $("#aBottom").offset().top
     }, 500);
 }

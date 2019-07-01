@@ -211,8 +211,8 @@ var app = {
                 var avisaEntrada = defectes.split('|')[3];
                 var avisaSortida = defectes.split('|')[4];
 
-                valAntAvisos.checkEntrada = avisaEntrada;                
-                valAntAvisos.checkSortida = avisaSortida;
+                valAntAvisos.checkEntrada = parseInt(avisaEntrada);                
+                valAntAvisos.checkSortida = parseInt(avisaSortida);
                 valAntAvisos.horaEntrada = null;
                 valAntAvisos.horaSortida = null;
                 
@@ -268,10 +268,7 @@ var app = {
             if( document.getElementById('cbE_H_Defecte').checked ) { avisaEntrada = 1;  }
             if( document.getElementById('cbS_H_Defecte').checked ) { avisaSortida = 1;  } 
 
-            guardaDatosCONFIGURACIO(usu, passw, horaEdefecte, horaSdefecte, tempsDefecte, avisaEntrada, avisaSortida);
-
-
-alert('avisaEntrada: ' + avisaEntrada);            
+            guardaDatosCONFIGURACIO(usu, passw, horaEdefecte, horaSdefecte, tempsDefecte, avisaEntrada, avisaSortida);          
 
             if(avisaEntrada==1) 
             {
@@ -279,10 +276,8 @@ alert('avisaEntrada: ' + avisaEntrada);
                     crearNotificacio("ENTRADA",horaEdefecte,"Control horari","Has de fitxar l'entrada!!!");
             }
             else
-            {
-alert('a eliminar');                
+            {              
                 eliminaNotificacio("ENTRADA");
-alert('valAntAvisos.checkEntrada: ' + valAntAvisos.checkEntrada);
                 if(valAntAvisos.checkEntrada==1) mensajePopup('OK','Avís per ENTRADA cancel·lat',4);
             }
             
