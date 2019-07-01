@@ -174,19 +174,23 @@ function constants(sCual)
 function mensajePopup(cual, txtMsg, esperar)
 {
     $('#Avis').hide();
+    $("#AvisOK").style.display = "none";
+    $("#AvisKO").style.display = "none";
     if(cual=='OK')
     {
+        $("#AvisOK").style.display = "";
         $("#AvisOK").popup();    
         $("#txtOK").html(txtMsg);
         $("#AvisOK").popup("open");         
-        if(esperar > 0) setTimeout(function(){  $("#AvisOK").popup("close"); }, esperar);
+        if(esperar > 0) setTimeout(function(){  $("#AvisOK").popup("close"); }, esperar * 60000);
     }
     else
     {
+        $("#AvisKO").style.display = "";
         $("#AvisKO").popup();    
         $("#txtKO").html(txtMsg);
         $("#AvisKO").popup("open"); 
-        if(esperar > 0) setTimeout(function(){  $("#AvisKO").popup("close"); }, esperar);
+        if(esperar > 0) setTimeout(function(){  $("#AvisKO").popup("close"); }, esperar * 60000);
     }
 }
 

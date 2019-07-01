@@ -97,6 +97,8 @@ function crearNotificacio(quin, hora, titulo, msg)
 /* alert(horaAra.toString() + "|" + minuAra.toString() + "  |  " + horaDef.toString() + "|" + minuDef.toString());          
 alert(minuts.toString()); */
 
+          msg += " [" + hora + "]"; 
+
           var idAleatori = Math.floor(Math.random() * (1000000000 - 1) + 1);
           cordova.plugins.notification.local.schedule({
               id: idAleatori,
