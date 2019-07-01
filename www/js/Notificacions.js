@@ -128,9 +128,9 @@ function eliminaNotificacio(quin)
 
 function cancelarNotificacio(id, quin)
 {
-    cordova.plugins.notification.local.cancel(id, function () {
+    cordova.plugins.notification.local.cancel(1, function() {
         alert("Els avisos diaris per '" + quin + "' s'han eliminat"); 
         eliminaIDnotificacio(quin);
-    }, scope);
+  });
 }
 

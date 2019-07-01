@@ -150,20 +150,18 @@ var app = {
         /* Al abrir la pagina de CONFIRMACIÓ ······················································ */
         $(document).on('pagebeforeshow', "#pageCONFIRMACIO", function (event, data) {
             try
-            {                
-/*              var parameters = $(this).data("url").split("?")[1];;
-                parameter = parameters.replace("color=","");  */           
-               /*  $("#divConfirmar").css("background-color", storeObject.colorFondoConfirmacio.toString());  */
-                var color = storeObject.colorFondoConfirmacio;
-                $(this).css('background-color', color );
-                $("#divConfirmar").css('background-color', color ); 
+            {                               
+/*                 var color = storeObject.colorFondoConfirmacio;
+                $(this).css('background-color', color );                
+                $("#divConfirmar").css('background-color', color );  */
+
                 $("#labelAccio").text(storeObject.accion.toString());
                 $("#labelUSU").text(storeObject.usuari.toString());
                 $("#labelDIA").text(storeObject.dia.toString());
                 $("#labelHORA").text(storeObject.hora.toString());
                 if(storeObject.accion.toString() == "SORTIDA")
                 {
-                    document.getElementById("trDescans").style.display = 'block';
+                    document.getElementById("trDescans").style.display = 'Inline';
                     $("#labelDESCANS").text(storeObject.descans.toString());  
                 }
                 else
