@@ -106,12 +106,12 @@ alert(minuts.toString()); */
               text: msg, 
               at: new Date(new Date().getTime() + (60000 * minuts))                            
           }); 
-                    
-          mensajePopup('OK','Rebràs un avís (' + quin + ') cada dia a les ' + hora, 3);
-
+                              
           eliminaNotificacio(quin); //Elimina la anterior notificación si había ... 
 
           guardaIDnotificacio(quin,idAleatori); //Guarda nueva hora de aviso en LocalStorage 
+
+          mensajePopup('OK','Rebràs un avís (' + quin + ') cada dia a les ' + hora, 3);
 
         }    
       });
