@@ -106,8 +106,8 @@ alert(minuts.toString()); */
               text: msg, 
               at: new Date(new Date().getTime() + (60000 * minuts))                            
           }); 
-          
-          alert('Rebràs un avís (' + quin + ') cada dia a les ' + hora );
+                    
+          mensajePopup('OK','Rebràs un avís (' + quin + ') cada dia a les ' + hora, 3);
 
           eliminaNotificacio(quin); //Elimina la anterior notificación si había ... 
 
@@ -131,7 +131,7 @@ function eliminaNotificacio(quin)
 function cancelarNotificacio(id, quin)
 {
     cordova.plugins.notification.local.cancel(id, function() {
-        alert("Els avisos diaris per '" + quin + "' s'han eliminat"); 
+        //alert("Els avisos diaris per '" + quin + "' s'han eliminat"); 
         eliminaIDnotificacio(quin);
   });
 }
