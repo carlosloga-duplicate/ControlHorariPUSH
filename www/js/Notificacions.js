@@ -105,7 +105,7 @@ alert(minuts.toString()); */
               at: new Date(new Date().getTime() + (60000 * minuts))                            
           }); 
                   
-          mensajePopup('OK','Rebràs un avís (' + quin + ') cada dia a les ' + hora, 0);
+          mensajePopup('OK','Rebràs un avís (' + quin + ') cada dia a les ' + hora, 4);
           
           eliminaNotificacio(quin); //Elimina la anterior notificación si había ... 
 
