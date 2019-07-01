@@ -146,13 +146,11 @@ var app = {
 
                     document.getElementById('labelDTD').innerHTML = "Defecte<br/>" + defectes.split('|')[2];
                     $("#cgTipoHoraDESCANS").controlgroup("refresh");
-                }             
-                
-                //Evento al abrir el acordeón SORTIDA 
+                }                             
+
+                //Evento al abrir el acordeón de SORTIDA 
                 $('#panelSORTIDA').bind('expand', function () {
                     ScrollHastaAbajo();
-/*                 }).bind('collapse', function () {
-                    alert('Collapsed'); */
                 });
 
             }
@@ -161,6 +159,13 @@ var app = {
                 alert(err.toString());       
             }
         });
+
+/*         $('#panelSORTIDA').bind('expand', function () {
+            alert('Expand');
+                }).bind('collapse', function () {
+            alert('Collapsed');
+        }); */
+
 
         /* Al abrir la pagina de CONFIRMACIÓ ······················································ */
         $(document).on('pagebeforeshow', "#pageCONFIRMACIO", function (event, data) {
@@ -286,7 +291,8 @@ var app = {
             else
             {              
                 eliminaNotificacio("ENTRADA");
-                if(valAntAvisos.checkEntrada==1) mensajePopup('OK','Avís per ENTRADA cancel·lat',4);
+                LS_recuperaIDnotificacio(valAntAvisos.checkEntrada);
+                if(valAntAvisos.checkEntrada==1) {  alert('Avís per ENTRADA cancel·lat');  mensajePopup('OK','Avís per ENTRADA cancel·lat',4); }
             }
             
             if(avisaSortida==1) 
