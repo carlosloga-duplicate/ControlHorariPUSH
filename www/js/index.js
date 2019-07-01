@@ -146,7 +146,15 @@ var app = {
 
                     document.getElementById('labelDTD').innerHTML = "Defecte<br/>" + defectes.split('|')[2];
                     $("#cgTipoHoraDESCANS").controlgroup("refresh");
-                }                                      
+                }             
+                
+                //Evento al abrir el acordeón SORTIDA 
+                $('#panelSORTIDA').bind('expand', function () {
+                    ScrollHastaAbajo();
+/*                 }).bind('collapse', function () {
+                    alert('Collapsed'); */
+                });
+
             }
             catch(err)
             {         
