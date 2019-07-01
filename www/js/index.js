@@ -155,14 +155,15 @@ var app = {
                 $(this).css('background-color', color );                
                 $("#divConfirmar").css('background-color', color );  */
 
+                var dia = storeObject.dia.toString();
                 $("#labelAccio").text(storeObject.accion.toString());
                 $("#labelUSU").text(storeObject.usuari.toString());
-                $("#labelDIA").text(storeObject.dia.toString());
+                $("#labelDIA").text( dia.substr(9,2) + "/" + dia.substr(5,2) + "/" + dia.substr(0,4));
                 $("#labelHORA").text(storeObject.hora.toString());
                 if(storeObject.accion.toString() == "SORTIDA")
                 {
-                    document.getElementById("tdDescansH").style.display = 'block';
-                    document.getElementById("tdDescansB").style.display = 'block';
+                    document.getElementById("tdDescansH").style.display = 'inline';
+                    document.getElementById("tdDescansB").style.display = 'inline';
                     $("#labelDESCANS").text(storeObject.descans.toString());  
                 }
                 else

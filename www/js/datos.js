@@ -46,7 +46,7 @@ function recuperaDatosDEFECTE()
 
 function guardaIDnotificacio(quin, id)
 {
-    alert('guardaIDnotificacio: ' + id.toString());
+    eliminaIDnotificacio(quin);
     localStorage.setItem("ID_" + quin, id.toString());
 }
 
@@ -57,18 +57,21 @@ function recuperaIDnotificacio(quin)
     {
         var sID = localStorage.getItem("ID_" + quin);
         nID = parseInt(sID);
-        alert('ID de la notificació recuperat: ' + sID + " | " + nID.toString()) ; 
     }
     catch(err)
     {       
-        alert('ID de la notificació no recuperat!'); 
     }
     return nID;
 }
 
 function eliminaIDnotificacio(quin)
 {
-    localStorage.removeItem("ID_" + quin);
+    try
+    {
+        localStorage.removeItem("ID_" + quin);
+    }
+    catch(err)
+    {}
 }
 
 function historicoUsuSector()
