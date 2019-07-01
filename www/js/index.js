@@ -39,7 +39,9 @@ var app = {
 
         var valAntAvisos = {
             checkEntrada: null,
-            checkSortida: null
+            horaEntrada: null,
+            checkSortida: null,
+            horaSortida: null
         }
 
         var storeObject = {
@@ -167,14 +169,14 @@ var app = {
                 $("#labelHORA").text(storeObject.hora.toString());
                 if(storeObject.accion.toString() == "SORTIDA")
                 {
-                    document.getElementById("tdACCIO").style.backgroundColor = '#FF0000';
+                    document.getElementById("tdACCIO").style.backgroundColor = '#7F0000';
                     document.getElementById("tdDescansH").style.display = '';
                     document.getElementById("tdDescansB").style.display = '';
                     $("#labelDESCANS").text(storeObject.descans.toString());  
                 }
                 else
                 {
-                    document.getElementById("tdACCIO").style.backgroundColor = '#4CFF00';
+                    document.getElementById("tdACCIO").style.backgroundColor = '#267F00';
                     document.getElementById("tdDescansH").style.display = 'none';
                     document.getElementById("tdDescansB").style.display = 'none';
                 }
@@ -209,16 +211,24 @@ var app = {
                 var avisaEntrada = defectes.split('|')[3];
                 var avisaSortida = defectes.split('|')[4];
 
-                valAntAvisos,checkEntrada = avisaEntrada;
-                valAntAvisos,checkSortida = avisaSortida;
-
-                if(avisaEntrada == 1 || avisaEntrada == '1')                                     
+                valAntAvisos.checkEntrada = avisaEntrada;                
+                valAntAvisos.checkSortida = avisaSortida;
+                valAntAvisos.horaEntrada = null;
+                valAntAvisos.horaSortida = null;
+                
+                if(avisaEntrada == 1 || avisaEntrada == '1')    
+                {
+                    valAntAvisos.horaEntrada = $("#selectE_H_Defecte").find(":selected").text();
                     $("#cbE_H_Defecte").prop('checked', true).checkboxradio('refresh');                
+                }
                 else
                     $("#cbE_H_Defecte").prop('checked', false).checkboxradio('refresh');
 
                 if(avisaSortida == 1 || avisaSortida=='1') 
+                {
+                    valAntAvisos.horaSortida = $("#selectS_H_Defecte").find(":selected").text();
                     $("#cbS_H_Defecte").prop('checked', true).checkboxradio('refresh');
+                }
                 else
                     $("#cbS_H_Defecte").prop('checked', false).checkboxradio('refresh');
             }
@@ -261,7 +271,10 @@ var app = {
             guardaDatosCONFIGURACIO(usu, passw, horaEdefecte, horaSdefecte, tempsDefecte, avisaEntrada, avisaSortida);
 
             if(avisaEntrada==1) 
-                crearNotificacio("ENTRADA",horaEdefecte,"Control horari","Has de fitxar l'entrada!!!");
+            {
+                if(valAntAvisos.horaEntrada != horaEdefecte)
+                    crearNotificacio("ENTRADA",horaEdefecte,"Control horari","Has de fitxar l'entrada!!!");
+            }
             else
             {
                 eliminaNotificacio("ENTRADA");
@@ -269,7 +282,10 @@ var app = {
             }
             
             if(avisaSortida==1) 
-                crearNotificacio("SORTIDA",horaSdefecte,"Control horari","Has de fitxar la sortida (i el temps de descans) !!!");
+            {
+                if(valAntAvisos.horaSortida != horaSdefecte)
+                    crearNotificacio("SORTIDA",horaSdefecte,"Control horari","Has de fitxar la sortida (i el temps de descans) !!!");
+            }
             else
             {
                 eliminaNotificacio("SORTIDA");
