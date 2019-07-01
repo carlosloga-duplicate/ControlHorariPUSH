@@ -107,7 +107,7 @@ alert(minuts.toString()); */
               at: new Date(new Date().getTime() + (60000 * minuts))                            
           }); 
           
-          alert('notificació/ns activada/es');
+          alert('Rebràs un avís (' + quin + ') cada dia a les ' + hora ) ;
 
           guardaIDnotificacio(quin,idAleatori);
 
