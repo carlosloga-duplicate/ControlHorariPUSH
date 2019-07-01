@@ -134,21 +134,21 @@ alert('granted OK');
           var horaDef = parseInt(hora.split(':')[0]);
           var minuDef = parseInt(hora.split(':')[1]);
                    
-          var horaAra = HoraActual5Min().split(":")[0];
-          var minuAra = HoraActual5Min().split(":")[1];
+          var horaAra = parseInt(HoraActual5Min().split(":")[0]);
+          var minuAra = parseInt(HoraActual5Min().split(":")[1]);
 
           var hores = 0;
           var minuts = 1;
 
           if(horaDef > horaAra)
           {
-              minuts = (60 - minuAra) + ((horaDef - (horaAra + 1)) * 60) + minuAra;
+              minuts = (60 - minuAra) + ((horaDef - (horaAra + 1)) * 60) + minuDef;
           }
           else
           {
               minuts = -1 * ( minuAra + ((horaAra - (horaDef)) * 60) - minuDef ) ;
           }
-          var d = new Date(new Date().getTime() + (60*1000*minuts));
+          var d = new Date(new Date().getTime() + (60000*minuts));
 
 alert(horaAra.toString() + "|" + minuAra.toString() + "  |  " + horaDef.toString() + "|" + minuDef.toString());          
 alert(minuts.toString());
