@@ -44,6 +44,30 @@ function recuperaDatosDEFECTE()
     }
 }
 
+function guardaIDnotificacio(quin, id)
+{
+    localStorage.setItem("ID_" + quin, id.toString());
+}
+
+function recuperaIDnotificacio(quin)
+{
+    var nID = -1;
+    try
+    {
+        var sID = localStorage.getItem("ID_" + quin);
+        nID = parseInt(sID);
+    }
+    catch(err)
+    {        
+    }
+    return nID;
+}
+
+function eliminaIDnotificacio(quin)
+{
+    localStorage.removeItem("ID_" + quin);
+}
+
 function historicoUsuSector()
 {
     $('#pTxtAvis').html(constants("WAITRebent"));

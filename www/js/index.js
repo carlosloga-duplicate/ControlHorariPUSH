@@ -248,10 +248,16 @@ var app = {
             if( document.getElementById('cbS_H_Defecte').checked ) { avisaSortida = 1;  } 
 
             guardaDatosCONFIGURACIO(usu, passw, horaEdefecte, horaSdefecte, tempsDefecte, avisaEntrada, avisaSortida);
-          
-            if(avisaEntrada==1 ) crearNotificacio(15,"2019/25/06",horaEdefecte,"FICHAR","Ficha la entrada !!!");
+
+            if(avisaEntrada==1) 
+                crearNotificacio("ENTRADA",horaEdefecte,"Control horari","Has de fitxar l'entrada!!!");
+            else
+                eliminaNotificacio("ENTRADA");
             
-            //if(avisaSortida==1 ) crearNotificacio(16,"2019/25/06",horaSdefecte,"FICHAR","Ficha la salida y el tiempo de descanso !!!");
+            if(avisaSortida==1) 
+                crearNotificacio("SORTIDA",horaSdefecte,"Control horari","Has de fitxar la sortida (i el temps de descans) !!!");
+            else
+                eliminaNotificacio("SORTIDA");
         
             $.mobile.changePage('#pageSETHORA', { transition: 'slideup', changeHash: false });
             $('#acordeonENTRADA_SORTIDA').collapsible( "collapse" );           
