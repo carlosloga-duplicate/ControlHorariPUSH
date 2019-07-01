@@ -270,6 +270,9 @@ var app = {
 
             guardaDatosCONFIGURACIO(usu, passw, horaEdefecte, horaSdefecte, tempsDefecte, avisaEntrada, avisaSortida);
 
+
+alert('avisaEntrada: ' + avisaEntrada);            
+
             if(avisaEntrada==1) 
             {
                 if(valAntAvisos.horaEntrada != horaEdefecte)
@@ -277,7 +280,9 @@ var app = {
             }
             else
             {
+alert('a eliminar');                
                 eliminaNotificacio("ENTRADA");
+alert('valAntAvisos.checkEntrada: ' + valAntAvisos.checkEntrada);
                 if(valAntAvisos.checkEntrada==1) mensajePopup('OK','Avís per ENTRADA cancel·lat',4);
             }
             
