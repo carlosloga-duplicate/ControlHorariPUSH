@@ -46,6 +46,7 @@ function recuperaDatosDEFECTE()
 
 function guardaIDnotificacio(quin, id)
 {
+    alert('guardaIDnotificacio: ' + id.toString());
     localStorage.setItem("ID_" + quin, id.toString());
 }
 
@@ -56,9 +57,11 @@ function recuperaIDnotificacio(quin)
     {
         var sID = localStorage.getItem("ID_" + quin);
         nID = parseInt(sID);
+        alert('ID de la notificació recuperat: ' + sID + " | " + nID.toString()) ; 
     }
     catch(err)
-    {        
+    {       
+        alert('ID de la notificació no recuperat!'); 
     }
     return nID;
 }

@@ -161,12 +161,14 @@ var app = {
                 $("#labelHORA").text(storeObject.hora.toString());
                 if(storeObject.accion.toString() == "SORTIDA")
                 {
-                    document.getElementById("trDescans").style.display = 'Inline';
+                    document.getElementById("tdDescansH").style.display = 'block';
+                    document.getElementById("tdDescansB").style.display = 'block';
                     $("#labelDESCANS").text(storeObject.descans.toString());  
                 }
                 else
                 {
-                    document.getElementById("trDescans").style.display = 'none';
+                    document.getElementById("tdDescansH").style.display = 'none';
+                    document.getElementById("tdDescansB").style.display = 'none';
                 }
             }
             catch(err)
