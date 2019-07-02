@@ -263,7 +263,8 @@ var app = {
                 $('#panelSORTIDA').trigger('collapse');                                                            
 
                 $("#pTxtAvis").text("enviant dades ..."); 
-                $("#Avis").show();                                   
+                $("#Avis").show();  
+                document.getElementById("Avis").style.display='';                                 
                 setTimeout(function(){                    
                     $("#pTxtAvis").text("...");
                     $("#Avis").hide();    
