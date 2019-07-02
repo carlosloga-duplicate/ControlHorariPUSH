@@ -89,12 +89,15 @@ function LS_recuperaUltimaEntrada()
 
 function CalculoTempsDia(horaS, diaS, horaE, diaE, minDescans)
 {
+    alert('llega minDescans: ' + minDescans);
     var nMinDescans = 0;
     try
     {
         nMinDescans = parseInt(minDescans);
     }
-    catch(err){nMinDescans = 0;}
+    catch(err)
+    {nMinDescans = 0;};
+
     var sTemps = '';
     var dEntrada = new Date(parseInt(diaE.split('/')[2]) , parseInt(diaE.split('/')[1]) - 1, parseInt(diaE.split('/')[0]), parseInt(horaE.split(":")[0]), parseInt(horaE.split(":")[1]) , 0);   
     var dSortida = new Date(parseInt(diaS.split('/')[2]) , parseInt(diaS.split('/')[1]) - 1, parseInt(diaS.split('/')[0]), parseInt(horaS.split(":")[0]), parseInt(horaS.split(":")[1]) , 0);   
