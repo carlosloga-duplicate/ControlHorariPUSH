@@ -254,24 +254,21 @@ var app = {
         });
 
         /* CONFIRMAR ENVIAMENT ····················································· */
-        $('#botonEnviaCONFIRMAR').click(function() {                        
+        $('#botonEnviaCONFIRMAR').click(function() {               
+
                 $.mobile.changePage('#pageSETHORA', { transition: 'slideup', changeHash: false });
                 $('#panelENTRADA').collapsible( "collapse" );
                 $('#panelSORTIDA').collapsible( "collapse" );
                 $('#panelENTRADA').trigger('collapse');
-                $('#panelSORTIDA').trigger('collapse');                                     
-alert('1');                         
-            /* document.getElementById("Avis").style.display=''; */
-            $("#Avis").show(); 
-alert('2');                
-            $("#pTxtAvis").text("enviant dades ...");
-alert('3');            
-            setTimeout(function(){
-alert('4 pasaron 3000');                    
-                $("#pTxtAvis").text("...");
-                $("#Avis").hide();    
-                mensajePopup("OK","El fitxatge s'ha enregistrat correctament", 2);
-            }, 3000);
+                $('#panelSORTIDA').trigger('collapse');                                                            
+
+                $("#pTxtAvis").text("enviant dades ..."); 
+                $("#Avis").show();                                   
+                setTimeout(function(){                    
+                    $("#pTxtAvis").text("...");
+                    $("#Avis").hide();    
+                    mensajePopup("OK","El fitxatge s'ha enregistrat correctament", 2);
+                }, 3000);
         });
 
         /* GUARDAR CONFIGURACIÓ ····················································· */
