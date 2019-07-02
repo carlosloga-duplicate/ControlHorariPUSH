@@ -89,10 +89,17 @@ function LS_recuperaUltimaEntrada()
 
 function CalculoTempsDia(horaS, diaS, horaE, diaE, minDescans)
 {
+    var nMinDescans = 0;
+    try
+    {
+        nMinDescans = parseInt(minDescans);
+    }
+    catch(err){nMinDescans = 0;}
     var sTemps = '';
     var dEntrada = new Date(parseInt(diaE.split('/')[2]) , parseInt(diaE.split('/')[1]) - 1, parseInt(diaE.split('/')[0]), parseInt(horaE.split(":")[0]), parseInt(horaE.split(":")[1]) , 0);   
     var dSortida = new Date(parseInt(diaS.split('/')[2]) , parseInt(diaS.split('/')[1]) - 1, parseInt(diaS.split('/')[0]), parseInt(horaS.split(":")[0]), parseInt(horaS.split(":")[1]) , 0);   
     var nRestaMin = (dSortida.getTime() - dEntrada.getTime()) / 60000; 
+    nRestaMin -= nMinDescans;
 alert('resta Min.: ' + nRestaMin.toString());    
     if(nRestaMin > 60) 
     {
@@ -100,10 +107,8 @@ alert('resta Min.: ' + nRestaMin.toString());
         sTemps = horas.toString().padStart(2,'0') + ":" + (nRestaMin - (horas * 60)).toString().padStart(2,'0');
     }
     else
-        sTemps = nRestaMin.toString().padStart(2,'0');
+        sTemps = nRestaMin.toString().padStart(2,'0'); 
 
-    sTemps -= minDescans; 
-    
 alert('calculo: ' + sTemps);        
     return sTemps;
 }
