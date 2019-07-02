@@ -97,7 +97,7 @@ alert('resta Min.: ' + nRestaMin.toString());
     if(nRestaMin > 60) 
     {
         var horas = Math.floor(nRestaMin/60);
-        sTemps = horas.toString().padStart(2,'0'); + ":" + (nRestaMin - (horas * 60)).padStart(2,'0');
+        sTemps = horas.toString().padStart(2,'0'); + ":" + (nRestaMin - (horas * 60)).toString().padStart(2,'0');
     }
     else
         sTemps = nRestaMin.toString().padStart(2,'0');
