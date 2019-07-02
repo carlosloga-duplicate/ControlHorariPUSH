@@ -101,8 +101,7 @@ var app = {
         });
 
         /* FITXAR ENTRADA ······················································ */
-        $('#botonENTRADA').click(function() {
-            /* $.mobile.changePage('#pageCONFIRMACIO', { dataUrl : "pageCONFIRMACIO?color=D2F1CE", data : { 'color' : 'D2F1CE' }, reloadPage : true, changeHash : true }); */
+        $('#botonENTRADA').click(function() {            
             storeObject.colorFondoConfirmacio = '#D2F1CE';
             storeObject.accion = 'ENTRADA';
             storeObject.dia = $("#inputDIA").val();
@@ -111,8 +110,7 @@ var app = {
         });
 
         /* FITXAR SORTIDA ······················································ */
-        $('#botonSORTIDA').click(function() {
-            /* $.mobile.changePage('#pageCONFIRMACIO', { dataUrl : "pageCONFIRMACIO?color=FCC6B6", data : { 'color' : 'FCC6B6' }, changeHash : false, transition: 'slideup' }); */
+        $('#botonSORTIDA').click(function() {        
             storeObject.colorFondoConfirmacio = '#FCC6B6';
             storeObject.accion = 'SORTIDA';
             storeObject.dia = $("#inputDIA").val();
@@ -172,15 +170,11 @@ var app = {
         $(document).on('pagebeforeshow', "#pageCONFIRMACIO", function (event, data) {
             try
             {                               
-/*                 var color = storeObject.colorFondoConfirmacio;
-                $(this).css('background-color', color );                
-                $("#divConfirmar").css('background-color', color );  */
-
                 var dia = storeObject.dia.toString();
                 var diaFormat = dia.substr(9,2) + "/" + dia.substr(5,2) + "/" + dia.substr(0,4);
                 $("#labelAccio").text(storeObject.accion.toString());
                 $("#labelUSU").text(storeObject.usuari.toString());
-                $("#labelDIA").text( diaFormat);
+                $("#labelDIA").text(diaFormat);
                 $("#labelHORA").text(storeObject.hora.toString());
                 if(storeObject.accion.toString() == "SORTIDA")
                 {
@@ -275,7 +269,10 @@ var app = {
 
         /* CONFIRMAR ENVIAMENT ····················································· */
         $('#botonEnviaCONFIRMAR').click(function() {               
-                if(storeObject.accion == 'ENTRADA') LS_guardaUltimaEntrada(storeObject.hora,  dia.substr(9,2) + "/" + dia.substr(5,2) + "/" + dia.substr(0,4));                
+                if(storeObject.accion == 'ENTRADA')
+                {
+                    LS_guardaUltimaEntrada(storeObject.hora,  storeObject.dia.substr(9,2) + "/" + storeObject.dia.substr(5,2) + "/" + storeObject.dia.substr(0,4));
+                }
 
                 $.mobile.changePage('#pageSETHORA', { transition: 'slideup', changeHash: false });
                 $('#panelENTRADA').collapsible( "collapse" );

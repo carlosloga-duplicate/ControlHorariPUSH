@@ -76,17 +76,16 @@ function LS_eliminaIDnotificacio(quin)
 
 function LS_guardaUltimaEntrada(hora, dia)
 {
-alert('guardo: ' + hora + "|" + dia);    
+alert('guardo: ' + hora + '|' + dia);    
     localStorage.setItem('ULTIMA_HORA_ENTRADA', hora);
     localStorage.setItem('ULTIMO_DIA_ENTRADA', dia);
 }
 
 function LS_recuperaUltimaEntrada()
 {
-    var ultimaEntrada = '';
     var ultimaHoraEntrada = localStorage.getItem('ULTIMA_HORA_ENTRADA');
     var ultimoDiaEntrada = localStorage.getItem('ULTIMO_DIA_ENTRADA'); 
-alert('recupero: ' +  ultimaHoraEntrada + "|" + ultimoDiaEntrada);    
+alert("recupero: " +  ultimaHoraEntrada + "|" + ultimoDiaEntrada);    
     return ultimaHoraEntrada + "|" + ultimoDiaEntrada;
 }
 
@@ -96,7 +95,7 @@ function CalculoTempsDia(horaS, diaS, horaE, diaE)
     var dEntrada = new Date(parseInt(diaE.split('/')[2]) , parseInt(diaE.split('/')[1]) - 1, parseInt(diaE.split('/')[0]), parseInt(horaE.split(":")[0]), parseInt(horaE.split(":")[1]) , 0);   
     var dSortida = new Date(parseInt(diaS.split('/')[2]) , parseInt(diaS.split('/')[1]) - 1, parseInt(diaS.split('/')[0]), parseInt(horaS.split(":")[0]), parseInt(horaS.split(":")[1]) , 0);   
     var nRestaMin = (dSortida.getTime() - dEntrada.getTime()) / 60000; 
-alert('resta Min.: ' + nRestaMin);    
+alert('resta Min.: ' + nRestaMin.toString());    
     if(nRestaMin > 60) 
     {
         var horas = Math.floor(nRestaMin/60);
