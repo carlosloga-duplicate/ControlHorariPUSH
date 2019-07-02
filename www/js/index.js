@@ -261,14 +261,15 @@ var app = {
                 $('#panelENTRADA').trigger('collapse');
                 $('#panelSORTIDA').trigger('collapse');                                     
 alert('1');                         
-            $("#Avis").style.display=''; 
+            /* document.getElementById("Avis").style.display=''; */
+            $("#Avis").show(); 
 alert('2');                
-            $("#pTxtAvis").html("enviant dades ...");
+            $("#pTxtAvis").text("enviant dades ...");
 alert('3');            
             setTimeout(function(){
 alert('4 pasaron 3000');                    
-                $("#pTxtAvis").html("...");
-                $("#Avis").style.display='none';    
+                $("#pTxtAvis").text("...");
+                $("#Avis").hide();    
                 mensajePopup("OK","El fitxatge s'ha enregistrat correctament", 2);
             }, 3000);
         });
