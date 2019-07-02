@@ -148,6 +148,14 @@ var app = {
                     $("#cgTipoHoraDESCANS").controlgroup("refresh");
                 }                             
 
+                $("#botonMenu .ui-icon-gear").parent().find(".ui-btn-text").css('color', "#1C3A6E");
+                $("#botonMenu .ui-icon-gear").parent().find(".ui-btn-text").css('backColor', "#5379BC");
+
+                $("#panelENTRADA .ui-icon-carat-r").parent().find(".ui-btn-text").css('color', "#1C3A6E");
+                $("#panelENTRADA .ui-icon-carat-r").parent().find(".ui-btn-text").css('backColor', "#5379BC");
+
+                $("#panelSORTIDA .ui-icon-carat-r").parent().find(".ui-btn-text").css('color', "#1C3A6E");
+                $("#panelSORTIDA .ui-icon-carat-r").parent().find(".ui-btn-text").css('backColor', "#5379BC");
             }
             catch(err)
             {         
@@ -175,14 +183,14 @@ var app = {
                 $("#labelHORA").text(storeObject.hora.toString());
                 if(storeObject.accion.toString() == "SORTIDA")
                 {
-                    document.getElementById("tdACCIO").style.backgroundColor = '#7F0000';
+                    /* document.getElementById("tdACCIO").style.backgroundColor = '#7F0000'; */
                     document.getElementById("tdDescansH").style.display = '';
                     document.getElementById("tdDescansB").style.display = '';
                     $("#labelDESCANS").text(storeObject.descans.toString());  
                 }
                 else
                 {
-                    document.getElementById("tdACCIO").style.backgroundColor = '#267F00';
+                    /* document.getElementById("tdACCIO").style.backgroundColor = '#267F00'; */
                     document.getElementById("tdDescansH").style.display = 'none';
                     document.getElementById("tdDescansB").style.display = 'none';
                 }
