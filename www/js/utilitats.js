@@ -131,12 +131,17 @@ function cargarCombos()
         $("#selectHoraSORTIDA").append('<option value="' + sHora + '">' + sHora + '</option>');
         $("#selectE_H_Defecte").append('<option value="' + sHora + '">' + sHora + '</option>');
         $("#selectS_H_Defecte").append('<option value="' + sHora + '">' + sHora + '</option>');
-        if(dHora.getHours() < 4)
+/*         if(dHora.getHours() < 4)
         {
             $("#selecTempsDESCANS").append('<option value="' + sHora + '">' + sHora + '</option>');
             $("#selecT_Defecte").append('<option value="' + sHora + '">' + sHora + '</option>');
-        }
-    }    
+        } */
+    }   
+    for(i=10; i<300; i+=5)
+    {
+        $("#selecTempsDESCANS").append('<option value="' + i.toString() + '">' + i.toString() + '</option>');
+        $("#selecT_Defecte").append('<option value="' + i.toString() + '">' + i.toString() + '</option>');
+    } 
 }
 
 function constants(sCual)

@@ -186,7 +186,7 @@ var app = {
                     var ultimaEntrada = LS_recuperaUltimaEntrada();
                     var ultimaHoraEntrada = ultimaEntrada.split('|')[0];
                     var ultimoDiaEntrada = ultimaEntrada.split('|')[1];
-                    var sTempsDia = CalculoTempsDia(storeObject.hora.toString() , diaFormat, ultimaHoraEntrada, ultimoDiaEntrada );
+                    var sTempsDia = CalculoTempsDia(storeObject.hora.toString() , diaFormat, ultimaHoraEntrada, ultimoDiaEntrada, storeObject.descans.toString() );
 
                     document.getElementById("tdTempsDiaH").style.display = '';
                     document.getElementById("tdTempsDiaB").style.display = '';
