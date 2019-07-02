@@ -83,8 +83,7 @@ function LS_guardaUltimaEntrada(hora, dia)
 function LS_recuperaUltimaEntrada()
 {
     var ultimaHoraEntrada = localStorage.getItem('ULTIMA_HORA_ENTRADA');
-    var ultimoDiaEntrada = localStorage.getItem('ULTIMO_DIA_ENTRADA'); 
-alert("recupero: " +  ultimaHoraEntrada.toString() + "|" + ultimoDiaEntrada.toString());    
+    var ultimoDiaEntrada = localStorage.getItem('ULTIMO_DIA_ENTRADA');    
     return ultimaHoraEntrada + "|" + ultimoDiaEntrada;
 }
 
