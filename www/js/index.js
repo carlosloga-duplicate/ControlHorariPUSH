@@ -155,14 +155,9 @@ var app = {
             }
         });
 
-/*         $('#panelSORTIDA').bind('expand', function () {
-            alert('Expand');
-                }).bind('collapse', function () {
-            alert('Collapsed');
-        }); */
-
         //Evento al abrir el acordeón de SORTIDA 
-        $('#panelSORTIDA').bind('expand', function () {
+        $(document).on( "collapsibleexpand", "panelSORTIDA",function( event, ui ) {
+            alert('expand');
             ScrollHastaAbajo();
         });
 
@@ -294,6 +289,9 @@ var app = {
                 if(valAntAvisos.checkEntrada==1) mensajePopup('OK','Avís per ENTRADA cancel·lat',4); 
             }
             
+            $.mobile.changePage('#pageSETHORA', { transition: 'slideup', changeHash: false }); 
+            $('#acordeonENTRADA_SORTIDA').collapsible( "collapse" );    
+
             if(avisaSortida==1) 
             {
                 if(valAntAvisos.horaSortida != horaSdefecte)
@@ -305,10 +303,10 @@ var app = {
                 if(valAntAvisos.checkSortida==1) mensajePopup('OK','Avís per SORTIDA cancel·lat',4);
             }
         
-            setTimeout(function(){
+/*             setTimeout(function(){
                 $.mobile.changePage('#pageSETHORA', { transition: 'slideup', changeHash: false });  
                 $('#acordeonENTRADA_SORTIDA').collapsible( "collapse" );   
-            }, (4000));
+            }, (4000)); */
             /* $.mobile.changePage('#pageSETHORA', { transition: 'slideup', changeHash: false }); */
             /* $('#acordeonENTRADA_SORTIDA').collapsible( "collapse" );    */        
         });    
