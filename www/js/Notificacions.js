@@ -1,38 +1,11 @@
 
 /* FAQS : https://github.com/katzer/cordova-plugin-local-notifications/issues?page=4&q=is%3Aissue+is%3Aopen */
-
 /* https://github.com/sitepoint-editors/ReminderApp */
 
-/* function configurarNotificacio(titol, missatge, quan, cadaMinutos, id)
-{
-    var sound = device.platform == 'Android' ? 'file://sound.mp3' : 'file://beep.caf';
-    var date = new Date();
-
-    cordova.plugins.notification.local.schedule({
-        id: id,
-        title: titol,
-        message: missatge,
-        at: quan,
-        sound: sound,
-        icon: "http://domain.com/icon.png"
-    });
-
-    cordova.plugins.notification.local.schedule({
-        id: id,
-        title: titol,
-        message: missatge,
-        firstAt: date,
-        every: cadaMinutos,
-        sound: sound,
-        icon: "http://domain.com/icon.png"
-    });
-} */
 
 function crearNotificacio(quin, hora, titulo, msg)
 {   
-
     try{
-
     cordova.plugins.notification.local.hasPermission(function (granted) {
         if( granted == false ) {
     
@@ -54,8 +27,6 @@ function crearNotificacio(quin, hora, titulo, msg)
         } 
         else 
         {
-
-/* alert('granted OK');     */
           var isAndroid = false;    
           if ( device.platform === "Android" ) {
             isAndroid = true;
@@ -99,12 +70,31 @@ alert(minuts.toString()); */
 
           msg += " [" + hora + "]"; 
 
+/*           var sound = device.platform == 'Android' ? 'file://sound.mp3' : 'file://beep.caf';
+          var date = new Date();
+      
+          cordova.plugins.notification.local.schedule({
+              id: id,
+              title: titol,
+              message: missatge,
+              at: quan,
+              sound: sound,
+              icon: "http://domain.com/icon.png"
+          }); */
+
+          /* var so = device.platform == 'Android' ? 'file://sound.mp3' : 'file://beep.caf'; */
+          var so = device.platform != 'iOS' ? 'file://audio/beepFichar.mp3' : 'content://audio/beepFichar.m4r';
+
           var idAleatori = Math.floor(Math.random() * (1000000000 - 1) + 1);
           cordova.plugins.notification.local.schedule({
               id: idAleatori,
               title: titulo,
               text: msg, 
-              at: new Date(new Date().getTime() + (60000 * minuts))                            
+              at: new Date(new Date().getTime() + (60000 * minuts)), 
+              repeat:  'daily',
+              sound: so,
+              icon: "res://iconLogo.png",
+              smallIcon: "res://iconLogo.png"                                        
           }); 
                  
           mensajePopup('OK','Rebràs un avís (' + quin + ') cada dia a les ' + hora, 4);          
@@ -127,9 +117,7 @@ function eliminaNotificacio(quin)
 
 function cancelarNotificacio(id, quin)
 {
-    cordova.plugins.notification.local.cancel(id, function() {
-        //alert("Els avisos diaris per '" + quin + "' s'han eliminat"); 
-alert('cancelada');        
+    cordova.plugins.notification.local.cancel(id, function() {      
         LS_eliminaIDnotificacio(quin);
   });
 }

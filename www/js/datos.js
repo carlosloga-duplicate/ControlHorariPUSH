@@ -79,10 +79,6 @@ function historicoUsuSector()
     $('#pTxtAvis').html(constants("WAITRebent"));
     $('#Avis').show();
 
-/*  var datosUsu = recuperaDatosUSU();
-    var sUsu = datosUsu.split("|")[0]; 
-    var sSector = datosUsu.split("|")[1];  */
-
     var sUsu = $('#txtCampUSU').val(); 
     var sSector = $('#txtCampSECTOR').val(); 
 

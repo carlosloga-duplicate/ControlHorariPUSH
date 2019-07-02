@@ -157,7 +157,6 @@ var app = {
 
         //Evento al abrir el acordeón de SORTIDA 
         $(document).on( "collapsibleexpand", "#panelSORTIDA",function( event, ui ) {
-            alert('expand');
             ScrollHastaAbajo();
         });
 

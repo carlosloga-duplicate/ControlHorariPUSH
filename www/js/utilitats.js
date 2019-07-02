@@ -202,8 +202,6 @@ function linkWebsite()
 
 function ScrollHastaAbajo()
 {
-    alert('ScrollHastaAbajo');
-    /* window.scrollTo(0,document.querySelector(".pageSETHORA").scrollHeight); */
     $('html, body').animate({
         scrollTop: $("#aBottom").offset().top
     }, 500);
