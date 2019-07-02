@@ -285,7 +285,7 @@ var app = {
             {              
                 eliminaNotificacio("ENTRADA");
                 LS_recuperaIDnotificacio(valAntAvisos.checkEntrada);
-                if(valAntAvisos.checkEntrada==1) mensajePopup('OK','Avís per ENTRADA cancel·lat',3); 
+                if(valAntAvisos.checkEntrada==1) mensajePopup('OK','Avís per ENTRADA cancel·lat',2); 
             }            
 
             if(avisaSortida==1) 
@@ -296,13 +296,13 @@ var app = {
             else
             {
                 eliminaNotificacio("SORTIDA");
-                if(valAntAvisos.checkSortida==1) mensajePopup('OK','Avís per SORTIDA cancel·lat',3);
+                if(valAntAvisos.checkSortida==1) mensajePopup('OK','Avís per SORTIDA cancel·lat',2);
             }
         
             setTimeout(function(){
                 $.mobile.changePage('#pageSETHORA', { transition: 'slideup', changeHash: false });  
                 $('#acordeonENTRADA_SORTIDA').collapsible( "collapse" );   
-            }, (3000));
+            }, (2000));
    
         });    
 

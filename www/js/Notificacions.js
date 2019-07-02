@@ -70,18 +70,6 @@ alert(minuts.toString()); */
 
           msg += " [" + hora + "]"; 
 
-/*           var sound = device.platform == 'Android' ? 'file://sound.mp3' : 'file://beep.caf';
-          var date = new Date();
-      
-          cordova.plugins.notification.local.schedule({
-              id: id,
-              title: titol,
-              message: missatge,
-              at: quan,
-              sound: sound,
-              icon: "http://domain.com/icon.png"
-          }); */
-
           /* var so = device.platform == 'Android' ? 'file://sound.mp3' : 'file://beep.caf'; */
           var so = device.platform != 'iOS' ? 'file://audio/beepFichar.mp3' : 'content://audio/beepFichar.m4r';
 
@@ -94,10 +82,13 @@ alert(minuts.toString()); */
               repeat:  'daily',
               sound: so,
               icon: "res://iconLogo.png",
-              smallIcon: "res://iconLogo.png"                                        
+              smallIcon: "res://iconLogo.png",
+              foreground: true,
+              vibrate: true, 
+              attachments: ['file://img/imgNotif.png']                                          
           }); 
                  
-          mensajePopup('OK','Rebràs un avís (' + quin + ') cada dia a les ' + hora, 4);          
+          mensajePopup('OK','Rebràs un avís (' + quin + ') cada dia a les ' + hora, 2);          
           eliminaNotificacio(quin); //Elimina la anterior notificación si había ... 
           guardaIDnotificacio(quin,idAleatori); //Guarda nueva hora de aviso en LocalStorage           
         }    
