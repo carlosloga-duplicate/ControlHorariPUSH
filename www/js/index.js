@@ -301,7 +301,7 @@ var app = {
             if(avisaSortida==1) 
             {
                 if(valAntAvisos.horaSortida != horaSdefecte)
-                    crearNotificacio("SORTIDA",horaSdefecte,"Control horari","Has de fitxar la sortida (i el temps de descans) !!!");
+                    crearNotificacio("SORTIDA",horaSdefecte,"Control horari","Has de fitxar la sortida (i temps descans) !!!");
             }
             else
             {
