@@ -65,13 +65,13 @@ function crearNotificacio(quin, hora, titulo, msg)
           {
               minuts = (-1 * ( minuAra + ((horaAra - (horaDef)) * 60) - minuDef ));
           }
-/* alert(horaAra.toString() + "|" + minuAra.toString() + "  |  " + horaDef.toString() + "|" + minuDef.toString());          
-alert(minuts.toString()); */
+      /* alert(horaAra.toString() + "|" + minuAra.toString() + "  |  " + horaDef.toString() + "|" + minuDef.toString());          
+      alert(minuts.toString()); */
 
           msg += " [" + hora + "]"; 
 
           /* var so = device.platform == 'Android' ? 'file://sound.mp3' : 'file://beepFichar.m4r';    bee.caf  */
-/*           var so = device.platform != 'iOS' ? 'file://audio/beepFichar.mp3' : 'content://audio/beepFichar.m4r';
+          /* var so = device.platform != 'iOS' ? 'file://audio/beepFichar.mp3' : 'content://audio/beepFichar.m4r';
           vibrate: true, 
           attachments: ['file://img/imgNotif.png'],
           sound: so,
@@ -79,18 +79,20 @@ alert(minuts.toString()); */
 
           var so = device.platform == 'Android' ? 'file://sound.mp3' : 'file://beepFichar.m4r';
           var idAleatori = Math.floor(Math.random() * (1000000000 - 1) + 1);
-          
+
           cordova.plugins.notification.local.schedule({
               id: idAleatori,
               title: titulo,
               text: msg,               
-              at: new Date(new Date().getTime() + (60000 * minuts)), 
+              at: new Date(new Date().getTime() + (60000 * minuts)),
+              trigger:{ at: new Date(new Date().getTime() + (60000 * minuts)) },    
               repeat:  'daily', 
               foreground: true,
               icon: "res://iconLogo.png",
               smallIcon: "res://iconLogo.png",
               attachments: ['file://img/imgNotif.png'], 
-              sound: so                                                      
+              sound: so,
+              silent: false                                                                  
           }); 
                  
           mensajePopup('OK','Rebràs un avís (' + quin + ') cada dia a les ' + hora, 2);          

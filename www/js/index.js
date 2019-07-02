@@ -254,15 +254,20 @@ var app = {
         });
 
         /* CONFIRMAR ENVIAMENT ····················································· */
-        $('#botonEnviaCONFIRMAR').click(function() {   
+        $('#botonEnviaCONFIRMAR').click(function() {  
+alert('1');                         
+            $("#Avis").style.display=''; 
+alert('2');                
             $("#pTxtAvis").html("enviant dades ...");
-            $("#Avis").style.display="";   
+alert('3');            
             setTimeout(function(){
+alert('4 pasaron 3000');                    
                 $("#pTxtAvis").html("...");
-                $("#Avis").style.display="none";    
+                $("#Avis").style.display='none';    
             }, 3000);
             setTimeout(function(){
-                mensajePopup("OK","El fitxatge s'ha enregistrat correctament", 5);
+alert('5 pasaron 5000');                    
+                mensajePopup("OK","El fitxatge s'ha enregistrat correctament", 2);
                 $.mobile.changePage('#pageSETHORA', { transition: 'slideup', changeHash: false });
                 $('#panelENTRADA').collapsible( "collapse" );
                 $('#panelSORTIDA').collapsible( "collapse" );
