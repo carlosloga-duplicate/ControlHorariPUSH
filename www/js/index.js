@@ -262,14 +262,14 @@ var app = {
                 $('#panelENTRADA').trigger('collapse');
                 $('#panelSORTIDA').trigger('collapse');                                                            
 
-                $("#pTxtAvis").text("enviant dades ..."); 
+                $("#pTxtAvis").text("Esperi si us pplau ...<br/>enviant dades ..."); 
                 $("#Avis").show();  
                 document.getElementById("Avis").style.display='';                                 
                 setTimeout(function(){                    
                     $("#pTxtAvis").text("...");
                     $("#Avis").hide();    
-                    mensajePopup("OK","El fitxatge s'ha enregistrat correctament", 2);
-                }, 3000);
+                    mensajePopup("OK","El fitxatge s'ha enregistrat correctament", 3);
+                }, 4000);
         });
 
         /* GUARDAR CONFIGURACIÓ ····················································· */
