@@ -71,7 +71,12 @@ alert(minuts.toString()); */
           msg += " [" + hora + "]"; 
 
           /* var so = device.platform == 'Android' ? 'file://sound.mp3' : 'file://beep.caf'; */
-          var so = device.platform != 'iOS' ? 'file://audio/beepFichar.mp3' : 'content://audio/beepFichar.m4r';
+/*           var so = device.platform != 'iOS' ? 'file://audio/beepFichar.mp3' : 'content://audio/beepFichar.m4r';
+          vibrate: true, 
+          attachments: ['file://img/imgNotif.png'],
+          sound: so,
+          icon: "res://iconLogo.png",
+          smallIcon: "res://iconLogo.png", */
 
           var idAleatori = Math.floor(Math.random() * (1000000000 - 1) + 1);
           cordova.plugins.notification.local.schedule({
@@ -80,12 +85,7 @@ alert(minuts.toString()); */
               text: msg, 
               at: new Date(new Date().getTime() + (60000 * minuts)), 
               repeat:  'daily',
-              sound: so,
-              icon: "res://iconLogo.png",
-              smallIcon: "res://iconLogo.png",
-              foreground: true,
-              vibrate: true, 
-              attachments: ['file://img/imgNotif.png']                                          
+              foreground: true                                         
           }); 
                  
           mensajePopup('OK','Rebràs un avís (' + quin + ') cada dia a les ' + hora, 2);          

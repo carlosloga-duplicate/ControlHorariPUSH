@@ -254,12 +254,21 @@ var app = {
         });
 
         /* CONFIRMAR ENVIAMENT ····················································· */
-        $('#botonEnviaCONFIRMAR').click(function() {            
-            $.mobile.changePage('#pageSETHORA', { transition: 'slideup', changeHash: false });
-            $('#panelENTRADA').collapsible( "collapse" );
-            $('#panelSORTIDA').collapsible( "collapse" );
-            $('#panelENTRADA').trigger('collapse');
-            $('#panelSORTIDA').trigger('collapse');                     
+        $('#botonEnviaCONFIRMAR').click(function() {   
+            $("#pTxtAvis").html("enviant dades ...");
+            $("#Avis").style.display="";   
+            setTimeout(function(){
+                $("#pTxtAvis").html("...");
+                $("#Avis").style.display="none";    
+            }, 3000);
+            setTimeout(function(){
+                mensajePopup("OK","El fitxatge s'ha enregistrat correctament", 5);
+                $.mobile.changePage('#pageSETHORA', { transition: 'slideup', changeHash: false });
+                $('#panelENTRADA').collapsible( "collapse" );
+                $('#panelSORTIDA').collapsible( "collapse" );
+                $('#panelENTRADA').trigger('collapse');
+                $('#panelSORTIDA').trigger('collapse');
+            }, 5000);                     
         });
 
         /* GUARDAR CONFIGURACIÓ ····················································· */
@@ -302,7 +311,7 @@ var app = {
             setTimeout(function(){
                 $.mobile.changePage('#pageSETHORA', { transition: 'slideup', changeHash: false });  
                 $('#acordeonENTRADA_SORTIDA').collapsible( "collapse" );   
-            }, (2000));
+            },2000);
    
         });    
 
