@@ -75,8 +75,7 @@ function LS_eliminaIDnotificacio(quin)
 }
 
 function LS_guardaUltimaEntrada(hora, dia)
-{
-alert('guardo: ' + hora + '|' + dia);    
+{   
     localStorage.setItem('ULTIMA_HORA_ENTRADA', hora);
     localStorage.setItem('ULTIMO_DIA_ENTRADA', dia);
 }
@@ -85,7 +84,7 @@ function LS_recuperaUltimaEntrada()
 {
     var ultimaHoraEntrada = localStorage.getItem('ULTIMA_HORA_ENTRADA');
     var ultimoDiaEntrada = localStorage.getItem('ULTIMO_DIA_ENTRADA'); 
-alert("recupero: " +  ultimaHoraEntrada + "|" + ultimoDiaEntrada);    
+alert("recupero: " +  ultimaHoraEntrada.toString() + "|" + ultimoDiaEntrada.toString());    
     return ultimaHoraEntrada + "|" + ultimoDiaEntrada;
 }
 
