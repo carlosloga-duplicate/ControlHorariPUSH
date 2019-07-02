@@ -156,7 +156,7 @@ var app = {
         });
 
         //Evento al abrir el acordeón de SORTIDA 
-        $(document).on( "collapsibleexpand", "panelSORTIDA",function( event, ui ) {
+        $(document).on( "collapsibleexpand", "#panelSORTIDA",function( event, ui ) {
             alert('expand');
             ScrollHastaAbajo();
         });
@@ -286,11 +286,8 @@ var app = {
             {              
                 eliminaNotificacio("ENTRADA");
                 LS_recuperaIDnotificacio(valAntAvisos.checkEntrada);
-                if(valAntAvisos.checkEntrada==1) mensajePopup('OK','Avís per ENTRADA cancel·lat',4); 
-            }
-            
-            $.mobile.changePage('#pageSETHORA', { transition: 'slideup', changeHash: false }); 
-            $('#acordeonENTRADA_SORTIDA').collapsible( "collapse" );    
+                if(valAntAvisos.checkEntrada==1) mensajePopup('OK','Avís per ENTRADA cancel·lat',3); 
+            }            
 
             if(avisaSortida==1) 
             {
@@ -300,15 +297,14 @@ var app = {
             else
             {
                 eliminaNotificacio("SORTIDA");
-                if(valAntAvisos.checkSortida==1) mensajePopup('OK','Avís per SORTIDA cancel·lat',4);
+                if(valAntAvisos.checkSortida==1) mensajePopup('OK','Avís per SORTIDA cancel·lat',3);
             }
         
-/*             setTimeout(function(){
+            setTimeout(function(){
                 $.mobile.changePage('#pageSETHORA', { transition: 'slideup', changeHash: false });  
                 $('#acordeonENTRADA_SORTIDA').collapsible( "collapse" );   
-            }, (4000)); */
-            /* $.mobile.changePage('#pageSETHORA', { transition: 'slideup', changeHash: false }); */
-            /* $('#acordeonENTRADA_SORTIDA').collapsible( "collapse" );    */        
+            }, (3000));
+   
         });    
 
         /* SALIR DE LA APP CUANDO SE PULSE LA TECLA BACK ··········································· */
