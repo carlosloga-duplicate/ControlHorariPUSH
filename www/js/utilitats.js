@@ -53,7 +53,8 @@ function GetHoraSel(sAccion)
             switch(radioSelec)  
             {
                 case 'DTD':  /* tiempo por defecto */
-                    sHora = $("#labelDTD").text().substring($("#labelDTD").text().length - 5);
+                    sHora = $("#labelDTD").text().split('>')[1];
+alert(sHora);                    
                     break;
                 case 'DTO':  /* otra tiempo (manual) */
                     sHora = $("#selecTempsDESCANS").find(":selected").text();
