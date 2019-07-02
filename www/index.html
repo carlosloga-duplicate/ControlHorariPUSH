@@ -235,7 +235,7 @@
     
                 <!-- CONTENIDO -->
                 <div data-role="content" data-theme="a" id="divConfirmar" name="divConfirmar">
-                    <center><h2 style="color:#5379BC;">CONFIRMACIÓ DE LES DADES QUE S'ENVIARAN</h2>
+                    <center><h5 style="color:#1C3A6E;">CONFIRMACIÓ DE LES DADES QUE S'ENVIARAN</h5>
                         <table>
                             <thead><tr><th>&nbsp;</th><th>&nbsp;</th></tr></thead>
                             <tfoot><tr>
@@ -243,7 +243,7 @@
                                 <td style="text-align: right;"><a id="botonEnviaCONFIRMAR" name="botonEnviaCONFIRMAR" class="ui-btn ui-btn-a ui-btn ui-icon-check ui-btn-icon-left" href="#" data-mini="true">ENVIAR</a></td>
                             </tr></tfoot>
                             <tbody>
-                                <tr><td id="tdACCIO" name="tdACCIO" colspan="2" style="font-weight: bold; text-align: center;"><label style="font-weight: bold; font-size:x-large; color:black;" id="labelAccio" name="labelAccio"></label></td></tr>
+                                <tr><td id="tdACCIO" name="tdACCIO" colspan="2" style="font-weight: bold; text-align: center;"><label style="font-weight: bold; font-size:large; color:black;" id="labelAccio" name="labelAccio"></label></td></tr>
                                 <tr><td style="font-weight: bold; text-align: left;">Usuari</td><td style="text-align: left;"><label id="labelUSU" name="labelUSU"></label></td></tr>
                                 <tr><td style="font-weight: bold; text-align: left;">Dia</td><td style="text-align: left;"><label id="labelDIA" name="labelDIA"></label></td></tr>
                                 <tr><td style="font-weight: bold; text-align: left;">Hora</td><td style="text-align: left;"><label id="labelHORA" name="labelHORA"></label></td></tr>
@@ -279,12 +279,12 @@
 
             <!-- CONTENIDO -->
             <div data-role="content" data-theme="a" data-mini="true">
-                <center><h2>CONFIGURACIÓ</h2></center>
+                <center><h5 style="color:#1C3A6E;">CONFIGURACIÓ</h5></center>
                     <table>
                         <thead><tr><th style="text-align: left;">&nbsp;</th><th style="text-align: left;">&nbsp;</th><th style="text-align: left;">&nbsp;</th></tr></thead>
                         <tfoot><tr>
                             <td>&nbsp;</td>
-                            <td style="text-align: left;"><a class="ui-btn ui-btn-b ui-btn ui-icon-delete ui-btn-icon-left" href="#pageSETHORA" data-mini="true">CANCELAR</a></td>
+                            <td style="text-align: left;"><a class="ui-btn ui-btn-b ui-btn ui-icon-delete ui-btn-icon-left" href="#pageSETHORA" data-mini="true" style="background-color: silver;">CANCELAR</a></td>
                             <td style="text-align: right;"><a id="botonGuardarCONFIGURACIO" name="" class="ui-btn ui-btn-a ui-btn ui-icon-check ui-btn-icon-left" href="#" data-mini="true">GUARDAR</a></td>
                         </tr></tfoot>
                         <tbody>
@@ -342,14 +342,14 @@
     
                 <!-- CONTENIDO -->
                 <div data-role="content" data-theme="a" style="width: 100%;">
-                        <center><h2>HISTÒRIC (darrer mes)</h2></center>  
+                        <center><h5 style="color:#1C3A6E;">HISTÒRIC (darrer mes)</h5></center>  
                         <table style="padding:0 5px 0 5px;" width="100%">
                             <thead><tr style="text-align: left;"><th>Dia</th><th>ENTR</th><th>DESC</th><th>SORT</th><th>JORN</th></tr></thead>
                             <tfoot>
                                 <tr><td colspan="5">&nbsp;</td></tr>
                                 <tr>
                                     <td colspan="2">&nbsp;</td>
-                                    <td style="text-align: right;" colspan="3"><a class="ui-btn ui-btn-a ui-btn ui-icon-arrow-l ui-btn-icon-left" href="#pageSETHORA" data-mini="true">TORNAR</a>
+                                    <td style="text-align: right;" colspan="3"><a class="ui-btn ui-btn-a ui-btn ui-icon-arrow-l ui-btn-icon-left" href="#pageSETHORA" data-mini="true" style="background-color: silver;">TORNAR</a>
                                 </td>
                             </tr></tfoot>
                             <tbody>
@@ -375,14 +375,13 @@
                 </div>
         </div>
 
-
         <!-- A L E R T S  ************************************************************************************************ -->
         <!-- MENSAJES POP UPs -->
-        <div data-role="popup" id="AvisOK" name="AvisOK" data-dismissible="false" data-history="false" data-position-to="window" class="ui-content" style="display: none; max-width:280px; color: #5379BC;">
+        <div data-role="popup" id="AvisOK" name="AvisOK" data-dismissible="false" data-history="false" data-position-to="window" class="ui-content" style="display: none; max-width:280px; color: #1C3A6E; background-color:#5379BC">
             <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right" data-mini="true">OK</a>
             <p id="txtOK" name="txtOK">OK</p>
         </div>               
-        <div data-role="popup" id="AvisKO" name="AvisKO" data-dismissible="false" data-history="false" data-position-to="window" class="ui-content" style="display: none; max-width:280px; color: #5379BC">
+        <div data-role="popup" id="AvisKO" name="AvisKO" data-dismissible="false" data-history="false" data-position-to="window" class="ui-content" style="display: none; max-width:280px; color: #1C3A6E; background-color:#5379BC">
             <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right" data-mini="true">OK</a>
             <p id="txtKO" name="txtKO">ERROR</p>
         </div>

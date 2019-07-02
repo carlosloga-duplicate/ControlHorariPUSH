@@ -148,14 +148,14 @@ var app = {
                     $("#cgTipoHoraDESCANS").controlgroup("refresh");
                 }                             
 
-                $("#botonMenu .ui-icon-gear").parent().find(".ui-btn-text").css('color', "#1C3A6E");
-                $("#botonMenu .ui-icon-gear").parent().find(".ui-btn-text").css('backColor', "#5379BC");
-
                 $("#panelENTRADA .ui-icon-carat-r").parent().find(".ui-btn-text").css('color', "#1C3A6E");
                 $("#panelENTRADA .ui-icon-carat-r").parent().find(".ui-btn-text").css('backColor', "#5379BC");
 
                 $("#panelSORTIDA .ui-icon-carat-r").parent().find(".ui-btn-text").css('color', "#1C3A6E");
                 $("#panelSORTIDA .ui-icon-carat-r").parent().find(".ui-btn-text").css('backColor', "#5379BC");
+
+                $("#botonMenu .ui-icon-gear").find(".ui-btn-text").css('color', "#1C3A6E");
+                $("#botonMenu .ui-icon-gear").find(".ui-btn-text").css('backColor', "#5379BC");
             }
             catch(err)
             {         
