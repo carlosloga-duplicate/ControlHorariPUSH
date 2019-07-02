@@ -177,9 +177,10 @@ var app = {
                 $("#divConfirmar").css('background-color', color );  */
 
                 var dia = storeObject.dia.toString();
+                var diaFormat = dia.substr(9,2) + "/" + dia.substr(5,2) + "/" + dia.substr(0,4);
                 $("#labelAccio").text(storeObject.accion.toString());
                 $("#labelUSU").text(storeObject.usuari.toString());
-                $("#labelDIA").text( dia.substr(9,2) + "/" + dia.substr(5,2) + "/" + dia.substr(0,4));
+                $("#labelDIA").text( diaFormat);
                 $("#labelHORA").text(storeObject.hora.toString());
                 if(storeObject.accion.toString() == "SORTIDA")
                 {
@@ -187,12 +188,23 @@ var app = {
                     document.getElementById("tdDescansH").style.display = '';
                     document.getElementById("tdDescansB").style.display = '';
                     $("#labelDESCANS").text(storeObject.descans.toString());  
+                    
+                    var ultimaEntrada = LS_recuperaUltimaEntrada();
+                    var ultimaHoraEntrada = ultimaEntrada.split('|')[0];
+                    var ultimodiaEntrada = ultimaEntrada.split('|')[1];
+                    var sTempsDia = CalculoTempsDia(storeObject.hora.toString() , diaFormat, ultimaHoraEntrada, ultimoDiaEntrada );
+
+                    document.getElementById("tdTempsDiaH").style.display = '';
+                    document.getElementById("tdTempsDiaB").style.display = '';
+                    $("#labelTEMPSDIA").text(sTempsDia);  
                 }
                 else
                 {
-                    /* document.getElementById("tdACCIO").style.backgroundColor = '#267F00'; */
                     document.getElementById("tdDescansH").style.display = 'none';
                     document.getElementById("tdDescansB").style.display = 'none';
+
+                    document.getElementById("tdTempsDiaH").style.display = 'none';
+                    document.getElementById("tdTempsDiaB").style.display = 'none';  
                 }
             }
             catch(err)
@@ -263,6 +275,7 @@ var app = {
 
         /* CONFIRMAR ENVIAMENT ····················································· */
         $('#botonEnviaCONFIRMAR').click(function() {               
+                if(storeObject.accion == 'ENTRADA') LS_guardaUltimaEntrada(storeObject.hora,  dia.substr(9,2) + "/" + dia.substr(5,2) + "/" + dia.substr(0,4));                
 
                 $.mobile.changePage('#pageSETHORA', { transition: 'slideup', changeHash: false });
                 $('#panelENTRADA').collapsible( "collapse" );
