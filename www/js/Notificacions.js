@@ -77,8 +77,6 @@ function crearNotificacio(quin, hora, titulo, msg)
           sound: so,
            */
 
-alert(device.platform);
-
           var so = device.platform == 'Android' ? 'res//beepFichar.mp3' : 'res//beepFichar.m4r';
           var idAleatori = Math.floor(Math.random() * (1000000000 - 1) + 1);
 

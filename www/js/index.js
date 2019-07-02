@@ -262,7 +262,7 @@ var app = {
                 $('#panelENTRADA').trigger('collapse');
                 $('#panelSORTIDA').trigger('collapse');                                                            
 
-                $("#pTxtAvis").text("Esperi si us pplau ...<br/>enviant dades ..."); 
+                $("#pTxtAvis").text("Esperi si us pplau ...\nenviant dades ..."); 
                 $("#Avis").show();  
                 document.getElementById("Avis").style.display='';                                 
                 setTimeout(function(){                    
