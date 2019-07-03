@@ -225,8 +225,8 @@
 
         <!-- C O N F I R M A C I Ó  ************************************************************************************** -->
         <div data-role="page" id="pageCONFIRMACIO" data-theme="a" >
-            <!-- LINEA DE CABECERA -->
-            <div data-role="header" data-theme="a" style="margin-bottom: 0px; margin-top: 0px;">  
+                <!-- LINEA DE CABECERA -->
+                <div data-role="header" data-theme="a" style="margin-bottom: 0px; margin-top: 0px;">  
                     <table width="100%" cellpadding="0" cellspacing="0"><tr>
                         <td style="padding: 0px; vertical-align: middle;"><img src="img/Atras.png" onclick="IrPantallaInicio();" /></td>
                         <td style="padding: 0px; text-align: center; width: 100%;"><h3>Control Horari</h3></td>                   
@@ -269,6 +269,19 @@
                         </tr>
                     </table>             
                 </div>
+
+                <!-- POP UP CONFIRMACIÓ SI/NO -->       
+                <div data-role="dialog" id="popupDialog" name="popupDialog" data-dismissible="false" data-history="false" data-position-to="window" class="ui-content" style="display: none; max-width:280px; color:white; background-color:#1C3A6E">    
+                    <div style="background-color: #5379BC; color:white; font-weight: bold">
+                        <p id="txtTitol" name="txtTitol"></p>
+                    </div>
+                    <div style="color:white;">
+                        <p id="txtPregunta" name="txtPregunta"></p>
+                        <a href="#" id="aHrefNO" name="aHrefNO" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-btn-icon-notext ui-btn-right" data-mini="true">No</a>
+                        <a href="#" id="aHrefSI" name="aHrefSI" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-btn-icon-notext ui-btn-right" data-mini="true">Si</a>
+                    </div>
+                </div> 
+
         </div>
 
         <!-- C O N F I G U R A C I Ó  ************************************************************************************** -->
@@ -391,17 +404,6 @@
             <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right" data-mini="true">OK</a>
             <p id="txtKO" name="txtKO">ERROR</p>
         </div>
-        <!-- POP UP CONFIRMACIÓ SI/NO -->       
-        <div data-role="dialog" id="popupDialog" name="popupDialog" data-dismissible="false" data-history="false" data-position-to="window" class="ui-content" style="display: none; max-width:280px; color:white; background-color:#1C3A6E">    
-            <div style="background-color: #5379BC; color:white; font-weight: bold">
-                <p id="txtTitol" name="txtTitol"></p>
-            </div>
-            <div style="color:white;">
-                <p id="txtPregunta" name="txtPregunta"></p>
-                <a href="#" id="aHrefNO" name="aHrefNO" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-btn-icon-notext ui-btn-right" data-mini="true">No</a>
-                <a href="#" id="aHrefSI" name="aHrefSI" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-btn-icon-notext ui-btn-right" data-mini="true">Si</a>
-            </div>
-        </div> 
 
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
