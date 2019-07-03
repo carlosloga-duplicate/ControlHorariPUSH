@@ -359,12 +359,14 @@ var app = {
             paginaACTIVA = 4;
         });
 
-        /* SALIR DE LA APP CUANDO SE PULSE LA TECLA BACK ··········································· */
+        /* EVENTO TECLA BACK ··········································· */
         $(window).on("navigate", function (event, data) {            
             var direction = data.state.direction;
-            if (direction == 'back') {
-this.alert(paginaACTIVA.toString());                
-                if(paginaACTIVA == 1) setTimeout(function(){ navigator.app.exitApp(); }, 500);                
+            if (direction == 'back') {              
+                if(paginaACTIVA == 1) 
+                    setTimeout(function(){ navigator.app.exitApp(); }, 500); 
+                else
+                    IrPantallaInicio();
             }
         }); 
 
