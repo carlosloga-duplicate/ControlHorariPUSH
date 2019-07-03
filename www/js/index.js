@@ -168,8 +168,9 @@ var app = {
             ScrollHastaAbajo();
         });
 
-        /* Evento pulsar SI en Pop Up pregunta */
+        /* Eventos de los botones del POPUP CONFIRMAR */
         $('#botonSIconfirma').click( function(e) {e.preventDefault(); RespostaSI(); return false; } );
+        $('#botonNOconfirma').click( function(e) {e.preventDefault(); window.history.back(); return false; } );
 
         /* Al abrir la pagina de CONFIRMACIÓ ······················································ */
         $(document).on('pagebeforeshow', "#pageCONFIRMACIO", function (event, data) {      
