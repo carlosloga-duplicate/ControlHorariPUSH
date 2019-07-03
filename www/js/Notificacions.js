@@ -97,7 +97,8 @@ function crearNotificacio(quin, hora, titulo, msg)
                  
           mensajePopup('OK','Rebràs un avís (' + quin + ') cada dia a les ' + hora, 2);          
           eliminaNotificacio(quin); //Elimina la anterior notificación si había ... 
-          guardaIDnotificacio(quin,idAleatori); //Guarda nueva hora de aviso en LocalStorage           
+alert('va a guardaIDnotificacio');          
+          LS_guardaIDnotificacio(quin,idAleatori); //Guarda nueva hora de aviso en LocalStorage           
         }    
       });
     }
@@ -112,12 +113,16 @@ function eliminaNotificacio(quin)
 alert('eliminaNotificacio: ' + quin);  
     var nId = LS_recuperaIDnotificacio(quin); 
 alert(nId.toString());      
+  try
+  {
     if(nId >= 0) cancelarNotificacio(nId, quin);
+  }
+  catch(err){}
 }
 
 function cancelarNotificacio(id, quin)
 {
-alert('cancelando ando...');  
+alert('cancelando ando...' + id.toString() + '|' + quin);  
     cordova.plugins.notification.local.cancel(id, function() {      
 alert('lo canceló OK');      
         LS_eliminaIDnotificacio(quin);
