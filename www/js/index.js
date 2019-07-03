@@ -196,12 +196,13 @@ var app = {
                     var sTempsDia = CalculoTempsDia(storeObject.hora.toString() , diaFormat, ultimaHoraEntrada, ultimoDiaEntrada, storeObject.descans.toString() );
                     document.getElementById("tdTempsDiaH").style.display = '';
                     document.getElementById("tdTempsDiaB").style.display = '';
-                    $("#labelTEMPSDIA").text(sTempsDia);  
-                    
+
+                    if(parseInt(sTempsDia) < 1) sTempsDia = "-";
+                    $("#labelTEMPSDIA").text(sTempsDia);
+
                     //Existeix ja una ENTRADA per avui?                       
                     if(ultimoDiaEntrada != diaFormat)
-                    {                  
-                        /* mostrarDialog = true; */
+                    {                                          
                         mensajeSiNo("Confirmi si us plau", "PREGUNTA_1");
                     }
                 }
