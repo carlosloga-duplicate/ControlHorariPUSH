@@ -166,6 +166,9 @@ var app = {
             ScrollHastaAbajo();
         });
 
+        /* Evento pulsar SI en Pop Up pregunta */
+        $('#aHrefSI').click( function(e) {e.preventDefault(); RespostaSI(); return false; } );
+
         /* Al abrir la pagina de CONFIRMACIÓ ······················································ */
         $(document).on('pagebeforeshow', "#pageCONFIRMACIO", function (event, data) {
             try
@@ -185,12 +188,19 @@ var app = {
                     
                     var ultimaEntrada = LS_recuperaUltimaEntrada();
                     var ultimaHoraEntrada = ultimaEntrada.split('|')[0];
-                    var ultimoDiaEntrada = ultimaEntrada.split('|')[1];
-                    var sTempsDia = CalculoTempsDia(storeObject.hora.toString() , diaFormat, ultimaHoraEntrada, ultimoDiaEntrada, storeObject.descans.toString() );
+                    var ultimoDiaEntrada = ultimaEntrada.split('|')[1];           
 
+                    var sTempsDia = CalculoTempsDia(storeObject.hora.toString() , diaFormat, ultimaHoraEntrada, ultimoDiaEntrada, storeObject.descans.toString() );
                     document.getElementById("tdTempsDiaH").style.display = '';
                     document.getElementById("tdTempsDiaB").style.display = '';
                     $("#labelTEMPSDIA").text(sTempsDia);  
+                    
+                    //Existeix una ENTRADA per avui?
+alert(ultimoDiaEntrada + "|" + dia);         
+                    if(ultimoDiaEntrada != dia)
+                    {
+                        mensajeSiNo("Confirmi si us plau", "PREGUNTA_1");
+                    }
                 }
                 else
                 {

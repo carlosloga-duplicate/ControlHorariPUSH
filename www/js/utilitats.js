@@ -167,6 +167,8 @@ function constants(sCual)
 
         dict['NOConfig'] = "Mòvil no configurat. Informi al menys l'usuari i el password si us plau";
         
+        dict['PREGUNTA_1'] = "No s'ha detectat ENTRADA pel dia d'avui. Vol continuar?";
+
         sRet = dict[sCual].toString();
     }
     catch(err){
@@ -197,6 +199,27 @@ function mensajePopup(cual, txtMsg, esperar)
         $("#txtKO").html(txtMsg);
         $("#AvisKO").popup("open"); 
         if(esperar > 0) setTimeout(function(){  $("#AvisKO").popup("close"); }, (esperar * 1000));
+    }
+}
+
+
+var pregunta = '';
+function mensajeSiNo(titol, ctePregunta)
+{
+    pregunta = ctePregunta;
+    $("#popupDialog").popup();
+    $("txtTitol").html(titol);
+    $("txtPregunta").html(constants(ctePregunta));
+    $("#popupDialog").popup("open");
+}
+
+function RespostaSI()
+{   alert(pregunta);
+    switch(pregunta)
+    {
+        case 'PREGUNTA_1': 
+            alert('si!!');
+        break;
     }
 }
 
