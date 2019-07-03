@@ -207,12 +207,10 @@ var pregunta = '';
 function mensajeSiNo(titol, ctePregunta)
 {
     pregunta = ctePregunta;
-    var textoPregunta = constants(ctePregunta);
-    document.getElementById("popupDialog").style.display = '';
-    $("#popupDialog").popup("open");     
+    var textoPregunta = constants(ctePregunta); 
     $("txtTitol").html(titol);
     $("txtPregunta").html(textoPregunta);    
-    /* $.mobile.changePage('#dialog', 'pop', true, true); */
+    $.mobile.changePage('#popupDialog', 'pop', true, true);    
 }
 
 function RespostaSI()
