@@ -109,13 +109,17 @@ function crearNotificacio(quin, hora, titulo, msg)
 
 function eliminaNotificacio(quin)
 {  
-    var nId = LS_recuperaIDnotificacio(quin);   
+alert('eliminaNotificacio: ' + quin);  
+    var nId = LS_recuperaIDnotificacio(quin); 
+alert(nId.toString());      
     if(nId >= 0) cancelarNotificacio(nId, quin);
 }
 
 function cancelarNotificacio(id, quin)
 {
+alert('cancelando ando...');  
     cordova.plugins.notification.local.cancel(id, function() {      
+alert('lo canceló OK');      
         LS_eliminaIDnotificacio(quin);
   });
 }
