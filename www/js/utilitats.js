@@ -210,7 +210,8 @@ function mensajeSiNo(titol, ctePregunta)
     var textoPregunta = constants(ctePregunta); 
     $("txtTitol").html(titol);
     $("txtPregunta").html(textoPregunta);      
-    $.mobile.changePage('#popupDialog', {transition: 'pop', role: 'dialog'}); 
+/*     $.mobile.changePage('#popupDialog', {transition: 'slide', role: 'dialog'}); */
+    $.mobile.changePage("#popupDialog", { role: "dialog" }) 
 }
 
 function RespostaSI()
