@@ -169,11 +169,10 @@ var app = {
         });
 
         /* Evento pulsar SI en Pop Up pregunta */
-        $('#aHrefSI').click( function(e) {e.preventDefault(); RespostaSI(); return false; } );
+        $('#botonSIconfirma').click( function(e) {e.preventDefault(); RespostaSI(); return false; } );
 
         /* Al abrir la pagina de CONFIRMACIÓ ······················································ */
-        $(document).on('pagebeforeshow', "#pageCONFIRMACIO", function (event, data) { 
-alert('pagebeforeshow');            
+        $(document).on('pagebeforeshow', "#pageCONFIRMACIO", function (event, data) {      
             try
             {                               
                 var dia = storeObject.dia.toString();
