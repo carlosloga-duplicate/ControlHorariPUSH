@@ -207,14 +207,17 @@ var pregunta = '';
 function mensajeSiNo(titol, ctePregunta)
 {
     pregunta = ctePregunta;
-    /* $("#popupDialog").popup(); */
+    document.getElementById("AvisOK").style.display = "popupDialog";
+    $("#AvisOK").popup();  
     $("txtTitol").html(titol);
     $("txtPregunta").html(constants(ctePregunta));
     $("#popupDialog").popup("open");
 }
 
 function RespostaSI()
-{   alert(pregunta);
+{   
+    $("#popupDialog").popup("close");
+alert(pregunta);
     switch(pregunta)
     {
         case 'PREGUNTA_1': 
