@@ -209,8 +209,7 @@ function mensajeSiNo(titol, ctePregunta)
     pregunta = ctePregunta;
     var textoPregunta = constants(ctePregunta);
     document.getElementById("popupDialog").style.display = '';
-    $("#popupDialog").popup();  
-alert(titol + "|" + pregunta + "|" + textoPregunta);    
+    $("#popupDialog").popup();     
     $("txtTitol").html(titol);
     $("txtPregunta").html(textoPregunta);
     $("#popupDialog").popup("open");
