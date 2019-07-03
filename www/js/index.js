@@ -196,8 +196,8 @@ var app = {
                     $("#labelTEMPSDIA").text(sTempsDia);  
                     
                     //Existeix una ENTRADA per avui?
-alert(ultimoDiaEntrada + "|" + dia);         
-                    if(ultimoDiaEntrada != dia)
+alert(ultimoDiaEntrada + "|" + diaFormat);         
+                    if(ultimoDiaEntrada != diaFormat)
                     {
                         mensajeSiNo("Confirmi si us plau", "PREGUNTA_1");
                     }
@@ -281,7 +281,7 @@ alert(ultimoDiaEntrada + "|" + dia);
         $('#botonEnviaCONFIRMAR').click(function() {               
                 if(storeObject.accion == 'ENTRADA')
                 {
-                    LS_guardaUltimaEntrada(storeObject.hora,  storeObject.dia.substr(9,2) + "/" + storeObject.dia.substr(5,2) + "/" + storeObject.dia.substr(0,4));
+                    LS_guardaUltimaEntrada(storeObject.hora,  storeObject.dia.substr(9,2).padStart(2,'0') + "/" + storeObject.dia.substr(5,2) + "/" + storeObject.dia.substr(0,4));
                 }
 
                 $.mobile.changePage('#pageSETHORA', { transition: 'slideup', changeHash: false });
@@ -345,12 +345,12 @@ alert(ultimoDiaEntrada + "|" + dia);
         });    
 
         /* SALIR DE LA APP CUANDO SE PULSE LA TECLA BACK ··········································· */
-        $(window).on("navigate", function (event, data) {            
+/*         $(window).on("navigate", function (event, data) {            
             var direction = data.state.direction;
             if (direction == 'back') {
                 setTimeout(function(){ navigator.app.exitApp(); }, 500);                
             }
-        });
+        }); */
 
     },
     // Update DOM on a Received Event
