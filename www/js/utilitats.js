@@ -209,10 +209,10 @@ function mensajeSiNo(titol, ctePregunta)
     pregunta = ctePregunta;
     var textoPregunta = constants(ctePregunta);
     document.getElementById("popupDialog").style.display = '';
-    $("#popupDialog").popup();     
+    $("#popupDialog").popup("open");     
     $("txtTitol").html(titol);
-    $("txtPregunta").html(textoPregunta);
-    $("#popupDialog").popup("open");
+    $("txtPregunta").html(textoPregunta);    
+    /* $.mobile.changePage('#dialog', 'pop', true, true); */
 }
 
 function RespostaSI()
@@ -236,4 +236,9 @@ function ScrollHastaAbajo()
     $('html, body').animate({
         scrollTop: $("#aBottom").offset().top
     }, 500);
+}
+
+function IrPantallaInicio()
+{
+    $.mobile.changePage('#pageSETHORA', { transition: 'flow', changeHash: false });     
 }

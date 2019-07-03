@@ -228,14 +228,14 @@
             <!-- LINEA DE CABECERA -->
             <div data-role="header" data-theme="a" style="margin-bottom: 0px; margin-top: 0px;">  
                     <table width="100%" cellpadding="0" cellspacing="0"><tr>
-                        <td style="padding: 0px; vertical-align: middle;"><img src="img/logo.png" onclick="linkWebsite();" /></td>
+                        <td style="padding: 0px; vertical-align: middle;"><img src="img/Atras.png" onclick="IrPantallaInicio();" /></td>
                         <td style="padding: 0px; text-align: center; width: 100%;"><h3>Control Horari</h3></td>                   
                     </tr></table>                
                 </div>
     
                 <!-- CONTENIDO -->
                 <div data-role="content" data-theme="a" id="divConfirmar" name="divConfirmar">
-                    <center><h5 style="color:#1C3A6E;">CONFIRMACIÓ DE LES DADES QUE S'ENVIARAN</h5>
+                    <center><h4 style="color:#1C3A6E;">CONFIRMACIÓ DE LES DADES QUE S'ENVIARAN</h4>
                         <table>
                             <thead><tr style="height: 0px"><th>&nbsp;</th><th>&nbsp;</th></tr></thead>
                             <tfoot><tr>
@@ -256,19 +256,7 @@
                                 <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
                             </tbody>
                         </table>
-                    </center>  
-                    
-                    <!-- POP UP CONFIRMACIÓ SI/NO -->       
-                    <div data-role="popup" id="popupDialog" name="popupDialog" data-dismissible="false" data-history="false" data-position-to="window" class="ui-content" style="display: none; max-width:280px; color:white; background-color:#1C3A6E">    
-                        <div style="background-color: #5379BC; color:white; font-weight: bold">
-                            <p id="txtTitol" name="txtTitol"></p>
-                        </div>
-                        <div style="color:white;">
-                            <p id="txtPregunta" name="txtPregunta"></p>
-                            <a href="#" id="aHrefNO" name="aHrefNO" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-btn-icon-notext ui-btn-right" data-mini="true">No</a>
-                            <a href="#" id="aHrefSI" name="aHrefSI" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-btn-icon-notext ui-btn-right" data-mini="true">Si</a>
-                        </div>
-                    </div> 
+                    </center>                      
 
                 </div>
     
@@ -288,14 +276,14 @@
             <!-- LINEA DE CABECERA -->
             <div data-role="header" data-theme="a" style="margin-bottom: 0px; margin-top: 0px;">  
                 <table width="100%" cellpadding="0" cellspacing="0"><tr>
-                    <td style="padding: 0px; vertical-align: middle;"><img src="img/logo.png" onclick="linkWebsite();" /></td>
+                    <td style="padding: 0px; vertical-align: middle;"><img src="img/Atras.png" onclick="IrPantallaInicio();" /></td>
                     <td style="padding: 0px; text-align: center; width: 100%;"><h3>Control Horari</h3></td>                  
                 </tr></table>                
             </div>
 
             <!-- CONTENIDO -->
             <div data-role="content" data-theme="a" data-mini="true">
-                <center><h5 style="color:#1C3A6E;">CONFIGURACIÓ</h5></center>
+                <center><h4 style="color:#1C3A6E;">CONFIGURACIÓ</h4></center>
                     <table>
                         <thead><tr><th></th><th></th><th></th><th style="width: 100%"></th></tr></thead>
                         <tfoot><tr>     
@@ -353,14 +341,14 @@
             <!-- LINEA DE CABECERA -->
             <div data-role="header" data-theme="a" style="margin-bottom: 0px; margin-top: 0px;">  
                     <table width="100%" cellpadding="0" cellspacing="0"><tr>
-                        <td style="padding: 0px; vertical-align: middle;"><img src="img/logo.png" onclick="linkWebsite();" /></td>
+                        <td style="padding: 0px; vertical-align: middle;"><img src="img/Atras.png" onclick="IrPantallaInicio();" /></td>
                         <td style="padding: 0px; text-align: center; width: 100%;"><h3>Control Horari</h3></td>                
                     </tr></table>                
                 </div>
     
                 <!-- CONTENIDO -->
                 <div data-role="content" data-theme="a" style="width: 100%; font-size: small; border-left: 0px">
-                        <center><h5 style="color:#1C3A6E;">HISTÒRIC (darrer mes)</h5></center>  
+                        <center><h4 style="color:#1C3A6E;">HISTÒRIC (darrer mes)</h4></center>  
                         <table style="padding:0 2px 0 0;" width="100%">
                             <thead><tr style="text-align: left;"><th>Dia</th><th>ENTR</th><th>DESC</th><th>SORT</th><th>JORN</th></tr></thead>
                             <tfoot>
@@ -403,8 +391,21 @@
             <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right" data-mini="true">OK</a>
             <p id="txtKO" name="txtKO">ERROR</p>
         </div>
+        <!-- POP UP CONFIRMACIÓ SI/NO -->       
+        <div data-role="popup" id="popupDialog" name="popupDialog" data-dismissible="false" data-history="false" data-position-to="window" class="ui-content" style="display: none; max-width:280px; color:white; background-color:#1C3A6E">    
+            <div style="background-color: #5379BC; color:white; font-weight: bold">
+                <p id="txtTitol" name="txtTitol"></p>
+            </div>
+            <div style="color:white;">
+                <p id="txtPregunta" name="txtPregunta"></p>
+                <a href="#" id="aHrefNO" name="aHrefNO" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-btn-icon-notext ui-btn-right" data-mini="true">No</a>
+                <a href="#" id="aHrefSI" name="aHrefSI" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-btn-icon-notext ui-btn-right" data-mini="true">Si</a>
+            </div>
+        </div> 
+        
+<!--         <div data-role="dialog" id="popupDialog" name="popupDialog">
 
-
+        </div>> -->
 
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
