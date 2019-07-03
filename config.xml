@@ -28,7 +28,6 @@
     <plugin name="cordova-plugin-statusbar-hide-on-startup" source="npm"/>
     <plugin name="cordova-plugin-whitelist" spec="1" />
 	<plugin name="cordova-plugin-local-notification" source="npm"/>    
-    <!-- <plugin name="cordova-plugin-local-notification-fixed" source="npm"/>     -->
 
     <feature name="File">
         <param name="android-package" value="org.apache.cordova.file.FileUtils" />

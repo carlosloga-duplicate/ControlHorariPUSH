@@ -1,21 +1,4 @@
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 var app = {
     // Application Constructor
     initialize: function() {
@@ -31,18 +14,7 @@ var app = {
     onDeviceReady: function() {
         app.receivedEvent('deviceready'); 
 
-        var paginaACTIVA = 0;
-        
-        /* EVENTO TECLA BACK ··········································· */
-        $(window).on("navigate", function (event, data) {            
-            var direction = data.state.direction;
-            if (direction == 'back') {              
-                if(paginaACTIVA == 1) 
-                    setTimeout(function(){ navigator.app.exitApp(); }, 500); 
-                else
-                    IrPantallaInicio();
-            }
-        });         
+        var paginaACTIVA = 0;       
 
         var usu_passw = recuperaDatosUSU();
         if(usu_passw.startsWith('ERROR'))
@@ -294,11 +266,6 @@ var app = {
         /* CANCELAR ENVIAMENT ······················································ */
         $('#botonCancelaCONFIRMAR').click(function() { 
             IrPantallaInicio();           
-/*             $.mobile.changePage('#pageSETHORA', { transition: 'slideup', changeHash: false }); 
-            $('#panelENTRADA').collapsible( "collapse" );
-            $('#panelSORTIDA').collapsible( "collapse" );
-            $('#panelENTRADA').trigger('collapse');
-            $('#panelSORTIDA').trigger('collapse'); */
         });
 
         /* CONFIRMAR ENVIAMENT ····················································· */
@@ -307,12 +274,7 @@ var app = {
                 {
                     LS_guardaUltimaEntrada(storeObject.hora,  storeObject.dia.substr(9,2).padStart(2,'0') + "/" + storeObject.dia.substr(5,2) + "/" + storeObject.dia.substr(0,4));
                 }
-
-/*                 $.mobile.changePage('#pageSETHORA', { transition: 'slideup', changeHash: false });
-                $('#panelENTRADA').collapsible( "collapse" );
-                $('#panelSORTIDA').collapsible( "collapse" );
-                $('#panelENTRADA').trigger('collapse');
-                $('#panelSORTIDA').trigger('collapse');     */    
+   
                 IrPantallaInicio();                                                    
 
                 $("#pTxtAvis").text("Esperi si us plau, enviant dades ..."); 
@@ -373,6 +335,18 @@ var app = {
         $(document).on('pagebeforeshow', "#pageHISTORIC", function (event, data) { 
             paginaACTIVA = 4;
         });
+
+
+        /* EVENTO TECLA BACK ··········································· */
+        $(window).on("navigate", function (event, data) {            
+            var direction = data.state.direction;
+            if (direction == 'back') {              
+                if(paginaACTIVA == 1) 
+                    setTimeout(function(){ navigator.app.exitApp(); }, 500); 
+                else
+                    IrPantallaInicio();
+            }
+        });  
 
     },
     // Update DOM on a Received Event
