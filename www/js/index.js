@@ -32,6 +32,17 @@ var app = {
         app.receivedEvent('deviceready'); 
 
         var paginaACTIVA = 0;
+        
+        /* EVENTO TECLA BACK ··········································· */
+        $(window).on("navigate", function (event, data) {            
+            var direction = data.state.direction;
+            if (direction == 'back') {              
+                if(paginaACTIVA == 1) 
+                    setTimeout(function(){ navigator.app.exitApp(); }, 500); 
+                else
+                    IrPantallaInicio();
+            }
+        });         
 
         var usu_passw = recuperaDatosUSU();
         if(usu_passw.startsWith('ERROR'))
@@ -153,14 +164,14 @@ var app = {
                     $("#cgTipoHoraDESCANS").controlgroup("refresh");
                 }                             
 
-                $("#panelENTRADA .ui-icon-carat-r").parent().find(".ui-btn-text").css('color', "#1C3A6E");
-                $("#panelENTRADA .ui-icon-carat-r").parent().find(".ui-btn-text").css('backColor', "#5379BC");
+                $("#panelENTRADA.ui-icon-carat-r").parent().find(".ui-btn-text").css('color', "#1C3A6E");
+                $("#panelENTRADA.ui-icon-carat-r").parent().find(".ui-btn-text").css('backColor', "#5379BC");
 
-                $("#panelSORTIDA .ui-icon-carat-r").parent().find(".ui-btn-text").css('color', "#1C3A6E");
-                $("#panelSORTIDA .ui-icon-carat-r").parent().find(".ui-btn-text").css('backColor', "#5379BC");
+                $("#panelSORTIDA.ui-icon-carat-r").parent().find(".ui-btn-text").css('color', "#1C3A6E");
+                $("#panelSORTIDA.ui-icon-carat-r").parent().find(".ui-btn-text").css('backColor', "#5379BC");
 
-                $("#botonMenu .ui-icon-gear").find(".ui-btn-text").css('color', "#1C3A6E");
-                $("#botonMenu .ui-icon-gear").find(".ui-btn-text").css('backColor', "#5379BC");
+                $("#botonMenu.ui-icon-gear").find(".ui-btn-text").css('color', "#1C3A6E");
+                $("#botonMenu.ui-icon-gear").find(".ui-btn-text").css('backColor', "#5379BC");
             }
             catch(err)
             {         
@@ -281,12 +292,13 @@ var app = {
         });
         
         /* CANCELAR ENVIAMENT ······················································ */
-        $('#botonCancelaCONFIRMAR').click(function() {            
-            $.mobile.changePage('#pageSETHORA', { transition: 'slideup', changeHash: false }); 
+        $('#botonCancelaCONFIRMAR').click(function() { 
+            IrPantallaInicio();           
+/*             $.mobile.changePage('#pageSETHORA', { transition: 'slideup', changeHash: false }); 
             $('#panelENTRADA').collapsible( "collapse" );
             $('#panelSORTIDA').collapsible( "collapse" );
             $('#panelENTRADA').trigger('collapse');
-            $('#panelSORTIDA').trigger('collapse');
+            $('#panelSORTIDA').trigger('collapse'); */
         });
 
         /* CONFIRMAR ENVIAMENT ····················································· */
@@ -296,11 +308,12 @@ var app = {
                     LS_guardaUltimaEntrada(storeObject.hora,  storeObject.dia.substr(9,2).padStart(2,'0') + "/" + storeObject.dia.substr(5,2) + "/" + storeObject.dia.substr(0,4));
                 }
 
-                $.mobile.changePage('#pageSETHORA', { transition: 'slideup', changeHash: false });
+/*                 $.mobile.changePage('#pageSETHORA', { transition: 'slideup', changeHash: false });
                 $('#panelENTRADA').collapsible( "collapse" );
                 $('#panelSORTIDA').collapsible( "collapse" );
                 $('#panelENTRADA').trigger('collapse');
-                $('#panelSORTIDA').trigger('collapse');                                                            
+                $('#panelSORTIDA').trigger('collapse');     */    
+                IrPantallaInicio();                                                    
 
                 $("#pTxtAvis").text("Esperi si us plau, enviant dades ..."); 
                 $("#Avis").show();  
@@ -309,7 +322,7 @@ var app = {
                     $("#pTxtAvis").text("...");
                     $("#Avis").hide();    
                     mensajePopup("OK","El fitxatge s'ha enregistrat correctament", 3);
-                }, 4000);
+                }, 2000);
         });
 
         /* GUARDAR CONFIGURACIÓ ····················································· */
@@ -361,17 +374,6 @@ var app = {
             paginaACTIVA = 4;
         });
 
-        /* EVENTO TECLA BACK ··········································· */
-        $(window).on("navigate", function (event, data) {            
-            var direction = data.state.direction;
-            if (direction == 'back') {              
-                if(paginaACTIVA == 1) 
-                    setTimeout(function(){ navigator.app.exitApp(); }, 500); 
-                else
-                    IrPantallaInicio();
-            }
-        }); 
-
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
@@ -382,6 +384,7 @@ var app = {
         listeningElement.setAttribute('style', 'display:none;');
         receivedElement.setAttribute('style', 'display:block;');        
     }   
+
 };
 
 
