@@ -220,8 +220,8 @@ alert('mostrar=SI');
             }
         });
 
-        $(document).on('pageload', "#pageCONFIRMACIO", function (event, data) { 
-alert('load : ' + mostrarDialog.toString());            
+        $(document).on('pageshow', "#pageCONFIRMACIO", function (event, data) { 
+alert('show : ' + mostrarDialog.toString());            
             //if(mostrarDialog)
             //{
                 mensajeSiNo("Confirmi si us plau", "PREGUNTA_1");
