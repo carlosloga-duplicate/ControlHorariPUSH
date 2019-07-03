@@ -37,6 +37,8 @@ var app = {
             mensajePopup("KO", usu_passw,0);        
         }
 
+        var mostrarDialog = false;
+
         var valAntAvisos = {
             checkEntrada: null,
             horaEntrada: null,
@@ -198,7 +200,7 @@ var app = {
                     //Existeix ja una ENTRADA per avui?        
                     if(ultimoDiaEntrada != diaFormat)
                     {
-                        mensajeSiNo("Confirmi si us plau", "PREGUNTA_1");
+                        mostrarDialog = true;
                     }
                 }
                 else
@@ -213,6 +215,14 @@ var app = {
             catch(err)
             {         
                 alert(err.toString());       
+            }
+        });
+
+        $(document).on('pageload', "#pageCONFIRMACIO", function (event, data) {
+            if(mostrarDialog)
+            {
+                mensajeSiNo("Confirmi si us plau", "PREGUNTA_1");
+                mostrarDialog = false;
             }
         });
 
