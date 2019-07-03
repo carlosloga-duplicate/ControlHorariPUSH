@@ -104,7 +104,8 @@ var app = {
         });
 
         /* FITXAR ENTRADA ······················································ */
-        $('#botonENTRADA').click(function() {            
+        $('#botonENTRADA').click(function() {   
+            paginaACTIVA=2;         
             storeObject.colorFondoConfirmacio = '#D2F1CE';
             storeObject.accion = 'ENTRADA';
             storeObject.dia = $("#inputDIA").val();
@@ -113,7 +114,8 @@ var app = {
         });
 
         /* FITXAR SORTIDA ······················································ */
-        $('#botonSORTIDA').click(function() {        
+        $('#botonSORTIDA').click(function() {       
+            paginaACTIVA=2;    
             storeObject.colorFondoConfirmacio = '#FCC6B6';
             storeObject.accion = 'SORTIDA';
             storeObject.dia = $("#inputDIA").val();

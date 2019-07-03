@@ -230,6 +230,7 @@ function RespostaSI()
 
 function RespostaNO()
 {
+    paginaACTIVA=1;
     $("#popConfirma").popup("close");
     switch(pregunta)
     {
