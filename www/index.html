@@ -224,7 +224,15 @@
         </div>
 
         <!-- C O N F I R M A C I Ó  ************************************************************************************** -->
-        <div data-role="page" id="pageCONFIRMACIO" data-theme="a" >
+        <div data-role="page" id="pageCONFIRMACIO" data-theme="a" > 
+
+                <div data-role="popup" id="popConfirma" name="popConfirma" data-dismissible="false" data-history="false" data-position-to="window" class="ui-content" style="display: none; max-width:280px; color: white; background-color:#1C3A6E">
+                    <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right" data-mini="true">No</a>
+                    <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right" data-mini="true">Si</a>
+                    <p id="txtTitolDialog" name="txtTitolDialog"></p>
+                    <p id="txtPreguntaDialog" name="txtPreguntaDialog"></p>
+                </div>
+
                 <!-- LINEA DE CABECERA -->
                 <div data-role="header" data-theme="a" style="margin-bottom: 0px; margin-top: 0px;">  
                     <table width="100%" cellpadding="0" cellspacing="0"><tr>
@@ -391,12 +399,7 @@
             <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right" data-mini="true">OK</a>
             <p id="txtKO" name="txtKO">ERROR</p>
         </div>
-        <div data-role="popup" id="popupDialog" name="popupDialog" data-dismissible="false" data-history="false" data-position-to="window" class="ui-content" style="display: none; max-width:280px; color: white; background-color:#1C3A6E">
-            <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right" data-mini="true">No</a>
-            <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right" data-mini="true">Si</a>
-            <p id="txtTitolDialog" name="txtTitolDialog"></p>
-            <p id="txtPreguntaDialog" name="txtPreguntaDialog"></p>
-        </div>
+
 
         <!-- POP UP CONFIRMACIÓ SI/NO -->    
 <!--                 <div id="popupDialog" data-role="page">

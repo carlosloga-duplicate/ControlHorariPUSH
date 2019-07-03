@@ -208,18 +208,18 @@ function mensajeSiNo(titol, ctePregunta)
 {
     pregunta = ctePregunta;
     var textoPregunta = constants(ctePregunta); 
-    document.getElementById("popupDialog").style.display = "";
-    $("#popupDialog").popup();  
+    document.getElementById("popConfirma").style.display = "";
+    $("#popConfirma").popup();  
     $("txtTitolDialog").html(titol);
     $("txtPreguntaDialog").html(textoPregunta);    
-    $("#popupDialog").popup("open");  
+    $("#popConfirma").popup("open");  
 /*     $.mobile.changePage('#popupDialog', {transition: 'slide', role: 'dialog'}); */
 /*     $.mobile.changePage("#popupDialog", { role: "dialog" })  */
 }
 
 function RespostaSI()
 {   
-    $("#popupDialog").popup("close");
+    $("#popConfirma").popup("close");
     switch(pregunta)
     {
         case 'PREGUNTA_1': 

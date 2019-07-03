@@ -200,8 +200,7 @@ alert('pagebeforeshow');
                     
                     //Existeix ja una ENTRADA per avui?        
                     if(ultimoDiaEntrada != diaFormat)
-                    { 
-alert('mostrar=SI');                        
+                    {                  
                         mostrarDialog = true;
                     }
                 }
@@ -221,12 +220,11 @@ alert('mostrar=SI');
         });
 
         $(document).on('pageshow', "#pageCONFIRMACIO", function (event, data) { 
-alert('show : ' + mostrarDialog.toString());            
-            //if(mostrarDialog)
-            //{
+            if(mostrarDialog)
+            {
                 mensajeSiNo("Confirmi si us plau", "PREGUNTA_1");
                 mostrarDialog = false;
-            //}
+            }
         });
 
         /* Al abrir la pagina de CONFIGURACIÓ ······················································ */
