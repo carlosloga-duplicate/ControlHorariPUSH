@@ -176,10 +176,10 @@ var app = {
         $('#botonNOconfirma').click( function(e) {e.preventDefault(); RespostaNO(); return false; } );
 
         /* Al abrir la pagina de CONFIRMACIÓ ······················································ */
-        $(document).on('pagebeforeshow', "#pageCONFIRMACIO", function (event, data) {      
+        $(document).on('pagebeforeshow', "#pageCONFIRMACIO", function (event, data) {  
+            paginaACTIVA = 2;    
             try
-            {         
-                paginaACTIVA = 2;                      
+            {                              
                 var dia = storeObject.dia.toString();
                 var diaFormat = dia.substr(9,2).padStart(2,"0") + "/" + dia.substr(5,2) + "/" + dia.substr(0,4);
                 $("#labelAccio").text(storeObject.accion.toString());
@@ -228,7 +228,7 @@ var app = {
         /* Al abrir la pagina de CONFIGURACIÓ ······················································ */
         $(document).on('pagebeforeshow', "#pageCONFIGURACIO", function (event, data) { 
             paginaACTIVA = 3;
-            
+
             var usu_passw = recuperaDatosUSU();
             if(!usu_passw.startsWith('ERROR'))
             {
@@ -354,11 +354,17 @@ var app = {
    
         });    
 
+        /* Al abrir la pagina de HISTORIC ······················································ */
+        $(document).on('pagebeforeshow', "#pageHISTORIC", function (event, data) { 
+            paginaACTIVA = 4;
+        });
+
         /* SALIR DE LA APP CUANDO SE PULSE LA TECLA BACK ··········································· */
         $(window).on("navigate", function (event, data) {            
             var direction = data.state.direction;
-            if (direction == 'back' && paginaACTIVA == 1) {
-                setTimeout(function(){ navigator.app.exitApp(); }, 500);                
+            if (direction == 'back') {
+this.alert(paginaACTIVA.toString());                
+                if(paginaACTIVA == 1) setTimeout(function(){ navigator.app.exitApp(); }, 500);                
             }
         }); 
 
