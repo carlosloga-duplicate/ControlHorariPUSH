@@ -31,13 +31,13 @@ var app = {
     onDeviceReady: function() {
         app.receivedEvent('deviceready'); 
 
+        var paginaACTIVA = 0;
+
         var usu_passw = recuperaDatosUSU();
         if(usu_passw.startsWith('ERROR'))
         {
             mensajePopup("KO", usu_passw,0);        
         }
-
-        var mostrarDialog = false;
 
         var valAntAvisos = {
             checkEntrada: null,
@@ -61,6 +61,7 @@ var app = {
                 $("#tdPie").html("v." + version); 
 
                 $.mobile.changePage('#pageSETHORA', { transition: 'flow', changeHash: false });
+                paginaACTIVA = 1;
 
                 cargarCombos();
 
@@ -125,6 +126,8 @@ var app = {
         $(document).on('pagebeforeshow', "#pageSETHORA", function (event, data) {
             try
             {    
+                paginaACTIVA = 1;
+
                 /* Hora d'ara */
                 var ara = HoraActual5Min();
               
@@ -175,7 +178,8 @@ var app = {
         /* Al abrir la pagina de CONFIRMACIÓ ······················································ */
         $(document).on('pagebeforeshow', "#pageCONFIRMACIO", function (event, data) {      
             try
-            {                               
+            {         
+                paginaACTIVA = 2;                      
                 var dia = storeObject.dia.toString();
                 var diaFormat = dia.substr(9,2).padStart(2,"0") + "/" + dia.substr(5,2) + "/" + dia.substr(0,4);
                 $("#labelAccio").text(storeObject.accion.toString());
@@ -221,16 +225,10 @@ var app = {
             }
         });
 
-/*         $(document).on('pageshow', "#pageCONFIRMACIO", function (event, data) { 
-            if(mostrarDialog)
-            {
-                mensajeSiNo("Confirmi si us plau", "PREGUNTA_1");
-                mostrarDialog = false;
-            }
-        }); */
-
         /* Al abrir la pagina de CONFIGURACIÓ ······················································ */
-        $(document).on('pagebeforeshow', "#pageCONFIGURACIO", function (event, data) {
+        $(document).on('pagebeforeshow', "#pageCONFIGURACIO", function (event, data) { 
+            paginaACTIVA = 3;
+            
             var usu_passw = recuperaDatosUSU();
             if(!usu_passw.startsWith('ERROR'))
             {
@@ -357,12 +355,12 @@ var app = {
         });    
 
         /* SALIR DE LA APP CUANDO SE PULSE LA TECLA BACK ··········································· */
-/*         $(window).on("navigate", function (event, data) {            
+        $(window).on("navigate", function (event, data) {            
             var direction = data.state.direction;
-            if (direction == 'back') {
+            if (direction == 'back' && paginaACTIVA == 1) {
                 setTimeout(function(){ navigator.app.exitApp(); }, 500);                
             }
-        }); */
+        }); 
 
     },
     // Update DOM on a Received Event

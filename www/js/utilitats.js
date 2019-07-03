@@ -253,6 +253,7 @@ function ScrollHastaAbajo()
 
 function IrPantallaInicio()
 {
+    paginaACTIVA=1;
     $.mobile.changePage('#pageSETHORA', { transition: 'slide', changeHash: false }); 
     ScrollHastaAbajo();
 }
