@@ -177,7 +177,7 @@ var app = {
             try
             {                               
                 var dia = storeObject.dia.toString();
-                var diaFormat = dia.substr(9,2) + "/" + dia.substr(5,2) + "/" + dia.substr(0,4);
+                var diaFormat = dia.substr(9,2).padStart(2,"0") + "/" + dia.substr(5,2) + "/" + dia.substr(0,4);
                 $("#labelAccio").text(storeObject.accion.toString());
                 $("#labelUSU").text(storeObject.usuari.toString());
                 $("#labelDIA").text(diaFormat);
@@ -198,8 +198,7 @@ var app = {
                     document.getElementById("tdTempsDiaB").style.display = '';
                     $("#labelTEMPSDIA").text(sTempsDia);  
                     
-                    //Existeix ja una ENTRADA per avui?   
-alert(ultimoDiaEntrada + '|' + diaFormat);                         
+                    //Existeix ja una ENTRADA per avui?                       
                     if(ultimoDiaEntrada != diaFormat)
                     {                  
                         /* mostrarDialog = true; */
