@@ -172,7 +172,8 @@ var app = {
         $('#aHrefSI').click( function(e) {e.preventDefault(); RespostaSI(); return false; } );
 
         /* Al abrir la pagina de CONFIRMACIÓ ······················································ */
-        $(document).on('pagebeforeshow', "#pageCONFIRMACIO", function (event, data) {
+        $(document).on('pagebeforeshow', "#pageCONFIRMACIO", function (event, data) { 
+alert('pagebeforeshow');            
             try
             {                               
                 var dia = storeObject.dia.toString();
@@ -199,7 +200,8 @@ var app = {
                     
                     //Existeix ja una ENTRADA per avui?        
                     if(ultimoDiaEntrada != diaFormat)
-                    {
+                    { 
+alert('mostrar=SI');                        
                         mostrarDialog = true;
                     }
                 }
@@ -218,12 +220,13 @@ var app = {
             }
         });
 
-        $(document).on('pageload', "#pageCONFIRMACIO", function (event, data) {
-            if(mostrarDialog)
-            {
+        $(document).on('pageload', "#pageCONFIRMACIO", function (event, data) { 
+alert('load : ' + mostrarDialog.toString());            
+            //if(mostrarDialog)
+            //{
                 mensajeSiNo("Confirmi si us plau", "PREGUNTA_1");
                 mostrarDialog = false;
-            }
+            //}
         });
 
         /* Al abrir la pagina de CONFIGURACIÓ ······················································ */
