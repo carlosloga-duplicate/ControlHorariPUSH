@@ -206,13 +206,19 @@ function mensajePopup(cual, txtMsg, esperar)
 var pregunta = '';
 function mensajeSiNo(titol, ctePregunta)
 {
-    pregunta = ctePregunta;
+    document.getElementById("AvisOK").style.display = "";
+    $("#AvisOK").popup();    
+    $("#txtOK").html(titol);
+    $("#AvisOK").popup("open");         
+    if(esperar > 0) setTimeout(function(){  $("#AvisOK").popup("close"); }, (esperar * 1000));
+
+/*     pregunta = ctePregunta;
     var textoPregunta = constants(ctePregunta); 
     document.getElementById("popConfirma").style.display = "";
     $("#popConfirma").popup();  
     $("txtTitolDialog").html(titol);
     $("txtPreguntaDialog").html(textoPregunta);    
-    $("#popConfirma").popup("open");  
+    $("#popConfirma").popup("open");   */
 /*     $.mobile.changePage('#popupDialog', {transition: 'slide', role: 'dialog'}); */
 /*     $.mobile.changePage("#popupDialog", { role: "dialog" })  */
 }
