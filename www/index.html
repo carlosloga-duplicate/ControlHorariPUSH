@@ -391,14 +391,14 @@
             <p id="txtKO" name="txtKO">ERROR</p>
         </div>
         <!-- POP UP CONFIRMACIÓ SI/NO -->        
-        <div id="popupDialog" style="max-width:400px; display:none" data-role="popup" data-theme="b" data-overlay-theme="b" data-dismissible="false">
+        <div id="popupDialog" style="max-width:280px; display:none; color: white; background-color:#1C3A6E" class="ui-content" data-role="popup" data-position-to="window" data-history="false" data-dismissible="false">
             <div data-role="header" data-theme="a">
-                <h1 id="txtTitol" name="txtTitol"></h1>
+                <p id="txtTitol" name="txtTitol" style="font-weight: bold"></p>
             </div>
             <div class="ui-content" role="main">
-                <h3 id="txtPregunta" name="txtPRegunta" class="ui-title"></h3>
-                <a class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" href="#" data-rel="back">No</a>
-                <a id="aHrefSI" name="aHrefSI" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" href="#" data-transition="flow">Si</a>
+                <p id="txtPregunta" name="txtPRegunta" class="ui-title"></p>
+                <a href="#" id="aHrefNO" name="aHrefNO" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right" data-mini="true">No</a>
+                <a href="#" id="aHrefSI" name="aHrefSI" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right" data-mini="true">Si</a>
             </div>
         </div>
 

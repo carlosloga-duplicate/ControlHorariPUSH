@@ -207,21 +207,21 @@ var pregunta = '';
 function mensajeSiNo(titol, ctePregunta)
 {
     pregunta = ctePregunta;
-    document.getElementById("popupDialog").style.display = "";
+    var txtPregunta = constants(ctePregunta);
+    document.getElementById("popupDialog").style.display = '';
     $("#popupDialog").popup();  
     $("txtTitol").html(titol);
-    $("txtPregunta").html(constants(ctePregunta));
+    $("txtPregunta").html(txtPregunta);
     $("#popupDialog").popup("open");
 }
 
 function RespostaSI()
 {   
     $("#popupDialog").popup("close");
-alert(pregunta);
     switch(pregunta)
     {
         case 'PREGUNTA_1': 
-            alert('si!!');
+
         break;
     }
 }

@@ -195,8 +195,7 @@ var app = {
                     document.getElementById("tdTempsDiaB").style.display = '';
                     $("#labelTEMPSDIA").text(sTempsDia);  
                     
-                    //Existeix una ENTRADA per avui?
-alert(ultimoDiaEntrada + "|" + diaFormat);         
+                    //Existeix ja una ENTRADA per avui?        
                     if(ultimoDiaEntrada != diaFormat)
                     {
                         mensajeSiNo("Confirmi si us plau", "PREGUNTA_1");
