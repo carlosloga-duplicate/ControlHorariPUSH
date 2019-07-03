@@ -96,8 +96,7 @@ function crearNotificacio(quin, hora, titulo, msg)
           }); 
                  
           mensajePopup('OK','Rebràs un avís (' + quin + ') cada dia a les ' + hora, 2);          
-          eliminaNotificacio(quin); //Elimina la anterior notificación si había ... 
-alert('va a guardaIDnotificacio');          
+          eliminaNotificacio(quin, false); //Elimina la anterior notificación si había ...          
           LS_guardaIDnotificacio(quin,idAleatori); //Guarda nueva hora de aviso en LocalStorage           
         }    
       });
@@ -108,24 +107,21 @@ alert('va a guardaIDnotificacio');
     }
 }
 
-function eliminaNotificacio(quin)
+function eliminaNotificacio(quin, bVerMsg)
 {  
-alert('eliminaNotificacio: ' + quin);  
-    var nId = LS_recuperaIDnotificacio(quin); 
-alert(nId.toString());      
+  var nId = LS_recuperaIDnotificacio(quin); 
   try
   {
-    if(nId >= 0) cancelarNotificacio(nId, quin);
+    if(nId >= 0) cancelarNotificacio(nId, quin, bVerMsg);
   }
   catch(err){}
 }
 
-function cancelarNotificacio(id, quin)
-{
-alert('cancelando ando...' + id.toString() + '|' + quin);  
-    cordova.plugins.notification.local.cancel(id, function() {      
-alert('lo canceló OK');      
+function cancelarNotificacio(id, quin, bVerMsg)
+{  
+    cordova.plugins.notification.local.cancel(id, function() {          
         LS_eliminaIDnotificacio(quin);
+        if(bVerMsg) mensajePopup("OK","S'ha eliminat l'avis (" + quin + ") " , 2);  
   });
 }
 

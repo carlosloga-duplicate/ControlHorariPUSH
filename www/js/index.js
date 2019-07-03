@@ -331,7 +331,7 @@ var app = {
             }
             else
             {              
-                eliminaNotificacio("ENTRADA");
+                eliminaNotificacio("ENTRADA", true);
                 LS_recuperaIDnotificacio(valAntAvisos.checkEntrada);
                 if(valAntAvisos.checkEntrada==1) mensajePopup('OK','Avís per ENTRADA cancel·lat',2); 
             }            
@@ -343,7 +343,7 @@ var app = {
             }
             else
             {
-                eliminaNotificacio("SORTIDA");
+                eliminaNotificacio("SORTIDA", true);
                 if(valAntAvisos.checkSortida==1) mensajePopup('OK','Avís per SORTIDA cancel·lat',2);
             }
         
