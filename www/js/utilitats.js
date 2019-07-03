@@ -223,7 +223,18 @@ function RespostaSI()
     switch(pregunta)
     {
         case 'PREGUNTA_1': 
+            //nada, solo cierra el dialog
+        break;
+    }
+}
 
+function RespostaNO()
+{
+    $("#popConfirma").popup("close");
+    switch(pregunta)
+    {
+        case 'PREGUNTA_1': 
+            IrPantallaInicio();
         break;
     }
 }
@@ -242,5 +253,5 @@ function ScrollHastaAbajo()
 
 function IrPantallaInicio()
 {
-    $.mobile.changePage('#pageSETHORA', { transition: 'flow', changeHash: false });     
+    $.mobile.changePage('#pageSETHORA', { transition: 'slide', changeHash: false });     
 }
