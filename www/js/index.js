@@ -198,10 +198,12 @@ var app = {
                     document.getElementById("tdTempsDiaB").style.display = '';
                     $("#labelTEMPSDIA").text(sTempsDia);  
                     
-                    //Existeix ja una ENTRADA per avui?        
+                    //Existeix ja una ENTRADA per avui?   
+alert(ultimoDiaEntrada + '|' + diaFormat);                         
                     if(ultimoDiaEntrada != diaFormat)
                     {                  
-                        mostrarDialog = true;
+                        /* mostrarDialog = true; */
+                        mensajeSiNo("Confirmi si us plau", "PREGUNTA_1");
                     }
                 }
                 else
@@ -219,13 +221,13 @@ var app = {
             }
         });
 
-        $(document).on('pageshow', "#pageCONFIRMACIO", function (event, data) { 
+/*         $(document).on('pageshow', "#pageCONFIRMACIO", function (event, data) { 
             if(mostrarDialog)
             {
                 mensajeSiNo("Confirmi si us plau", "PREGUNTA_1");
                 mostrarDialog = false;
             }
-        });
+        }); */
 
         /* Al abrir la pagina de CONFIGURACIÓ ······················································ */
         $(document).on('pagebeforeshow', "#pageCONFIGURACIO", function (event, data) {
