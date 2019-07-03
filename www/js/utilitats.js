@@ -207,11 +207,12 @@ var pregunta = '';
 function mensajeSiNo(titol, ctePregunta)
 {
     pregunta = ctePregunta;
-    var txtPregunta = constants(ctePregunta);
+    var textoPregunta = constants(ctePregunta);
     document.getElementById("popupDialog").style.display = '';
     $("#popupDialog").popup();  
+alert(titol + "|" + pregunta + "|" + textoPregunta);    
     $("txtTitol").html(titol);
-    $("txtPregunta").html(txtPregunta);
+    $("txtPregunta").html(textoPregunta);
     $("#popupDialog").popup("open");
 }
 
