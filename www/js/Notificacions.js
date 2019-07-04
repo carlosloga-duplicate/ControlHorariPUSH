@@ -84,7 +84,7 @@ function crearNotificacio(quin, hora, titulo, msg)
               id: idAleatori,
               title: titulo,
               text: msg,               
-              firstAt: new Date(new Date().getTime() + (60000 * minuts)),
+              at: new Date(new Date().getTime() + (60000 * minuts)),
               trigger:{ at: new Date(new Date().getTime() + (60000 * minuts)) },    
               every:  'day', 
               foreground: true,
