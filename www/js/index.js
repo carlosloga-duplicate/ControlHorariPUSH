@@ -183,11 +183,11 @@ var app = {
                     var ultimoDiaEntrada = ultimaEntrada.split('|')[1];           
 
                     var sTempsDia = CalculoTempsDia(storeObject.hora.toString() , diaFormat, ultimaHoraEntrada, ultimoDiaEntrada, storeObject.descans.toString() );
-                    document.getElementById("tdTempsDiaH").style.display = '';
+                    /* document.getElementById("tdTempsDiaH").style.display = ''; */
                     document.getElementById("tdTempsDiaB").style.display = '';
 
                     if(parseInt(sTempsDia) < 1) sTempsDia = "-";
-                    $("#labelTEMPSDIA").text(sTempsDia);
+                    $("#labelTEMPSDIA").text("Temps empleat: " + sTempsDia);
 
                     //Existeix ja una ENTRADA per avui?                       
                     if(ultimoDiaEntrada != diaFormat)
@@ -200,7 +200,7 @@ var app = {
                     document.getElementById("tdDescansH").style.display = 'none';
                     document.getElementById("tdDescansB").style.display = 'none';
 
-                    document.getElementById("tdTempsDiaH").style.display = 'none';
+                    /* document.getElementById("tdTempsDiaH").style.display = 'none'; */
                     document.getElementById("tdTempsDiaB").style.display = 'none';  
                 }
             }
