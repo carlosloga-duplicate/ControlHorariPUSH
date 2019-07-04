@@ -77,16 +77,16 @@ function crearNotificacio(quin, hora, titulo, msg)
           sound: so,
            */
 
-          var so = device.platform == 'Android' ? 'res://beepFichar.mp3' : 'res://beepFichar.m4r';
+          var so = device.platform == 'Android' ? 'file://audio/beepFichar.mp3' : 'res://beepFichar.m4r';
           var idAleatori = Math.floor(Math.random() * (1000000000 - 1) + 1);
 
           cordova.plugins.notification.local.schedule({
               id: idAleatori,
               title: titulo,
               text: msg,               
-              at: new Date(new Date().getTime() + (60000 * minuts)),
+              firstAt: new Date(new Date().getTime() + (60000 * minuts)),
               trigger:{ at: new Date(new Date().getTime() + (60000 * minuts)) },    
-              repeat:  'daily', 
+              every:  'day', 
               foreground: true,
               icon: "res://iconLogo.png",
               smallIcon: "res://iconLogo.png",
