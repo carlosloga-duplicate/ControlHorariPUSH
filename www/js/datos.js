@@ -197,8 +197,98 @@ function enviaFichaje(tipo,dia,hora,descans)
             error: function(request, status, error) { 
                 $('#pTxtAvis').html("");
                 $('#Avis').hide();
-                mensajePopup('KO', constants('ERRORRevent') + status + "\n" + request.statusText + "\n" + request.status + "\n" + request.responseText + "\n" + request.getAllResponseHeaders(), 0);
+                mensajePopup('KO', constants('ERROREnviant') + status + "\n" + request.statusText + "\n" + request.status + "\n" + request.responseText + "\n" + request.getAllResponseHeaders(), 0);
         }
-    }); */
+    }); */    
+}
+
+function recuperaFichajesMes(tipo,dia,hora,descans)
+{
+    $("#pTxtAvis").text("Esperi si us plau, rebent dades ..."); 
+    $("#Avis").show();  
+    document.getElementById("Avis").style.display='';                                 
+    setTimeout(function(){                    
+        $("#pTxtAvis").text("...");
+        $("#Avis").hide();    
+        mensajePopup("OK","Els fitxatges del darrer mes s'han rebut correctament", 3);
+    }, 2000);
+
+    // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+    // Cuando esté publicado el web service que recibe los datos:
+    //   - descomentar esto siguiente y comentar lo anterior !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    //   - Informar el valor correcto en 'urlServeiREST'
+    // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+  
+/*     
+    $('#pTxtAvis').html(constants("WAITRebent"));
+    $('#Avis').show();
+
+    var marcajesMes = '';
+    var usuPsw = recuperaDatosUSU();
+    var sUsu = usuPsw.split('|')[0];
+    var sPsw = usuPsw.split('|')[1];
+
+    $.ajax({
+        url: constants("urlServeiREST"),
+        data: {"usu": escape(sUsu), "psw": escape(sPsw) },
+        type: "GET",
+        dataType: "json",
+        headers: {"Accept": "application/json"},
+        success: function(response, status) {
+            response = JSON.stringify(response); 
+            $('#pTxtAvis').html("");    
+            $('#Avis').hide();       
+            marcajesMes = response;
+            mensajePopup("OK","Els fitxatges del darrer mes s'han rebut correctament",3);
+        },
+            error: function(request, status, error) { 
+                $('#pTxtAvis').html("");
+                $('#Avis').hide();
+                mensajePopup('KO', constants('ERRORRebent') + status + "\n" + request.statusText + "\n" + request.status + "\n" + request.responseText + "\n" + request.getAllResponseHeaders(), 0);
+        }
+    }); 
     
+    return marcajesMes;
+
+    */
+}
+
+function ActualitzarLlistaMarcatges()
+{
+    //Cuando esté publicado el webService que devuelve los marcajes del mes :
+    //  - Eliminar el contenido de prueba del div divHistoric
+    //  - descomentar esto:
+    
+/*     var marcatgesMes = recuperaFichajesMes();
+
+    var htmlTable = "";
+
+    if(marcatgesMes != null)
+    {
+        var nFilas = 0; 
+        var horasACUMULAT = 0;
+    
+        htmlTable += "<table style='padding:0 2px 0 0;' width='100%'>";
+        htmlTable += "    <thead><tr style='text-align: left;'><th>Dia</th><th>ENTR</th><th>DESC</th><th>SORT</th><th>JORN</th></tr></thead>";
+        htmlTable += "    <tfoot>";
+        htmlTable += "        <tr><td colspan='5'></td></tr>";
+        htmlTable += "    </tfoot>";
+        htmlTable += "    <tbody>";
+        for(var x=0; x<nFilas; x++)
+        {
+            var dia = '';
+            var hEntrada = '';
+            var hSortida = '';
+            var descans  = '';
+            var horasDIA = '';
+            htmlTable += "        <tr><td>" + dia + "</td><td>" + hEntrada + "</td><td>" + descans + "</td><td>" + hSortida + "</td><td>" + horasDIA + "</td></tr>";    
+            horasACUMULAT += 0;
+        }
+        htmlTable += "        <tr><td colspan='4' style='text-align: right; font-weight: bold;'>Temps acumulat&nbsp;</td><td style='font-weight: bold;'>" + horasACUMULAT + "</td></tr>";
+        htmlTable += "    </tbody>";
+        htmlTable += "</table>";
+    }
+
+    $("#divHistoric").html(htmlTable);  */
+
 }

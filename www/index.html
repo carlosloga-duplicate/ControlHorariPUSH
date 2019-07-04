@@ -335,26 +335,29 @@
     
                 <!-- CONTENIDO -->
                 <div data-role="content" data-theme="a" style="width: 100%; font-size: small; border-left: 0px">
-                        <center><h4 style="color:#1C3A6E;">HISTÒRIC (darrer mes)</h4></center>  
-                        <table style="padding:0 2px 0 0;" width="100%">
-                            <thead><tr style="text-align: left;"><th>Dia</th><th>ENTR</th><th>DESC</th><th>SORT</th><th>JORN</th></tr></thead>
-                            <tfoot>
-                                <tr><td colspan="5"></td></tr>
-                                <tr>
-                                    <!-- <td colspan="4" style="text-align: right;"><a class="ui-btn ui-btn-a ui-btn ui-icon-arrow-l ui-btn-icon-left" href="#pageSETHORA" data-mini="true" style="background-color: silver;">TORNAR</a></td>                       -->
-                                    <td></td>
-                                </tr>
-                            </tfoot>
-                            <tbody>
-                                <tr><td>03/06/2019</td><td>08:30</td><td>00:30</td><td>18:00</td><td>09:00</td></tr>
-                                <tr><td>04/06/2019</td><td>08:45</td><td>01:00</td><td>18:00</td><td>08:00</td></tr>
-                                <tr><td>05/06/2019</td><td>08:25</td><td>00:45</td><td>17:30</td><td>08:30</td></tr>
-                                <tr><td>03/06/2019</td><td>08:30</td><td>00:30</td><td>18:00</td><td>09:00</td></tr>
-                                <tr><td>04/06/2019</td><td>08:45</td><td>01:00</td><td>18:00</td><td>08:00</td></tr>
-                                <tr><td>05/06/2019</td><td>08:25</td><td>00:45</td><td>17:30</td><td>08:30</td></tr>
-                                <tr><td colspan="4" style="text-align: right; font-weight: bold;">Temps acumulat&nbsp;</td><td style="font-weight: bold;">49:30</td></tr>
-                            </tbody>
-                        </table>                                         
+                        <center><h4 style="color:#1C3A6E;">HISTÒRIC (darrer mes)</h4></center> 
+                        <center><a onclick="ActualitzarLlistaMarcatges();" class="ui-btn ui-btn-a ui-btn ui-icon-arrow-l ui-btn-icon-left" href="#" data-mini="true" style="background-color: silver;">Actualitzar la llista</a></center> 
+                        <div id="divHistoric" name="divHistoric">
+                            <table style="padding:0 2px 0 0;" width="100%">
+                                <thead><tr style="text-align: left;"><th>Dia</th><th>ENTR</th><th>DESC</th><th>SORT</th><th>JORN</th></tr></thead>
+                                <tfoot>
+                                    <tr><td colspan="5"></td></tr>
+                                    <tr>
+                                        <!-- <td colspan="4" style="text-align: right;"><a class="ui-btn ui-btn-a ui-btn ui-icon-arrow-l ui-btn-icon-left" href="#pageSETHORA" data-mini="true" style="background-color: silver;">TORNAR</a></td>                       -->
+                                        <td></td>
+                                    </tr>
+                                </tfoot>
+                                <tbody>
+                                    <tr><td>03/06/2019</td><td>08:30</td><td>00:30</td><td>18:00</td><td>09:00</td></tr>
+                                    <tr><td>04/06/2019</td><td>08:45</td><td>01:00</td><td>18:00</td><td>08:00</td></tr>
+                                    <tr><td>05/06/2019</td><td>08:25</td><td>00:45</td><td>17:30</td><td>08:30</td></tr>
+                                    <tr><td>03/06/2019</td><td>08:30</td><td>00:30</td><td>18:00</td><td>09:00</td></tr>
+                                    <tr><td>04/06/2019</td><td>08:45</td><td>01:00</td><td>18:00</td><td>08:00</td></tr>
+                                    <tr><td>05/06/2019</td><td>08:25</td><td>00:45</td><td>17:30</td><td>08:30</td></tr>
+                                    <tr><td colspan="4" style="text-align: right; font-weight: bold;">Temps acumulat&nbsp;</td><td style="font-weight: bold;">49:30</td></tr>
+                                </tbody>
+                            </table>                                         
+                        </div>
                 </div>
     
                 <!-- LINEA DE PIE DE PÁGINA -->
