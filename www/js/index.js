@@ -275,10 +275,8 @@ var app = {
                 {
                     LS_guardaUltimaEntrada(storeObject.hora, diaFormat);
                 }
-   
-                IrPantallaInicio();                                                    
-                
-                enviaFichaje(storeObject.accion, diaFormat, store.hora, store.descans);
+                IrPantallaInicio();
+                enviaFichaje(storeObject.accion, diaFormat, storeObject.hora, storeObject.descans);                
         });
 
         /* GUARDAR CONFIGURACIÓ ····················································· */
