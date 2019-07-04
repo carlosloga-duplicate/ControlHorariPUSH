@@ -202,7 +202,6 @@ function mensajePopup(cual, txtMsg, esperar)
     }
 }
 
-
 var pregunta = '';
 function mensajeSiNo(titol, ctePregunta)
 {
