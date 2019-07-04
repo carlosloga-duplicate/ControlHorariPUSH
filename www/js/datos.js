@@ -157,3 +157,48 @@ function historicoUsuSector()
 
 }
 
+function enviaFichaje(tipo,dia,hora,descans)
+{
+    $("#pTxtAvis").text("Esperi si us plau, enviant dades ..."); 
+    $("#Avis").show();  
+    document.getElementById("Avis").style.display='';                                 
+    setTimeout(function(){                    
+        $("#pTxtAvis").text("...");
+        $("#Avis").hide();    
+        mensajePopup("OK","El fitxatge s'ha enregistrat correctament", 3);
+    }, 2000);
+
+    // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+    // Cuando esté publicado el web service que recibe los datos:
+    //   - descomentar esto siguiente y comentar lo anterior !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    //   - Informar el valor correcto en 'urlServeiREST'
+    // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+    /*  
+    $('#pTxtAvis').html(constants("WAITEnviant"));
+    $('#Avis').show();
+
+    var usuPsw = recuperaDatosUSU();
+    var sUsu = usuPsw.split('|')[0];
+    var sPsw = usuPsw.split('|')[1];
+
+    $.ajax({
+        url: constants("urlServeiREST"),
+        data: {"usu": escape(sUsu), "psw": escape(sPsw), "tipo": escape(tipo), "dia": escape(dia), "hora": escape(hora), "descans": escape(descans) },
+        type: "POST",
+        dataType: "json",
+        headers: {"Accept": "application/json"},
+        success: function(response, status) {
+            response = JSON.stringify(response); 
+            $('#pTxtAvis').html("");    
+            $('#Avis').hide();       
+            var estat = response;
+            mensajePopup("OK",estat,3);
+        },
+            error: function(request, status, error) { 
+                $('#pTxtAvis').html("");
+                $('#Avis').hide();
+                mensajePopup('KO', constants('ERRORRevent') + status + "\n" + request.statusText + "\n" + request.status + "\n" + request.responseText + "\n" + request.getAllResponseHeaders(), 0);
+        }
+    }); */
+    
+}

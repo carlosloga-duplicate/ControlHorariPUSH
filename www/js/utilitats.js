@@ -162,7 +162,7 @@ function constants(sCual)
         dict['OKRebent'] = "Les dades s´han rebut correctament";    
         
         dict['WAITRebent'] = "Rebent dades del servidor";
-        dict['WAITEnviant'] = "Enviant dades al servidor";
+        dict['WAITEnviant'] = "Esperi si us plau, enviant dades ...";
         dict['WAITTancant'] = "tancant l'aplicació";
 
         dict['NOConfig'] = "Mòvil no configurat. Informi al menys l'usuari i el password si us plau";

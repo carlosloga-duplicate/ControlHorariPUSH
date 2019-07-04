@@ -269,22 +269,16 @@ var app = {
         });
 
         /* CONFIRMAR ENVIAMENT ····················································· */
-        $('#botonEnviaCONFIRMAR').click(function() {               
+        $('#botonEnviaCONFIRMAR').click(function() { 
+                var diaFormat =  storeObject.dia.substr(9,2).padStart(2,'0') + "/" + storeObject.dia.substr(5,2) + "/" + storeObject.dia.substr(0,4);              
                 if(storeObject.accion == 'ENTRADA')
                 {
-                    LS_guardaUltimaEntrada(storeObject.hora,  storeObject.dia.substr(9,2).padStart(2,'0') + "/" + storeObject.dia.substr(5,2) + "/" + storeObject.dia.substr(0,4));
+                    LS_guardaUltimaEntrada(storeObject.hora, diaFormat);
                 }
    
                 IrPantallaInicio();                                                    
-
-                $("#pTxtAvis").text("Esperi si us plau, enviant dades ..."); 
-                $("#Avis").show();  
-                document.getElementById("Avis").style.display='';                                 
-                setTimeout(function(){                    
-                    $("#pTxtAvis").text("...");
-                    $("#Avis").hide();    
-                    mensajePopup("OK","El fitxatge s'ha enregistrat correctament", 3);
-                }, 2000);
+                
+                enviaFichaje(storeObject.accion, diaFormat, store.hora, store.descans);
         });
 
         /* GUARDAR CONFIGURACIÓ ····················································· */
