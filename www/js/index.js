@@ -14,6 +14,7 @@ var app = {
     onDeviceReady: function() {
         app.receivedEvent('deviceready'); 
 
+        /* EVENTO TECLA BACK ··········································· */
         document.addEventListener("backbutton", onBackKeyDown, false);
 
         var paginaACTIVA = 0;       
@@ -213,9 +214,6 @@ var app = {
         });
 
         //Al cambiar de página ······················································ */
-        $(document).on("pagecontainerbeforechange", function (e, data) {
-            alert('ei');
-        });
         $(document).on('pagebeforechange', function(e, data){          
         });
 
@@ -338,25 +336,19 @@ var app = {
 
 
         /* EVENTO TECLA BACK ··········································· */
-        $(window).on("navigate", function (event, data) {                     
-            var direction = data.state.direction;
-            if (direction == 'back') {                           
-                if(paginaACTIVA == 1) 
-                    setTimeout(function(){ navigator.app.exitApp(); }, 500); 
-                else
-                    IrPantallaInicio();
-            }
-        });  
-
-        function onBackKeyDown() {
-alert('onBackKeyDown');            
+        function onBackKeyDown() {        
             var active_page = $(":mobile-pagecontainer").pagecontainer("getActivePage");
             var id =active_page.page().attr('id');
             if (id==='pageSETHORA') { 
                 mensajeSiNo("Confirmi si us plau ...", 'PREGUNTA_2');
             }
-            else{
-                navigator.app.backHistory();
+            else
+            {
+                if (id==='pageCONFIRMACIO') { 
+                    IrPantallaInicio();
+                }
+                else
+                { navigator.app.backHistory(); }
             }
         }
 
