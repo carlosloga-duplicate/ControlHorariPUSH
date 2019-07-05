@@ -210,6 +210,16 @@ var app = {
             }
         });
 
+        //Al cambiar de página 
+        $(document).on('pagebeforechange', function(e, data){  
+alert('back!!');            
+            if (typeof data.toPage == "string" && data.options.direction == "back" && data.prevPage[0].id == "pageSETHORA") {
+alert('dentro!');                
+                data.toPage = "#pageSETHORA"; /* redirect to pageY */
+                data.options.transition = "slide"; /* optional */
+            }
+        });
+
         /* Al abrir la pagina de CONFIGURACIÓ ······················································ */
         $(document).on('pagebeforeshow', "#pageCONFIGURACIO", function (event, data) { 
             paginaACTIVA = 3;
@@ -329,11 +339,9 @@ var app = {
 
 
         /* EVENTO TECLA BACK ··········································· */
-        $(window).on("navigate", function (event, data) {            
-alert('onNavigate');            
+        $(window).on("navigate", function (event, data) {                     
             var direction = data.state.direction;
-            if (direction == 'back') {     
-alert('patras ' + paginaACTIVA.toString());                         
+            if (direction == 'back') {                           
                 if(paginaACTIVA == 1) 
                     setTimeout(function(){ navigator.app.exitApp(); }, 500); 
                 else

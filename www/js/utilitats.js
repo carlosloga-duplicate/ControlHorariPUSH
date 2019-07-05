@@ -254,7 +254,7 @@ function ScrollHastaAbajo()
 function IrPantallaInicio()
 {
     paginaACTIVA=1;
-    $.mobile.changePage('#pageSETHORA', { transition: 'slide', changeHash: false }); 
+    $.mobile.changePage('#pageSETHORA', { transition: 'slide', changeHash: false, reverse: true }); 
     $('#panelENTRADA').collapsible( "collapse" );
     $('#panelSORTIDA').collapsible( "collapse" );
     $('#panelENTRADA').trigger('collapse');
