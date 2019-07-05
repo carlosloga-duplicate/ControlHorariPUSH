@@ -166,6 +166,7 @@ function enviaFichaje(tipo,dia,hora,descans)
     setTimeout(function(){                    
         $("#pTxtAvis").text("...");
         $("#Avis").hide();    
+        IrPantallaInicio();
         mensajePopup("OK","El fitxatge s'ha enregistrat correctament", 2);
     }, 4000);
 
