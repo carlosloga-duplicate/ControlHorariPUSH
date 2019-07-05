@@ -137,7 +137,7 @@ function cargarCombos()
             $("#selecT_Defecte").append('<option value="' + sHora + '">' + sHora + '</option>');
         } */
     }   
-    for(i=10; i<300; i+=5)
+    for(i=0; i<=300; i+=5)
     {
         $("#selecTempsDESCANS").append('<option value="' + i.toString() + '">' + i.toString() + '</option>');
         $("#selecT_Defecte").append('<option value="' + i.toString() + '">' + i.toString() + '</option>');
