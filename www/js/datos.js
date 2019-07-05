@@ -161,13 +161,13 @@ function enviaFichaje(tipo,dia,hora,descans)
 {
     $("#pTxtAvis").text("Esperi si us plau, enviant dades ..."); 
     document.getElementById("imgComunica").src="img/enviant.png";
-    $("#Avis").show();  
-    document.getElementById("Avis").style.display='';                                 
+    document.getElementById("Avis").style.display='';
+    $("#Avis").show();                               
     setTimeout(function(){                    
         $("#pTxtAvis").text("...");
         $("#Avis").hide();    
         mensajePopup("OK","El fitxatge s'ha enregistrat correctament", 2);
-    }, 2000);
+    }, 4000);
 
     // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
     // Cuando esté publicado el web service que recibe los datos:
@@ -207,13 +207,13 @@ function recuperaFichajesMes(tipo,dia,hora,descans)
 {
     $("#pTxtAvis").text("Esperi si us plau, rebent dades ..."); 
     document.getElementById("imgComunica").src="img/rebent.png";
-    $("#Avis").show();  
-    document.getElementById("Avis").style.display='';                                 
+    document.getElementById("Avis").style.display='';  
+    $("#Avis").show();                                     
     setTimeout(function(){                    
         $("#pTxtAvis").text("...");
         $("#Avis").hide();    
         mensajePopup("OK","Els fitxatges del darrer mes s'han rebut correctament", 3);
-    }, 2000);
+    }, 4000);
 
     // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
     // Cuando esté publicado el web service que recibe los datos:
