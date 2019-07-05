@@ -147,6 +147,19 @@ var app = {
 
                 $("#botonMenu.ui-icon-gear").find(".ui-btn-text").css('color', "#1C3A6E");
                 $("#botonMenu.ui-icon-gear").find(".ui-btn-text").css('backColor', "#5379BC");
+
+                //Abrir panel ENTRADA o SORTIDA dependiendo de la hora actual ...
+                if(parseInt(ara.split(':')[0]) >= parseInt(constants('horaIniE')) && parseInt(ara.split(':')[0]) <= parseInt(constants('horaFinE')) )
+                {
+                    $('#panelENTRADA').collapsible("expand");
+                    $('#panelENTRADA').trigger('expand');                    
+                }
+                else
+                {
+                    $('#panelSORTIDA').collapsible("expand");
+                    $('#panelSORTIDA').trigger('expand');  
+                    ScrollHastaAbajo();
+                }
             }
             catch(err)
             {         

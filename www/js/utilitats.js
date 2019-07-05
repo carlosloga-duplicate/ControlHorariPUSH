@@ -167,8 +167,11 @@ function constants(sCual)
 
         dict['NOConfig'] = "Mòvil no configurat. Informi al menys l'usuari i el password si us plau";
         
-        dict['PREGUNTA_1'] = "No s'ha detectat ENTRADA pel dia d'avui. Vol continuar?";
+        dict['PREGUNTA_1'] = "No s'ha detectat ENTRADA pel aquest dia. Vol continuar?";
         dict['PREGUNTA_2'] = "Vol sortir de l'aplicació?";
+
+        dict['horaIniE'] = '4';
+        dict['horaFinE'] = '13';
 
         sRet = dict[sCual].toString();
     }
