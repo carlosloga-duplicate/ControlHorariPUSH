@@ -274,9 +274,9 @@ var app = {
                 if(storeObject.accion == 'ENTRADA')
                 {
                     LS_guardaUltimaEntrada(storeObject.hora, diaFormat);
-                }
-                IrPantallaInicio();
-                enviaFichaje(storeObject.accion, diaFormat, storeObject.hora, storeObject.descans);                
+                }                
+                enviaFichaje(storeObject.accion, diaFormat, storeObject.hora, storeObject.descans); 
+                IrPantallaInicio();               
         });
 
         /* GUARDAR CONFIGURACIÓ ····················································· */
