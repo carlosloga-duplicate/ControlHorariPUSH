@@ -343,12 +343,8 @@ var app = {
                 mensajeSiNo("Confirmi si us plau ...", 'PREGUNTA_2');
             }
             else
-            {
-                if (id==='pageCONFIRMACIO') { 
-                    IrPantallaInicio();
-                }
-                else
-                { navigator.app.backHistory(); }
+            { 
+                IrPantallaInicio();
             }
         }
 
