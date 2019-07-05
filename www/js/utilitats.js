@@ -219,7 +219,6 @@ function mensajeSiNo(titol, ctePregunta)
 /*     $.mobile.changePage('#popupDialog', {transition: 'slide', role: 'dialog'}); */
 /*     $.mobile.changePage("#popupDialog", { role: "dialog" })  */
 }
-
 function RespostaSI()
 {   
     $("#popConfirma").popup("close");
