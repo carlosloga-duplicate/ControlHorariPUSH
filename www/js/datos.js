@@ -160,12 +160,13 @@ function historicoUsuSector()
 function enviaFichaje(tipo,dia,hora,descans)
 {
     $("#pTxtAvis").text("Esperi si us plau, enviant dades ..."); 
+    document.getElementById("imgComunica").src="img/enviant.png";
     $("#Avis").show();  
     document.getElementById("Avis").style.display='';                                 
     setTimeout(function(){                    
         $("#pTxtAvis").text("...");
         $("#Avis").hide();    
-        mensajePopup("OK","El fitxatge s'ha enregistrat correctament", 3);
+        mensajePopup("OK","El fitxatge s'ha enregistrat correctament", 2);
     }, 2000);
 
     // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
@@ -205,6 +206,7 @@ function enviaFichaje(tipo,dia,hora,descans)
 function recuperaFichajesMes(tipo,dia,hora,descans)
 {
     $("#pTxtAvis").text("Esperi si us plau, rebent dades ..."); 
+    document.getElementById("imgComunica").src="img/rebent.png";
     $("#Avis").show();  
     document.getElementById("Avis").style.display='';                                 
     setTimeout(function(){                    
@@ -259,8 +261,9 @@ function ActualitzarLlistaMarcatges()
     //  - Eliminar el contenido de prueba del div divHistoric
     //  - descomentar esto:
     
-/*     var marcatgesMes = recuperaFichajesMes();
+     var marcatgesMes = recuperaFichajesMes();
 
+/*
     var htmlTable = "";
 
     if(marcatgesMes != null)
