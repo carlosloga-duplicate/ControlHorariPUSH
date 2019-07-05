@@ -168,6 +168,7 @@ function constants(sCual)
         dict['NOConfig'] = "Mòvil no configurat. Informi al menys l'usuari i el password si us plau";
         
         dict['PREGUNTA_1'] = "No s'ha detectat ENTRADA pel dia d'avui. Vol continuar?";
+        dict['PREGUNTA_2'] = "Vol sortir de l'aplicació?";
 
         sRet = dict[sCual].toString();
     }
@@ -221,8 +222,11 @@ function RespostaSI()
     $("#popConfirma").popup("close");
     switch(pregunta)
     {
-        case 'PREGUNTA_1': 
+        case 'PREGUNTA_1': //No s'ha informat ENTRADA avui
             //nada, solo cierra el dialog
+        break;
+        case 'PREGUNTA_2': //Salir de la app
+            navigator.app.exitApp();
         break;
     }
 }

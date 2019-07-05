@@ -14,6 +14,8 @@ var app = {
     onDeviceReady: function() {
         app.receivedEvent('deviceready'); 
 
+        document.addEventListener("backbutton", onBackKeyDown, false);
+
         var paginaACTIVA = 0;       
 
         var usu_passw = recuperaDatosUSU();
@@ -210,14 +212,11 @@ var app = {
             }
         });
 
-        //Al cambiar de página 
-        $(document).on('pagebeforechange', function(e, data){  
-alert('back!!');            
-            if (typeof data.toPage == "string" && data.options.direction == "back" && data.prevPage[0].id == "pageSETHORA") {
-alert('dentro!');                
-                data.toPage = "#pageSETHORA"; /* redirect to pageY */
-                data.options.transition = "slide"; /* optional */
-            }
+        //Al cambiar de página ······················································ */
+        $(document).on("pagecontainerbeforechange", function (e, data) {
+            alert('ei');
+        });
+        $(document).on('pagebeforechange', function(e, data){          
         });
 
         /* Al abrir la pagina de CONFIGURACIÓ ······················································ */
@@ -348,6 +347,18 @@ alert('dentro!');
                     IrPantallaInicio();
             }
         });  
+
+        function onBackKeyDown() {
+alert('onBackKeyDown');            
+            var active_page = $(":mobile-pagecontainer").pagecontainer("getActivePage");
+            var id =active_page.page().attr('id');
+            if (id==='pageSETHORA') { 
+                mensajeSiNo("Confirmi si us plau ...", 'PREGUNTA_2');
+            }
+            else{
+                navigator.app.backHistory();
+            }
+        }
 
     },
     // Update DOM on a Received Event
