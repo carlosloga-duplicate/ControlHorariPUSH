@@ -330,8 +330,10 @@ var app = {
 
         /* EVENTO TECLA BACK ··········································· */
         $(window).on("navigate", function (event, data) {            
+alert('onNavigate');            
             var direction = data.state.direction;
-            if (direction == 'back') {              
+            if (direction == 'back') {     
+alert('patras ' + paginaACTIVA.toString());                         
                 if(paginaACTIVA == 1) 
                     setTimeout(function(){ navigator.app.exitApp(); }, 500); 
                 else
