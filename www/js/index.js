@@ -203,7 +203,7 @@ var app = {
                     document.getElementById("tdTempsDiaB").style.display = '';
 
                     if(parseInt(sTempsDia) < 1) sTempsDia = "-";
-                    $("#labelTEMPSDIA").text("Temps empleat: " + sTempsDia);
+                    $("#labelTEMPSDIA").text("Temps treballat " + sTempsDia);
 
                     //Existeix ja una ENTRADA per avui?                       
                     if(ultimoDiaEntrada != diaFormat)
