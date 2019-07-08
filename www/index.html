@@ -84,10 +84,10 @@
                 <div data-role="collapsible-set" data-theme="c" data-content-theme="d" data-mini="true" style="width: 100%;" id="acordeonENTRADA_SORTIDA" name="acordeonENTRADA_SORTIDA">
                     <!-- ACORDEON ENTRADA -->
                     <div data-role="collapsible" id="panelENTRADA" name="panelENTRADA">
-                        <h1>ENTRADA</h1>
+                        <h1 style="color:#5379BC">ENTRADA</h1>
                         <!-- PANEL D'ENTRADA -->
                         <table style="width: 100%;" cellpadding="0" cellspacing="0">
-                            <tr><td style="width: 100%; padding: 0px;"><div style="border: 1px solid #1C3A6E; background-color: #1C3A6E; border-radius: 15px; -moz-border-radius: 15px; width: 100%;">
+                            <tr><td style="width: 100%; padding: 0px;"><div style="border: 1px solid #1C3A6E; border-radius: 15px; -moz-border-radius: 15px; width: 100%;">
                             <table style="width: 100%;" cellpadding="0" cellspacing="0">
                                 <tr><td style="text-align: center;"><label style="font-size: large; font-weight:bold; color:white;">Hora d'entrada</label></td></tr>
                                 <tr>
@@ -116,10 +116,10 @@
                     </div>
                     <!-- ACORDEON SORTIDA -->
                     <div data-role="collapsible" id="panelSORTIDA" name="panelSORTIDA">
-                        <h1>SORTIDA (i temps de descans)</h1>
+                        <h1 style="color:#5379BC">SORTIDA (i temps de descans)</h1>
                         <!-- PANEL DE SORTIDA -->
                         <table style="width: 100%;" cellpadding="0" cellspacing="0">
-                            <tr><td style="padding: 0px; width: 100%;"><div style="width:100%; border: 1px solid #1C3A6E; background-color: #1C3A6E; border-radius: 15px;-moz-border-radius: 15px;">
+                            <tr><td style="padding: 0px; width: 100%;"><div style="width:100%; border: 1px solid #1C3A6E; border-radius: 15px;-moz-border-radius: 15px;">
                                 <table style="width: 100%; text-align: center;" cellpadding="0" cellspacing="0">
                                     <tr><td style="text-align: center; width: 100%;">
                                         <!-- <div style="width: 80%; border: 1px solid #FFDBD0; background-color: #FFDBD0; border-radius: 15px;-moz-border-radius: 15px; position: relative; left: 30px;"> -->
@@ -366,22 +366,22 @@
 
         <!-- A L E R T S  ************************************************************************************************ -->
         <!-- MENSAJES POP UPs -->
-        <div id="Avis" name="Avis" class="blink ui-corner-all" style="display: none; text-align: center; background-color: silver; position: absolute; top:50%; transform: translateY(-50%); left:50%; transform: translateX(-50%);">
+        <div id="Avis" name="Avis" class="blink ui-corner-all" style="display: none; border-radius: 15px; -moz-border-radius: 15px; text-align: center; background-color: silver; position: absolute; top:50%; transform: translateY(-50%); left:50%; transform: translateX(-50%);">
             <br/>
             <p id="pTxtAvis" name="pTxtAvis" class="event listening"></p>
             <p><img id="imgComunica" name="imgComunica" src="img/enviant.png"></p>
             <br/>
         </div>
-        <div data-role="popup" id="AvisOK" name="AvisOK" data-dismissible="false" data-history="false" data-position-to="window" class="ui-content ui-corner-all" style="display: none; max-width:280px; color:white; background-color:#1C3A6E">
+        <div data-role="popup" id="AvisOK" name="AvisOK" data-dismissible="false" data-history="false" data-position-to="window" class="ui-content ui-corner-all" style="display: none; border-radius: 15px; -moz-border-radius: 15px; max-width:280px; color:white; background-color:#1C3A6E">
             <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right" data-mini="true">OK</a>
             <p id="txtOK" name="txtOK">OK</p>
         </div>               
-        <div data-role="popup" id="AvisKO" name="AvisKO" data-dismissible="false" data-history="false" data-position-to="window" class="ui-content ui-corner-all" style="display: none; max-width:280px; color: white; background-color:#1C3A6E">
+        <div data-role="popup" id="AvisKO" name="AvisKO" data-dismissible="false" data-history="false" data-position-to="window" class="ui-content ui-corner-all" style="display: none; border-radius: 15px; -moz-border-radius: 15px; max-width:280px; color: white; background-color:#1C3A6E">
             <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right" data-mini="true">OK</a>
             <p id="txtKO" name="txtKO">ERROR</p>
         </div>
         <!-- POP UP CONFIRMACIÓ SI/NO -->    
-        <div data-role="popup" id="popConfirma" name="popConfirma" data-dismissible="false" data-history="false" data-position-to="window" class="ui-content ui-corner-all" style="display: none; max-width:280px; color:white; background-color:#1C3A6E">    
+        <div data-role="popup" id="popConfirma" name="popConfirma" data-dismissible="false" data-history="false" data-position-to="window" class="ui-content ui-corner-all" style="display: none; max-width:280px; color:white; background-color:#1C3A6E; border-radius: 15px; -moz-border-radius: 15px;">    
             <div style="background-color: #5379BC; color:white; font-weight: bold; text-align: center" data-role="header">
                 <p id="txtTitolDialog" name="txtTitolDialog"></p>
             </div>
